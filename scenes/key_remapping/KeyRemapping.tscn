@@ -29,10 +29,18 @@ margin_bottom = 20.0
 
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer2/Title"]
 margin_top = 3.0
-margin_right = 237.0
+margin_right = 221.0
 margin_bottom = 17.0
 size_flags_horizontal = 3
 text = "Remap Actions"
+
+[node name="DE" type="Button" parent="PanelContainer/VBoxContainer2/Title"]
+margin_left = 225.0
+margin_right = 237.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button" type="Button" parent="PanelContainer/VBoxContainer2/Title"]
 margin_left = 241.0
@@ -55,5 +63,6 @@ margin_top = 36.0
 margin_right = 286.0
 margin_bottom = 56.0
 
+[connection signal="pressed" from="PanelContainer/VBoxContainer2/Title/DE" to="." method="_on_DE_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer2/Title/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer2/Close" to="." method="_on_Close_pressed"]

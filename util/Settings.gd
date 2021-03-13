@@ -8,6 +8,8 @@ var music_volume: float = 1 setget _set_music_volume
 var screenshake_intensity: float = 1.0
 var particles_enabled: bool = true
 
+var language: String setget _set_language, _get_language
+
 
 
 func _init():
@@ -38,3 +40,12 @@ func _set_main_volume(new_value: float) -> void:
 		linear2db(new_value)
 	)
 	main_volume = new_value
+
+
+func _set_language(new_language: String) -> void:
+	TranslationServer.set_locale(new_language)
+	language = new_language
+
+
+func _get_language() -> String:
+	return TranslationServer.get_locale().split("_")[0]

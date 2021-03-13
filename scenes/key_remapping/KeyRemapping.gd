@@ -10,7 +10,10 @@ func _ready():
 
 
 func init_action_list():
-	for action in InputMap.get_actions():
+	var actions = InputMap.get_actions()
+	actions.sort()
+	
+	for action in actions:
 		var item = preload("./ActionListItem.tscn").instance()
 		item.action = action
 		action_list.add_child(item)

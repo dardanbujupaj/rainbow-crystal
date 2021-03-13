@@ -1,7 +1,23 @@
 ﻿key,en,de
-ui_up,UI up,UI nach oben
-ui_down,UI down,UI nach unten
-ui_left,UI left,UI nach links
-ui_right,UI right,UI nach rechts
-ui_accept,UI accept,UI Eingabe
-ui_select,UI select,UI Auswählen
+ui_up,UI Up,UI Nach oben
+ui_down,UI Down,UI Nach unten
+ui_left,UI Left,UI Nach links
+ui_right,UI Right,UI Nach rechts
+ui_accept,UI Accept,UI Eingabe
+ui_select,UI Select,UI Auswählen
+g_attack,Attack,Angreifen
+g_left,Left,Nach links
+g_right,Right,Nach rechts
+g_jump,Jump,Springen
+g_interact,Interact,Interagieren
+SETTINGS,Settings,Einstellungen
+LANGUAGE,Language,Sprache
+GENERAL,General,Allgemein
+SOUND,Sound,Sound
+MUSIC,Music,Musik
+EFFECTS,Effects,Effekte
+MAIN,Main,Gesamt
+LANGUAGE,Language,Sprache
+GAMEPLAY,Gameplay,Spielmechanik
+SCREENSHAKE,Screenshake,Screenshake
+PARTICLES,Particles,Partikel
