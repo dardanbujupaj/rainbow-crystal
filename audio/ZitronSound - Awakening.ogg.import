@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ZitronSound - Awakening.ogg-948a4530b3add972fe0ea6cae964f524.oggstr"
+
+[deps]
+
+source_file="res://audio/ZitronSound - Awakening.ogg"
+dest_files=[ "res://.import/ZitronSound - Awakening.ogg-948a4530b3add972fe0ea6cae964f524.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

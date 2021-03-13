@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/credits/Credits.gd" type="Script" id=1]
+
+[node name="Credits" type="CenterContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_left = 355.0
+margin_top = 181.0
+margin_right = 669.0
+margin_bottom = 419.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 307.0
+margin_bottom = 231.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 300, 200 )
+bbcode_enabled = true
+
+[node name="Close" type="Button" parent="PanelContainer/VBoxContainer"]
+margin_top = 204.0
+margin_right = 300.0
+margin_bottom = 224.0
+text = "Close"
+
+[connection signal="meta_clicked" from="PanelContainer/VBoxContainer/RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Close" to="." method="_on_Close_pressed"]

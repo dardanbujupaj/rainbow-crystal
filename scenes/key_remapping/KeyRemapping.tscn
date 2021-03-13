@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/key_remapping/KeyRemapping.gd" type="Script" id=1]
+
+[node name="KeyRemapping" type="CenterContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_left = 362.0
+margin_top = 265.0
+margin_right = 662.0
+margin_bottom = 335.0
+rect_min_size = Vector2( 300, 0 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 293.0
+margin_bottom = 63.0
+
+[node name="Title" type="HBoxContainer" parent="PanelContainer/VBoxContainer2"]
+margin_right = 286.0
+margin_bottom = 20.0
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer2/Title"]
+margin_top = 3.0
+margin_right = 237.0
+margin_bottom = 17.0
+size_flags_horizontal = 3
+text = "Remap Actions"
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer2/Title"]
+margin_left = 241.0
+margin_right = 286.0
+margin_bottom = 20.0
+text = "reset"
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer2"]
+margin_top = 24.0
+margin_right = 286.0
+margin_bottom = 28.0
+
+[node name="ActionList" type="VBoxContainer" parent="PanelContainer/VBoxContainer2"]
+margin_top = 32.0
+margin_right = 286.0
+margin_bottom = 32.0
+
+[node name="Close" type="Button" parent="PanelContainer/VBoxContainer2"]
+margin_top = 36.0
+margin_right = 286.0
+margin_bottom = 56.0
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer2/Title/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer2/Close" to="." method="_on_Close_pressed"]

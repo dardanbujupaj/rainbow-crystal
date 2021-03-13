@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/game/Color.shader" type="Shader" id=1]
+[ext_resource path="res://scenes/game/Village.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/game/Game.gd" type="Script" id=3]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/red_enabled = true
+shader_param/green_enabled = true
+shader_param/blue_enabled = true
+
+[sub_resource type="GradientTexture" id=2]
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Red" type="CheckBox" parent="CanvasLayer/VBoxContainer"]
+margin_right = 70.0
+margin_bottom = 24.0
+pressed = true
+text = "RED"
+
+[node name="Green" type="CheckBox" parent="CanvasLayer/VBoxContainer"]
+margin_top = 28.0
+margin_right = 70.0
+margin_bottom = 52.0
+pressed = true
+text = "GREEN"
+
+[node name="Blue" type="CheckBox" parent="CanvasLayer/VBoxContainer"]
+margin_top = 56.0
+margin_right = 70.0
+margin_bottom = 80.0
+pressed = true
+text = "BLUE"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+material = SubResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = SubResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Village" parent="." instance=ExtResource( 2 )]
+
+[connection signal="toggled" from="CanvasLayer/VBoxContainer/Red" to="." method="_set_color_enabled" binds= [ "red" ]]
+[connection signal="toggled" from="CanvasLayer/VBoxContainer/Green" to="." method="_set_color_enabled" binds= [ "green" ]]
+[connection signal="toggled" from="CanvasLayer/VBoxContainer/Blue" to="." method="_set_color_enabled" binds= [ "blue" ]]
