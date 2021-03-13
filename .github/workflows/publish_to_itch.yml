@@ -16,7 +16,6 @@ jobs:
         uses: dsaltares/fetch-gh-release-asset@master
         with:
           file: ${{ env.PACKAGE_PREFIX }}-windows.zip
-          token: ${{ secrets.GITHUB_TOKEN }}
       - name: deploy to itch.io (Windows)
         uses: josephbmanley/butler-publish-itchio-action@master
         env:
@@ -32,7 +31,6 @@ jobs:
         uses: dsaltares/fetch-gh-release-asset@master
         with:
           file: ${{ env.PACKAGE_PREFIX }}-linux.zip
-          token: ${{ secrets.GITHUB_TOKEN }}
       - name: deploy to itch.io (Linux)
         uses: josephbmanley/butler-publish-itchio-action@master
         env:
@@ -48,7 +46,6 @@ jobs:
         uses: dsaltares/fetch-gh-release-asset@master
         with:
           file: ${{ env.PACKAGE_PREFIX }}-macos.zip
-          token: ${{ secrets.GITHUB_TOKEN }}
       - name: deploy to itch.io (Mac OS)
         uses: josephbmanley/butler-publish-itchio-action@master
         env:
@@ -64,7 +61,6 @@ jobs:
         uses: dsaltares/fetch-gh-release-asset@master
         with:
           file: ${{ env.PACKAGE_PREFIX }}-html5.zip
-          token: ${{ secrets.GITHUB_TOKEN }}
       - name: deploy to itch.io (HTML5)
         uses: josephbmanley/butler-publish-itchio-action@master
         env:
