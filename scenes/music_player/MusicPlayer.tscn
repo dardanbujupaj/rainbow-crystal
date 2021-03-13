@@ -31,7 +31,7 @@ rect_min_size = Vector2( 150, 200 )
 margin_top = 204.0
 margin_right = 150.0
 margin_bottom = 224.0
-text = "Close"
+text = "CLOSE"
 
 [connection signal="item_activated" from="PanelContainer/VBoxContainer/Songs" to="." method="_on_Songs_item_activated"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Close" to="." method="_on_Close_pressed"]

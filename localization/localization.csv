@@ -13,11 +13,18 @@ g_interact,Interact,Interagieren
 SETTINGS,Settings,Einstellungen
 LANGUAGE,Language,Sprache
 GENERAL,General,Allgemein
-SOUND,Sound,Sound
+AUDIO,Audio,Audio
 MUSIC,Music,Musik
-EFFECTS,Effects,Effekte
+SOUND,Sound,Sound
 MAIN,Main,Gesamt
 LANGUAGE,Language,Sprache
 GAMEPLAY,Gameplay,Spielmechanik
 SCREENSHAKE,Screenshake,Screenshake
 PARTICLES,Particles,Partikel
+CLOSE,Close,Schliessen
+QUIT,Quit,Beenden
+PLAY,Play,Spielen
+SETTINGS,Settings,Einstellungen
+CREDITS,Credits,Credits
+MUSIC_PLAYER,Music Player,Musikplayer
+KEY_MAPPING,Key Mapping,Tastenbelegung

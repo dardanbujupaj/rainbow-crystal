@@ -2,11 +2,11 @@ extends CenterContainer
 
 
 const test_scenes = {
-	"Play": "res://scenes/game/Game.tscn",
-	"Key Mapping": "res://scenes/key_remapping/KeyRemapping.tscn",
-	"Music Player": "res://scenes/music_player/MusicPlayer.tscn",
-	"Settings": "res://scenes/settings_menu/SettingsMenu.tscn",
-	"Credits": "res://scenes/credits/Credits.tscn"
+	"PLAY": "res://scenes/game/Game.tscn",
+	"KEY_MAPPING": "res://scenes/key_remapping/KeyRemapping.tscn",
+	"MUSIC_PLAYER": "res://scenes/music_player/MusicPlayer.tscn",
+	"SETTINGS": "res://scenes/settings_menu/SettingsMenu.tscn",
+	"CREDITS": "res://scenes/credits/Credits.tscn"
 }	
 
 

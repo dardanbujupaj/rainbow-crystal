@@ -32,7 +32,7 @@ bbcode_enabled = true
 margin_top = 204.0
 margin_right = 300.0
 margin_bottom = 224.0
-text = "Close"
+text = "CLOSE"
 
 [connection signal="meta_clicked" from="PanelContainer/VBoxContainer/RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Close" to="." method="_on_Close_pressed"]

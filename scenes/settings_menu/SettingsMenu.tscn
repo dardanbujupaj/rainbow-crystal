@@ -74,11 +74,11 @@ margin_top = 68.0
 margin_right = 192.0
 margin_bottom = 72.0
 
-[node name="Sound" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="Audio" type="Label" parent="PanelContainer/VBoxContainer"]
 margin_top = 76.0
 margin_right = 192.0
 margin_bottom = 90.0
-text = "SOUND"
+text = "AUDIO"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -94,7 +94,7 @@ margin_top = 1.0
 margin_right = 88.0
 margin_bottom = 15.0
 size_flags_horizontal = 3
-text = "Main"
+text = "MAIN"
 
 [node name="Main" type="HSlider" parent="PanelContainer/VBoxContainer/MainVolume"]
 margin_left = 92.0
@@ -134,7 +134,7 @@ margin_top = 1.0
 margin_right = 88.0
 margin_bottom = 15.0
 size_flags_horizontal = 3
-text = "EFFECTS"
+text = "SOUND"
 
 [node name="Sound" type="HSlider" parent="PanelContainer/VBoxContainer/SoundVolume"]
 margin_left = 92.0
