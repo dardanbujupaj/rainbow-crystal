@@ -1,36 +1,39 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/music_player/MusicPlayer.gd" type="Script" id=1]
+[ext_resource path="res://default_theme.tres" type="Theme" id=2]
 
 [node name="MusicPlayer" type="CenterContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 2 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-margin_left = 430.0
-margin_top = 181.0
-margin_right = 594.0
-margin_bottom = 419.0
+margin_left = 312.0
+margin_top = 174.0
+margin_right = 712.0
+margin_bottom = 426.0
+rect_min_size = Vector2( 400, 0 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 157.0
-margin_bottom = 231.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 392.0
+margin_bottom = 244.0
 
 [node name="Songs" type="ItemList" parent="PanelContainer/VBoxContainer"]
-margin_right = 150.0
+margin_right = 384.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 150, 200 )
 
 [node name="Close" type="Button" parent="PanelContainer/VBoxContainer"]
 margin_top = 204.0
-margin_right = 150.0
-margin_bottom = 224.0
+margin_right = 384.0
+margin_bottom = 236.0
 text = "CLOSE"
 
 [connection signal="item_activated" from="PanelContainer/VBoxContainer/Songs" to="." method="_on_Songs_item_activated"]

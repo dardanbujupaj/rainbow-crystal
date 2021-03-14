@@ -1,7 +1,7 @@
 extends CenterContainer
 
 
-onready var action_list = $PanelContainer/VBoxContainer2/ActionList
+onready var action_list = $PanelContainer/VBoxContainer2/ScrollContainer/ActionList
 
 
 # Called when the node enters the scene tree

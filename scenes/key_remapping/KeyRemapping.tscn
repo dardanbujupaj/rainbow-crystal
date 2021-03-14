@@ -1,68 +1,70 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/key_remapping/KeyRemapping.gd" type="Script" id=1]
+[ext_resource path="res://default_theme.tres" type="Theme" id=2]
 
 [node name="KeyRemapping" type="CenterContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 2 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-margin_left = 362.0
-margin_top = 265.0
-margin_right = 662.0
-margin_bottom = 335.0
-rect_min_size = Vector2( 300, 0 )
+margin_left = 312.0
+margin_top = 52.0
+margin_right = 712.0
+margin_bottom = 548.0
+rect_min_size = Vector2( 400, 0 )
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 293.0
-margin_bottom = 63.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 392.0
+margin_bottom = 488.0
 
 [node name="Title" type="HBoxContainer" parent="PanelContainer/VBoxContainer2"]
-margin_right = 286.0
-margin_bottom = 20.0
+margin_right = 384.0
+margin_bottom = 32.0
 
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer2/Title"]
-margin_top = 3.0
-margin_right = 221.0
-margin_bottom = 17.0
+margin_right = 268.0
+margin_bottom = 32.0
 size_flags_horizontal = 3
 text = "Remap Actions"
 
-[node name="DE" type="Button" parent="PanelContainer/VBoxContainer2/Title"]
-margin_left = 225.0
-margin_right = 237.0
-margin_bottom = 20.0
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer2/Title"]
+margin_left = 272.0
+margin_right = 384.0
+margin_bottom = 32.0
+text = "reset"
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer2"]
+margin_top = 36.0
+margin_right = 384.0
+margin_bottom = 40.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/VBoxContainer2"]
+margin_top = 44.0
+margin_right = 384.0
+margin_bottom = 444.0
+rect_min_size = Vector2( 0, 400 )
+scroll_horizontal_enabled = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="PanelContainer/VBoxContainer2/Title"]
-margin_left = 241.0
-margin_right = 286.0
-margin_bottom = 20.0
-text = "reset"
-
-[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer2"]
-margin_top = 24.0
-margin_right = 286.0
-margin_bottom = 28.0
-
-[node name="ActionList" type="VBoxContainer" parent="PanelContainer/VBoxContainer2"]
-margin_top = 32.0
-margin_right = 286.0
-margin_bottom = 32.0
+[node name="ActionList" type="VBoxContainer" parent="PanelContainer/VBoxContainer2/ScrollContainer"]
+margin_right = 384.0
+size_flags_horizontal = 3
 
 [node name="Close" type="Button" parent="PanelContainer/VBoxContainer2"]
-margin_top = 36.0
-margin_right = 286.0
-margin_bottom = 56.0
+margin_top = 448.0
+margin_right = 384.0
+margin_bottom = 480.0
+text = "CLOSE"
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer2/Title/DE" to="." method="_on_DE_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer2/Title/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer2/Close" to="." method="_on_Close_pressed"]

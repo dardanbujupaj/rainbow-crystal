@@ -2,6 +2,7 @@ extends Control
 
 
 const licenses = [
+	# Music Player
 	{
 		"title": "Crystals",
 		"url": "https://zitronsound.bandcamp.com/track/crystals",
@@ -15,6 +16,17 @@ const licenses = [
 		"author": "ZitronSound",
 		"license": "CC BY-ND 3.0",
 		"license_url": "https://creativecommons.org/licenses/by-nd/3.0/"
+	},
+	
+	
+	
+	# Font
+	{
+		"title": "Press Start 2P",
+		"url": "https://fonts.google.com/specimen/Press+Start+2P?preview.text_type=custom#about",
+		"author": "CodeMan38",
+		"license": "OFL",
+		"license_url": "https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL"
 	},
 	
 ]
@@ -39,7 +51,7 @@ func generate_license_line(entry: Dictionary):
 	var title = build_url(entry.get("title"), entry.get("url"))
 	var license = build_url(entry.get("license"), entry.get("license_url"))
 	
-	return "%s by %s. %s\n" % [title, entry.get("author"), license]
+	return "%s by %s. %s\n\n" % [title, entry.get("author"), license]
 
 
 func build_url(description, url):
