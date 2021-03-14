@@ -1,9 +1,11 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://scenes/game/grass_tiles.png" type="Texture" id=1]
 [ext_resource path="res://scenes/game/character/Character.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/game/tree.png" type="Texture" id=3]
 [ext_resource path="res://scenes/game/village.png" type="Texture" id=4]
+[ext_resource path="res://scenes/game/orb/Orb.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/game/Village.gd" type="Script" id=6]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -166,7 +168,203 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 } ]
 0/z_index = 0
 
+[sub_resource type="AnimationNodeAnimation" id=20]
+animation = "orbs_disappearing"
+
+[sub_resource type="AnimationNodeAnimation" id=21]
+animation = "orbs_idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id=23]
+states/orbs_disappearing/node = SubResource( 20 )
+states/orbs_disappearing/position = Vector2( 500.5, 126 )
+states/orbs_idle/node = SubResource( 21 )
+states/orbs_idle/position = Vector2( 196.5, 126.5 )
+transitions = [ "orbs_idle", "orbs_disappearing", SubResource( 22 ) ]
+start_node = "orbs_idle"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=24]
+
+[sub_resource type="Animation" id=17]
+resource_name = "orbs_disappearing"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("BlueOrb:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 1.5, 2, 2.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 708.681, -60.5874 ), Vector2( 695.293, -69.1192 ), Vector2( 694.588, -54.1289 ), Vector2( 660.904, -59.7723 ), Vector2( 685.417, -111.621 ), Vector2( 693.414, -248.227 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("RedOrb:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 4.5, 5, 5.5, 6, 6.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 695.293, -83.1639 ), Vector2( 695.293, -69.1192 ), Vector2( 695.293, -69.1192 ), Vector2( 676.07, -72.6463 ), Vector2( 712.752, -93.1037 ), Vector2( 702.7, -40.9022 ), Vector2( 330.75, -41.0055 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("GreenOrb:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 8, 8.5, 9, 9.5, 10 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 682.43, -60.3248 ), Vector2( 695.293, -69.1192 ), Vector2( 695.293, -69.1192 ), Vector2( 710.46, -77.4079 ), Vector2( 727.919, -44.0766 ), Vector2( 911.33, -48.8382 ), Vector2( 1244.64, -44.5144 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("GreenOrb:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 8.5, 9, 9.5, 10 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0, 0.0, 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("RedOrb:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 5, 5.5, 6, 6.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0, 0.0, 0.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("BlueOrb:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1.5, 2, 2.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0, 0.0, 0.0 ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 3, 6.5, 10 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "set_blue_disabled"
+}, {
+"args": [  ],
+"method": "set_red_disabled"
+}, {
+"args": [  ],
+"method": "set_green_disabled"
+} ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "orbs_idle"
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("RedOrb:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 695.293, -83.1639 ), Vector2( 710.257, -75.9447 ), Vector2( 708.419, -60.5874 ), Vector2( 695.949, -54.0244 ), Vector2( 681.38, -55.0745 ), Vector2( 682.088, -73.5954 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("RedOrb:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("BlueOrb:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 708.681, -60.5874 ), Vector2( 695.949, -51.9243 ), Vector2( 681.773, -58.4872 ), Vector2( 681.117, -72.9257 ), Vector2( 697.262, -81.195 ), Vector2( 713.866, -74.542 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("BlueOrb:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("GreenOrb:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 682.43, -60.3248 ), Vector2( 682.036, -75.4196 ), Vector2( 695.162, -83.1639 ), Vector2( 710.781, -74.2383 ), Vector2( 713.407, -54.9432 ), Vector2( 698.011, -49.6142 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("GreenOrb:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
+}
+
+[sub_resource type="CircleShape2D" id=19]
+radius = 50.0
+
 [node name="Village" type="Node2D"]
+script = ExtResource( 6 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 16 )
@@ -189,3 +387,33 @@ texture = ExtResource( 3 )
 [node name="village" type="Sprite" parent="."]
 position = Vector2( 665.885, -128 )
 texture = ExtResource( 4 )
+
+[node name="BlueOrb" parent="." instance=ExtResource( 5 )]
+position = Vector2( 708.179, -76.8208 )
+color = Color( 0, 0, 1, 1 )
+
+[node name="RedOrb" parent="." instance=ExtResource( 5 )]
+position = Vector2( 681.846, -67.2516 )
+color = Color( 1, 0, 0, 1 )
+
+[node name="GreenOrb" parent="." instance=ExtResource( 5 )]
+position = Vector2( 703.284, -51.4395 )
+color = Color( 0, 1, 0, 1 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 23 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 24 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/orbs_disappearing = SubResource( 17 )
+anims/orbs_idle = SubResource( 18 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 695.015, -11.9588 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 19 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
