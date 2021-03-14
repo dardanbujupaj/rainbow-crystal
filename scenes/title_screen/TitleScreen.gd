@@ -18,7 +18,7 @@ func _ready():
 		button.text = scene
 		button.connect("pressed", self, "_goto_scene", [test_scenes[scene]])
 		
-		$VBoxContainer/Scenes.add_child(button)
+		$PanelContainer/VBoxContainer/Scenes.add_child(button)
 
 
 

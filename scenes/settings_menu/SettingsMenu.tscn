@@ -70,7 +70,6 @@ margin_right = 384.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 100, 0 )
 text = "en"
-selected = 0
 
 [node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer"]
 margin_top = 116.0
