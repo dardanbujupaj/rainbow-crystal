@@ -94,7 +94,7 @@ func _physics_process(delta):
 
 func hit(damage: float, direction: Vector2):
 	knockback += direction * damage * KNOCKBACK_INTENSITY
-	$Camera2D.add_trauma(damage)
+	$CameraCenter/Camera2D.add_trauma(damage)
 	
 
 func apply_gravity(delta):
