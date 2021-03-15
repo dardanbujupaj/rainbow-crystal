@@ -17,6 +17,8 @@ func _ready():
 		var button = Button.new()
 		button.text = scene
 		button.connect("pressed", self, "_goto_scene", [test_scenes[scene]])
+		button.connect("pressed", self, "_on_Button_pressed")
+		button.connect("mouse_entered", self, "_on_Button_mouse_entered")
 		
 		$PanelContainer/VBoxContainer/Scenes.add_child(button)
 
@@ -27,4 +29,11 @@ func _goto_scene(path: String) -> void:
 
 
 func _on_Button_pressed() -> void:
+	SoundEngine.play_sound("UIClick")
+
+
+func _on_Button_mouse_entered() -> void:
+	SoundEngine.play_sound("UIHover")
+
+func _on_Quit_pressed() -> void:
 	get_tree().quit()

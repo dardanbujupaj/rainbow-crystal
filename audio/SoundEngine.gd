@@ -4,26 +4,26 @@ const POOL_SIZE = 8
 
 const sounds = {
 	
-#	"MenuButtonSound": {
-#		"stream": preload("res://Sounds/MenuButtonSound.wav"),
-#		"volume": 0
-#		},
-#	"MoonImpact": {
-#		"stream": preload("res://Sounds/MoonImpact.wav"),
-#		"volume": 0
-#		},
-#	"AstroidImpact": {
-#		"stream": preload("res://Sounds/AstroidImpact.wav"),
-#		"volume": -3
-#		},
-#	"Wurmhole": {
-#		"stream":preload("res://Sounds/wurmhole.wav"),
-#		"volume": 0
-#		},
-#	"Reset": {
-#		"stream": preload("res://Sounds/Reset.wav"),
-#		"volume": 0
-#		},
+	"EntCreak": {
+		"stream": preload("res://audio/effects/CREAK_Wood_Hollow_Deep_Smooth_mono.wav"),
+		"volume": 0
+		},
+	"EntImpact": {
+		"stream": preload("res://audio/effects/IMPACT_Generic_09_mono.wav"),
+		"volume": 0
+		},
+	"UIHover": {
+		"stream": preload("res://audio/effects/UI_Click_Metallic_mono.wav"),
+		"volume": 0
+		},
+	"UIClick": {
+		"stream":preload("res://audio/effects/UI_Click_Distinct_mono.wav"),
+		"volume": 0
+		},
+	"AcornImpact": {
+		"stream": preload("res://audio/effects/IMPACT_Wood_Plank_On_Wood_Pile_07_Short_mono.wav"),
+		"volume": 0
+		},
 #	"Star": {
 #		"stream": preload("res://Sounds/Star.wav"),
 #		"volume": 0

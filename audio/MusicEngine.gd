@@ -20,11 +20,11 @@ var tween: Tween
 # all available songs
 const songs = {
 	"Awakening": {
-		"stream": preload("res://audio/ZitronSound - Awakening.ogg"),
+		"stream": preload("res://audio/songs/ZitronSound - Awakening.ogg"),
 		"volume": 0
 	},
 	"Crystals": {
-		"stream": preload("res://audio/ZitronSound - Crystals.ogg"),
+		"stream": preload("res://audio/songs/ZitronSound - Crystals.ogg"),
 		"volume": 0
 	}
 }

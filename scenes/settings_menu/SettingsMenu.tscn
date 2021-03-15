@@ -219,4 +219,6 @@ text = "CLOSE"
 [connection signal="value_changed" from="PanelContainer/VBoxContainer/SoundVolume/Sound" to="." method="_on_Sound_value_changed"]
 [connection signal="value_changed" from="PanelContainer/VBoxContainer/Screenshake/Screenshake" to="." method="_on_Screenshake_value_changed"]
 [connection signal="toggled" from="PanelContainer/VBoxContainer/Particles/Particles" to="." method="_on_Particles_toggled"]
+[connection signal="mouse_entered" from="PanelContainer/VBoxContainer/Close" to="." method="_on_Button_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Close" to="." method="_on_Close_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Close" to="." method="_on_Button_pressed"]

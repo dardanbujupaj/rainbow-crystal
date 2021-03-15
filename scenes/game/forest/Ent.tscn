@@ -4,7 +4,7 @@
 [ext_resource path="res://scenes/game/orb/Orb.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/game/forest/Ent.gd" type="Script" id=3]
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=1]
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -61,18 +61,21 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 1.2, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 1.2, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "values": [ {
-"args": [ 0.8 ],
-"method": "shake"
+"args": [  ],
+"method": "creak"
 }, {
 "args": [ 0.8 ],
-"method": "shake"
+"method": "impact"
+}, {
+"args": [ 0.8 ],
+"method": "impact"
 } ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=2]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -124,7 +127,7 @@ tracks/3/keys = {
 "values": [ 0.0, 0.0 ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=3]
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -176,7 +179,7 @@ tracks/3/keys = {
 "values": [ 0.0 ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=4]
 length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -209,11 +212,14 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.5 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
+"args": [  ],
+"method": "creak"
+}, {
 "args": [ 1.0 ],
-"method": "shake"
+"method": "impact"
 } ]
 }
 
@@ -223,10 +229,10 @@ animation = "activate"
 [sub_resource type="AnimationNodeAnimation" id=6]
 animation = "idle"
 
-[sub_resource type="AnimationNodeAnimation" id=8]
+[sub_resource type="AnimationNodeAnimation" id=7]
 animation = "still"
 
-[sub_resource type="AnimationNodeAnimation" id=16]
+[sub_resource type="AnimationNodeAnimation" id=8]
 animation = "stomp"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=9]
@@ -235,22 +241,22 @@ animation = "stomp"
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=17]
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachine" id=1]
+[sub_resource type="AnimationNodeStateMachine" id=13]
 states/activate/node = SubResource( 5 )
 states/activate/position = Vector2( 328, 60 )
 states/idle/node = SubResource( 6 )
 states/idle/position = Vector2( 638, 87 )
-states/still/node = SubResource( 8 )
+states/still/node = SubResource( 7 )
 states/still/position = Vector2( 164.5, 104.5 )
-states/stomp/node = SubResource( 16 )
+states/stomp/node = SubResource( 8 )
 states/stomp/position = Vector2( 542, 228 )
-transitions = [ "still", "activate", SubResource( 9 ), "activate", "idle", SubResource( 10 ), "idle", "stomp", SubResource( 17 ), "stomp", "idle", SubResource( 18 ) ]
+transitions = [ "still", "activate", SubResource( 9 ), "activate", "idle", SubResource( 10 ), "idle", "stomp", SubResource( 11 ), "stomp", "idle", SubResource( 12 ) ]
 start_node = "still"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=14]
@@ -259,24 +265,24 @@ start_node = "still"
 script = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/activate = SubResource( 11 )
-anims/idle = SubResource( 12 )
-anims/still = SubResource( 13 )
-anims/stomp = SubResource( 15 )
+anims/activate = SubResource( 1 )
+anims/idle = SubResource( 2 )
+anims/still = SubResource( 3 )
+anims/stomp = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 3328, 0, 256, 256 )
+region_rect = Rect2( 0, 0, 256, 256 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 1 )
+tree_root = SubResource( 13 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 14 )
 
 [node name="Orb" parent="." instance=ExtResource( 2 )]
-position = Vector2( -7.4667, 2.70743 )
+position = Vector2( -9.28303, -22.2802 )
 color = Color( 0, 1, 0.133333, 1 )
 draw_orb = false
 

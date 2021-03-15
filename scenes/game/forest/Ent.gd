@@ -21,7 +21,12 @@ func _ready() -> void:
 #	pass
 
 
-func shake(amount: float) -> void:
+func creak() -> void:
+	SoundEngine.play_sound("EntCreak")
+
+
+func impact(amount: float) -> void:
+	SoundEngine.play_sound("EntImpact")
 	get_tree().call_group("cameras", "add_trauma", amount)
 
 

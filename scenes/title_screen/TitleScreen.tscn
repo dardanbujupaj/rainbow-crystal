@@ -27,10 +27,12 @@ margin_bottom = 44.0
 [node name="Scenes" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
 margin_right = 96.0
 
-[node name="Button" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="PanelContainer/VBoxContainer"]
 margin_top = 4.0
 margin_right = 96.0
 margin_bottom = 36.0
 text = "QUIT"
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="mouse_entered" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_Button_mouse_entered"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]

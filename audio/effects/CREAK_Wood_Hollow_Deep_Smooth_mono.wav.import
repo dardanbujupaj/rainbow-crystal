@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/CREAK_Wood_Hollow_Deep_Smooth_mono.wav-476e480040a366a2ae336b38a104be50.sample"
+
+[deps]
+
+source_file="res://audio/effects/CREAK_Wood_Hollow_Deep_Smooth_mono.wav"
+dest_files=[ "res://.import/CREAK_Wood_Hollow_Deep_Smooth_mono.wav-476e480040a366a2ae336b38a104be50.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

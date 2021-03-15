@@ -58,3 +58,12 @@ func _on_Language_item_selected(index: int) -> void:
 	var language = language_selection.get_item_text(index)
 	print(language)
 	Settings.language = language
+	
+
+
+func _on_Button_pressed() -> void:
+	SoundEngine.play_sound("UIClick")
+
+
+func _on_Button_mouse_entered() -> void:
+	SoundEngine.play_sound("UIHover")

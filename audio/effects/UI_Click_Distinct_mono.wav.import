@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/UI_Click_Distinct_mono.wav-0adadf2e9c83fe35558093e93e530916.sample"
+
+[deps]
+
+source_file="res://audio/effects/UI_Click_Distinct_mono.wav"
+dest_files=[ "res://.import/UI_Click_Distinct_mono.wav-0adadf2e9c83fe35558093e93e530916.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
