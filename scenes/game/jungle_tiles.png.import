@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/village.png-8d5b3cbd1619fe7ab2099b11fd47ca6b.stex"
+path="res://.import/jungle_tiles.png-74d083326ebf6804034c2e0a86a9c874.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/game/village.png"
-dest_files=[ "res://.import/village.png-8d5b3cbd1619fe7ab2099b11fd47ca6b.stex" ]
+source_file="res://scenes/game/jungle_tiles.png"
+dest_files=[ "res://.import/jungle_tiles.png-74d083326ebf6804034c2e0a86a9c874.stex" ]
 
 [params]
 

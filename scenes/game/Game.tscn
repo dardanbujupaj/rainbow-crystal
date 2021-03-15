@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/game/Color.shader" type="Shader" id=1]
-[ext_resource path="res://scenes/game/Village.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/game/village/Village.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/game/Game.gd" type="Script" id=3]
 
 [sub_resource type="ShaderMaterial" id=1]
@@ -12,7 +12,9 @@ shader_param/blue_enabled = true
 
 [sub_resource type="GradientTexture" id=2]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" groups=[
+"game",
+]]
 script = ExtResource( 3 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -56,7 +58,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Village" parent="." instance=ExtResource( 2 )]
+[node name="Scene" parent="." instance=ExtResource( 2 )]
 
 [connection signal="toggled" from="CanvasLayer/VBoxContainer/Red" to="." method="_set_color_enabled" binds= [ "red" ]]
 [connection signal="toggled" from="CanvasLayer/VBoxContainer/Green" to="." method="_set_color_enabled" binds= [ "green" ]]

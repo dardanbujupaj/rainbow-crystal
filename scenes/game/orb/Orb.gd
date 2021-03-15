@@ -9,7 +9,7 @@ export var color: Color setget _set_color
 func _draw() -> void:
 	var circle_color = color
 	circle_color.a = 0.5
-	draw_circle(Vector2(), 3, circle_color)
+	draw_circle(Vector2(), 6, circle_color)
 
 
 func _set_color(new_color: Color):

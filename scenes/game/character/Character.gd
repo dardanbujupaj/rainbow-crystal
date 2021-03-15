@@ -1,4 +1,6 @@
 extends KinematicBody2D
+class_name Character
+
 
 const ACCELERATION = 800
 const DECELERATION = 1000
@@ -14,15 +16,22 @@ var velocity = Vector2()
 onready var coyote_timer = $CoyoteTimer
 onready var jump_memory_timer = $JumpMemoryTimer
 
+onready var animation_tree = $AnimationTree
+onready var state_machine = animation_tree["parameters/playback"]
+
+
 var jumped
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 
-
 func _physics_process(delta):
+	animation_tree["parameters/conditions/running"] = abs(velocity.x) > 1
+	animation_tree["parameters/conditions/not_running"] = abs(velocity.x) < 1
+	
 	
 	# handle horizontal movement
 	if Input.is_action_pressed("g_left") or Input.is_action_pressed("g_right"):
@@ -74,7 +83,8 @@ func _physics_process(delta):
 
 	#$Label.text = str(velocity)
 	velocity = move_and_slide(velocity, Vector2(0, -1))
-
+	
+	
 
 
 func apply_gravity(delta):

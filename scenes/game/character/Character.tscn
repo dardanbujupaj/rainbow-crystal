@@ -1,8 +1,30 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/game/character/character.png" type="Texture" id=1]
 [ext_resource path="res://scenes/game/character/ShakeCamera.gd" type="Script" id=2]
 [ext_resource path="res://scenes/game/character/Character.gd" type="Script" id=3]
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=6]
+advance_condition = "running"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=7]
+advance_condition = "not_running"
+
+[sub_resource type="AnimationNodeStateMachine" id=8]
+states/idle/node = SubResource( 4 )
+states/idle/position = Vector2( 188, 94 )
+states/run/node = SubResource( 5 )
+states/run/position = Vector2( 428, 135 )
+transitions = [ "idle", "run", SubResource( 6 ), "run", "idle", SubResource( 7 ) ]
+start_node = "idle"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=9]
 
 [sub_resource type="Animation" id=1]
 length = 0.1
@@ -64,7 +86,16 @@ height = 24.0
 
 [node name="Character" type="KinematicBody2D"]
 z_index = 1
+collision_mask = 2
 script = ExtResource( 3 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 8 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 9 )
+parameters/conditions/not_running = false
+parameters/conditions/running = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/idle = SubResource( 1 )
@@ -73,9 +104,10 @@ anims/run = SubResource( 2 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 128, 128 )
+region_rect = Rect2( 128, 0, 128, 128 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 0, -45 )
 current = true
 zoom = Vector2( 0.5, 0.5 )
 script = ExtResource( 2 )
