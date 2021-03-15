@@ -10,8 +10,10 @@ const GRAVITY = 200
 const JUMP_MODIFIER = 1
 const FALL_MODIFIER = 6
 
+const KNOCKBACK_INTENSITY = 20
 
-var velocity = Vector2()
+var knockback: Vector2
+var velocity: Vector2
 
 onready var coyote_timer = $CoyoteTimer
 onready var jump_memory_timer = $JumpMemoryTimer
@@ -82,10 +84,18 @@ func _physics_process(delta):
 			
 
 	#$Label.text = str(velocity)
-	velocity = move_and_slide(velocity, Vector2(0, -1))
+	velocity = move_and_slide(velocity + knockback, Vector2(0, -1))
+	
+	knockback *= 0.9
 	
 	
 
+
+
+func hit(damage: float, direction: Vector2):
+	knockback += direction * damage * KNOCKBACK_INTENSITY
+	$Camera2D.add_trauma(damage)
+	
 
 func apply_gravity(delta):
 	var modifier = FALL_MODIFIER if velocity.y > 0 else JUMP_MODIFIER
