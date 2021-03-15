@@ -52,7 +52,7 @@ Keymap="*res://util/Keymap.gd"
 
 [editor_plugins]
 
-enabled=PoolStringArray(  )
+enabled=PoolStringArray( "res://addons/aseprite_importer/plugin.cfg" )
 
 [importer_defaults]
 
