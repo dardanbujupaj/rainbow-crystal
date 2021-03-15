@@ -13,6 +13,8 @@ const test_scenes = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	MusicEngine.play_song("Runaway")
+	
 	for scene in test_scenes:
 		var button = Button.new()
 		button.text = scene

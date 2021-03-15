@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ZitronSound - Runaway.ogg-912a01d515ab0a10950f4ad56c6ee38a.oggstr"
+
+[deps]
+
+source_file="res://audio/songs/ZitronSound - Runaway.ogg"
+dest_files=[ "res://.import/ZitronSound - Runaway.ogg-912a01d515ab0a10950f4ad56c6ee38a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

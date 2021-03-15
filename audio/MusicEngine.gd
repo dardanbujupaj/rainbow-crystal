@@ -26,7 +26,12 @@ const songs = {
 	"Crystals": {
 		"stream": preload("res://audio/songs/ZitronSound - Crystals.ogg"),
 		"volume": 0
-	}
+	},
+	"Runaway": {
+		"stream": preload("res://audio/songs/ZitronSound - Runaway.ogg"),
+		"volume": 0
+	},
+	
 }
 
 
@@ -44,7 +49,7 @@ func _ready():
 
 
 # Play next song, fade volumes between songs
-func play_song(song_name: String, transition: float = 3.0):
+func play_song(song_name: String, transition: float = 2.0):
 	tween.stop_all()
 	print("Switching to song %s" % song_name)
 	

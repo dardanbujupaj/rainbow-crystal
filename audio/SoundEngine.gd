@@ -24,6 +24,10 @@ const sounds = {
 		"stream": preload("res://audio/effects/IMPACT_Wood_Plank_On_Wood_Pile_07_Short_mono.wav"),
 		"volume": 0
 		},
+	"OrbWhoosh": {
+		"stream": preload("res://audio/effects/WHOOSH_Whistle_Fast_01_mono.wav"),
+		"volume": 0
+		},
 #	"Star": {
 #		"stream": preload("res://Sounds/Star.wav"),
 #		"volume": 0
