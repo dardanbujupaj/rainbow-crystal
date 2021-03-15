@@ -37,3 +37,45 @@ ui_select,UI Select,UI Auswählen
 ui_up,UI Up,UI Nach oben
 REMAP_ACTIONS,Remap actions,Tastaturbelegung ändern
 RESET,Reset,Zurücksetzen
+NOT_AVAILABLE,N/A,k.A.
+Joypad Axis 0-,Left Stick Left,Linker Stick links
+Joypad Axis 0+,Left Stick Right,Linker Stick rechts
+Joypad Axis 1-,Left Stick Up,Linker Stick oben
+Joypad Axis 1+,Left Stick Down,Linker Stick unten
+Joypad Axis 2-,Right Stick Left,Rechter Stick links
+Joypad Axis 2+,Right Stick Right,Rechter Stick rechts
+Joypad Axis 3-,Right Stick Up,Rechter Stick oben
+Joypad Axis 3+,Right Stick Down,Rechter Stick unten
+Joypad Axis 4-,,
+Joypad Axis 4+,,
+Joypad Axis 5-,,
+Joypad Axis 5+,,
+Joypad Axis 6-,,
+Joypad Axis 6+,L2,L2
+Joypad Axis 7-,,
+Joypad Axis 7+,R2,R2
+BUTTON_LEFT,Left mouse button,Linke Maustaste
+BUTTON_RIGHT,Right mouse button,Rechte Maustaste
+BUTTON_MIDDLE,Middle mouse button,Mittlere Maustaste
+BUTTON_XBUTTON1,Extra mouse button 1,Extra Maustaste 1
+BUTTON_XBUTTON2,Extra mouse button 2,Extra Maustaste 2
+BUTTON_WHEEL_UP,Mouse wheel up,Mausrad nach oben
+BUTTON_WHEEL_DOWN,Mouse wheel down,Mausrad nach unter
+BUTTON_WHEEL_LEFT,Mouse wheel left, Mausrad nach links
+BUTTON_WHEEL_RIGHT,Mouse wheel right, Mausrad nach rechts
+Joypad Button 0,PS Cross/Xbox A/Nintendo B, 
+Joypad Button 1,PS Circle/Xbox B/Nintendo A, 
+Joypad Button 2,PS Square/Xbox X/Nintendo Y, 
+Joypad Button 3,PS Triangle/Xbox Y/Nintendo X,
+Joypad Button 4,L/L1,
+Joypad Button 5,R/R1,
+Joypad Button 6,L2,
+Joypad Button 7,R2,
+Joypad Button 8,L3,
+Joypad Button 9,R3,
+Joypad Button 10,Select/PS Share/Nintendo -,
+Joypad Button 11,Start/PS Options/Nintendo +,
+Joypad Button 12,D-Pad Up,D-Pad oben
+Joypad Button 13,D-Pad Down,D-Pad unten
+Joypad Button 14,D-Pad Left,D-Pad links
+Joypad Button 15,D-Pad Right,D-Pad rechts

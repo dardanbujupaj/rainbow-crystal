@@ -9,8 +9,10 @@ func _ready():
 	init_action_list()
 
 
+# Read all actions from the Input map and create a list item for each
 func init_action_list():
 	var actions = InputMap.get_actions()
+	# sort by action name
 	actions.sort()
 	
 	for action in actions:
@@ -19,11 +21,16 @@ func init_action_list():
 		action_list.add_child(item)
 
 
-func _on_Button_pressed():
+# Set all Actions to default mapping (from project settings)
+func _on_Reset_pressed() -> void:
 	InputMap.load_from_globals()
+	
+	# update all buttons
 	for list_item in action_list.get_children():
 		list_item.update_button()
 
 
 func _on_Close_pressed() -> void:
 	SceneLoader.goto_scene("res://scenes/title_screen/TitleScreen.tscn")
+
+

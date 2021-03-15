@@ -32,5 +32,4 @@ margin_top = 4.0
 margin_right = 96.0
 margin_bottom = 36.0
 text = "QUIT"
-
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]

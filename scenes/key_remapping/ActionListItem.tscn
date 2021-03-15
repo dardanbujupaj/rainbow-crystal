@@ -10,18 +10,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
+[node name="ActionLabel" type="Label" parent="."]
 margin_top = 293.0
 margin_right = 1008.0
 margin_bottom = 307.0
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="."]
+[node name="Event" type="Button" parent="."]
 margin_left = 1012.0
 margin_right = 1024.0
 margin_bottom = 600.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Event" to="." method="_on_Event_pressed"]
