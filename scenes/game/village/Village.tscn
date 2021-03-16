@@ -238,15 +238,15 @@ position = Vector2( 683.712, -128.139 )
 texture = ExtResource( 3 )
 
 [node name="BlueOrb" parent="." instance=ExtResource( 6 )]
-position = Vector2( 684.628, -57.1652 )
+position = Vector2( 693.625, -53 )
 color = Color( 0, 0, 1, 1 )
 
 [node name="RedOrb" parent="." instance=ExtResource( 6 )]
-position = Vector2( 708.789, -63.6809 )
+position = Vector2( 709.956, -73.4275 )
 color = Color( 1, 0, 0, 1 )
 
 [node name="GreenOrb" parent="." instance=ExtResource( 6 )]
-position = Vector2( 692.518, -81.604 )
+position = Vector2( 684.188, -76.689 )
 color = Color( 0, 1, 0, 1 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]

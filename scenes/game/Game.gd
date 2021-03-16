@@ -15,7 +15,7 @@ func _ready() -> void:
 #func _process(delta: float) -> void:
 #	pass
 
-onready var shader: ShaderMaterial = $CanvasLayer/TextureRect.material
+onready var shader: ShaderMaterial = $CanvasLayer/HSplitContainer/TextureRect.material
 
 func _set_color_enabled(enabled: bool, color: String) -> void:
 	shader.set_shader_param("%s_enabled" % color, enabled)

@@ -5,7 +5,7 @@ class_name Character
 const ACCELERATION = 800
 const DECELERATION = 1000
 const MAX_SPEED = 150
-const JUMP_SPEED = 100
+const JUMP_SPEED = 200
 const GRAVITY = 200
 const JUMP_MODIFIER = 1
 const FALL_MODIFIER = 6

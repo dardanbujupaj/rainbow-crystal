@@ -31,6 +31,10 @@ const songs = {
 		"stream": preload("res://audio/songs/ZitronSound - Runaway.ogg"),
 		"volume": 0
 	},
+	"Showdown": {
+		"stream": preload("res://audio/songs/ZitronSound - Showdown.ogg"),
+		"volume": 0
+	},
 	
 }
 

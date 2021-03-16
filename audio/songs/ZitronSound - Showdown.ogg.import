@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ZitronSound - Showdown.ogg-df172c303bd1e78df9d9b6b1f5ceb7ed.oggstr"
+
+[deps]
+
+source_file="res://audio/songs/ZitronSound - Showdown.ogg"
+dest_files=[ "res://.import/ZitronSound - Showdown.ogg-df172c303bd1e78df9d9b6b1f5ceb7ed.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
