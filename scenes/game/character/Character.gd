@@ -11,7 +11,7 @@ const JUMP_ACTIVE_MODIFIER = 2
 const JUMP_PASSIVE_MODIFIER = 4
 const FALL_MODIFIER = 6
 
-const KNOCKBACK_INTENSITY = 100
+const KNOCKBACK_INTENSITY = 150
 
 var knockback: Vector2
 var velocity: Vector2

@@ -1,11 +1,8 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scenes/game/character/character.png" type="Texture" id=1]
 [ext_resource path="res://scenes/game/character/ShakeCamera.gd" type="Script" id=2]
 [ext_resource path="res://scenes/game/character/Character.gd" type="Script" id=3]
-
-[sub_resource type="RectangleShape2D" id=15]
-extents = Vector2( 13.2394, 24.5497 )
 
 [sub_resource type="AnimationNodeAnimation" id=1]
 animation = "idle"
@@ -134,8 +131,8 @@ z_index = 1
 collision_mask = 2
 script = ExtResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 15 )
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -4, 32, 10, 32, 13.9856, 18.0964, 14.0541, 3.92203, 11.0548, -10.266, 8.67186, -16.1959, 3.39928, -17.4284, -0.435318, -13.9362, -3.94119, -2.59675, -6.26934, 7.4006 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 10 )
@@ -151,7 +148,6 @@ anims/run = SubResource( 13 )
 anims/shoot = SubResource( 14 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -5.43774, -7.66225 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 64, 64 )

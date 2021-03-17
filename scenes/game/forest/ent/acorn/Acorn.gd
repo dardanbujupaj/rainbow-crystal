@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 func _on_Acorn_body_entered(body: Node) -> void:
 	var impact_direction = sign((body.position - position).x)
 	(body as Character).hit(1, Vector2(impact_direction, 0))
-	velocity.x = impact_direction * 10
+	velocity.x = -impact_direction * 30
 	
 	collision_tween.stop_all()
 	collision_tween.interpolate_property(self, "modulate", modulate, Color.white * 5, 0.6)
