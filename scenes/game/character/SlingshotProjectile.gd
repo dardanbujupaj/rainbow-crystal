@@ -11,4 +11,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	velocity.y += 98 * delta
 	position += velocity * delta

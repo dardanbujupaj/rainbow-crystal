@@ -37,10 +37,10 @@ func _physics_process(delta):
 	animation_tree["parameters/conditions/running"] = abs(velocity.x) > 1
 	animation_tree["parameters/conditions/not_running"] = abs(velocity.x) < 1
 	
-	
+	var input_direction = Input.get_action_strength("g_right") - Input.get_action_strength("g_left")
+	var shooting = state_machine.get_current_node() == "shoot"
 	# handle horizontal movement
-	if Input.is_action_pressed("g_left") or Input.is_action_pressed("g_right"):
-		var input_direction = Input.get_action_strength("g_right") - Input.get_action_strength("g_left")
+	if abs(input_direction) > 0.1 and not shooting:
 		
 		if $Sprite.scale.x == -sign(input_direction):
 			$Sprite.scale.x = sign(input_direction)
@@ -51,8 +51,10 @@ func _physics_process(delta):
 		else:
 			velocity.x += input_direction * ACCELERATION * delta
 		
+		
 		# Limit speed
-		velocity.x = clamp(velocity.x, -MAX_SPEED, MAX_SPEED)
+		var speed_limit = MAX_SPEED * 2 if has_green_orb() else MAX_SPEED
+		velocity.x = clamp(velocity.x, -speed_limit, speed_limit)
 		
 		#$character_body.play("walk")
 	else:
@@ -102,6 +104,14 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 
 
+# Helper functions to check if character has an orb
+func has_red_orb():
+	return has_node("Orb") and get_node("Orb").color == Color.red
+func has_green_orb():
+	return has_node("Orb") and get_node("Orb").color == Color.green
+func has_blue_orb():
+	return has_node("Orb") and get_node("Orb").color == Color.blue
+
 # Called by source, when character gets hit
 # decrease health and show impact
 func hit(damage: float, direction: Vector2):
@@ -117,10 +127,14 @@ func hit(damage: float, direction: Vector2):
 	
 
 func shoot():
-	var instance = preload("res://scenes/game/character/SlingshotProjectile.tscn").instance()
-	instance.position = position + Vector2(0, -10)
-	instance.velocity = Vector2($Sprite.scale.x * 300, 0)
-	add_child(instance)
+	if state_machine.get_current_node() != "shoot":
+		state_machine.travel("shoot")
+		yield(get_tree().create_timer(0.5), "timeout")
+		
+		var instance = preload("res://scenes/game/character/SlingshotProjectile.tscn").instance()
+		instance.position = position + Vector2(0, -7)
+		instance.velocity = Vector2($Sprite.scale.x * 300, -25)
+		add_child(instance)
 	
 
 func apply_gravity(delta):
