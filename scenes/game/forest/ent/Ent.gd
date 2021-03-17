@@ -34,5 +34,20 @@ func start_combat():
 	$CanvasLayer/MarginContainer.show()
 	MusicEngine.play_song("Showdown")
 
+
+func spawn_acorn(position: Vector2 = Vector2()):
+	var instance = preload("res://scenes/game/forest/ent/acorn/Acorn.tscn").instance()
+	instance.position = position
+	instance.set_as_toplevel(true)
+	add_child(instance)
+	
+
+func spawn_acorn_salve():
+	for i in range(-5, 5):
+		yield(get_tree().create_timer(0.5), "timeout")
+		spawn_acorn(Vector2(50 * i, -200))
+
+
 func _on_StompTimer_timeout() -> void:
 	state_machine.travel("stomp")
+	spawn_acorn_salve()

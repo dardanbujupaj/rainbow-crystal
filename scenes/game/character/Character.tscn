@@ -4,6 +4,9 @@
 [ext_resource path="res://scenes/game/character/ShakeCamera.gd" type="Script" id=2]
 [ext_resource path="res://scenes/game/character/Character.gd" type="Script" id=3]
 
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 13.2394, 24.5497 )
+
 [sub_resource type="AnimationNodeAnimation" id=1]
 animation = "idle"
 
@@ -126,13 +129,13 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=15]
-extents = Vector2( 13.2394, 24.5497 )
-
 [node name="Character" type="KinematicBody2D"]
 z_index = 1
 collision_mask = 2
 script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 15 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 10 )
@@ -151,7 +154,7 @@ anims/shoot = SubResource( 14 )
 position = Vector2( -5.43774, -7.66225 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 1024, 0, 64, 64 )
+region_rect = Rect2( 0, 0, 64, 64 )
 
 [node name="CameraCenter" type="Node2D" parent="."]
 position = Vector2( -0.23375, -61.082 )
@@ -171,5 +174,4 @@ one_shot = true
 wait_time = 0.2
 one_shot = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 15 )
+[node name="DamageColorTween" type="Tween" parent="."]

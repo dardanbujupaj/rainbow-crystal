@@ -4,13 +4,14 @@ class_name Character
 
 const ACCELERATION = 800
 const DECELERATION = 1000
-const MAX_SPEED = 150
-const JUMP_SPEED = 200
+const MAX_SPEED = 200
+const JUMP_SPEED = 250
 const GRAVITY = 200
-const JUMP_MODIFIER = 1
+const JUMP_ACTIVE_MODIFIER = 2
+const JUMP_PASSIVE_MODIFIER = 4
 const FALL_MODIFIER = 6
 
-const KNOCKBACK_INTENSITY = 20
+const KNOCKBACK_INTENSITY = 100
 
 var knockback: Vector2
 var velocity: Vector2
@@ -20,6 +21,8 @@ onready var jump_memory_timer = $JumpMemoryTimer
 
 onready var animation_tree = $AnimationTree
 onready var state_machine = animation_tree["parameters/playback"]
+
+onready var damage_tween = $DamageColorTween
 
 
 var jumped
@@ -38,8 +41,10 @@ func _physics_process(delta):
 	# handle horizontal movement
 	if Input.is_action_pressed("g_left") or Input.is_action_pressed("g_right"):
 		var input_direction = Input.get_action_strength("g_right") - Input.get_action_strength("g_left")
+		
 		if $Sprite.scale.x == -sign(input_direction):
 			$Sprite.scale.x = sign(input_direction)
+			
 		# Fast turn when changing run direction
 		if sign(velocity.x) != sign(input_direction):
 			velocity.x += input_direction * DECELERATION * delta
@@ -73,6 +78,7 @@ func _physics_process(delta):
 			velocity.y = 0
 	else:
 		if Input.is_action_just_pressed("g_jump"):
+			# coyote jump
 			if coyote_timer.time_left > 0:
 				jump()
 			else:
@@ -84,22 +90,37 @@ func _physics_process(delta):
 			
 
 	#$Label.text = str(velocity)
-	velocity = move_and_slide(velocity + knockback, Vector2(0, -1))
-	
+	velocity = move_and_slide(velocity, Vector2.UP)
+	move_and_slide(knockback, Vector2.UP)
 	knockback *= 0.9
-	
-	
 
 
-
+# Called by source, when character gets hit
+# decrease health and show impact
 func hit(damage: float, direction: Vector2):
-	knockback += direction * damage * KNOCKBACK_INTENSITY
-	$CameraCenter/Camera2D.add_trauma(damage)
+	knockback += direction.normalized() * pow(damage, 2) * KNOCKBACK_INTENSITY
+	$CameraCenter/Camera2D.add_trauma(damage / 2) # screenshake equal to dmg is a bit too much
+	
+	SoundEngine.play_sound("CharacterHit")
+	
+	damage_tween.stop_all()
+	damage_tween.interpolate_property(self, "modulate", modulate, Color.white * 5, 0.3)
+	damage_tween.interpolate_property(self, "modulate", Color.white * 5, Color.white, 0.3)
+	damage_tween.start()
 	
 
 func apply_gravity(delta):
-	var modifier = FALL_MODIFIER if velocity.y > 0 else JUMP_MODIFIER
+	var modifier
+	
+	if velocity.y > 0:
+		modifier = FALL_MODIFIER
+	elif Input.is_action_pressed("g_jump"):
+		modifier = JUMP_ACTIVE_MODIFIER
+	else:
+		modifier = JUMP_PASSIVE_MODIFIER
+		
 	velocity.y += GRAVITY * modifier * delta
+
 
 func jump():
 	velocity.y = -JUMP_SPEED

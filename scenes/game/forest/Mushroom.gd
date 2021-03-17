@@ -14,7 +14,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var collider = $RayCast2D.get_collider()
 	if collider is Character:
-		collider.hit(1, Vector2(direction, 0))
+		collider.hit(0.3, Vector2(direction, 0))
 	if collider != null:
 		direction *= -1
 		scale.x *= -1

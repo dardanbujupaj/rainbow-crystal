@@ -28,10 +28,10 @@ const sounds = {
 		"stream": preload("res://audio/effects/WHOOSH_Whistle_Fast_01_mono.wav"),
 		"volume": 0
 		},
-#	"Star": {
-#		"stream": preload("res://Sounds/Star.wav"),
-#		"volume": 0
-#		},
+	"CharacterHit": {
+		"stream": preload("res://audio/effects/THUD_Medium_01_mono.wav"),
+		"volume": 0
+		},
 #	"MoonThrowing": {
 #		"stream": preload("res://Sounds/MoonThrowing.wav"),
 #		"volume": 0
