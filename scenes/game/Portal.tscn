@@ -43,9 +43,11 @@ script = ExtResource( 1 )
 destination = 1
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 32
+lifetime = 2.0
 spread = 180.0
 gravity = Vector2( 0, 0 )
-initial_velocity = 30.0
+initial_velocity = 40.0
 tangential_accel = 100.0
 tangential_accel_random = 1.0
 color = Color( 0, 1, 0, 1 )

@@ -292,7 +292,6 @@ parameters/playback = SubResource( 14 )
 
 [node name="Orb" parent="." instance=ExtResource( 4 )]
 position = Vector2( -9.28303, -22.2802 )
-color = Color( 0, 1, 0.133333, 1 )
 draw_orb = false
 
 [node name="Timer" type="Timer" parent="."]

@@ -2,18 +2,26 @@ tool
 extends Node2D
 
 
-export var color: Color setget _set_color
+enum OrbColor { RED, GREEN, BLUE }
+
+export(OrbColor) var color setget _set_color
 export var draw_orb = true
 
 
-# Called when the node enters the scene tree for the first time.
-func _draw() -> void:
-	if draw_orb:
-		var circle_color = color
-		circle_color.a = 0.5
-		draw_circle(Vector2(), 6, circle_color)
+func _ready() -> void:
+	_set_color(color)
 
 
-func _set_color(new_color: Color):
+func _set_color(new_color):
 	color = new_color
-	$CPUParticles2D.color = new_color
+	if $Sprite != null:
+		match color:
+			OrbColor.RED:
+				$Sprite.texture = preload("res://scenes/game/orb/orb/orb_red.png")
+				$CPUParticles2D.color = Color("eb564b")
+			OrbColor.GREEN:
+				$Sprite.texture = preload("res://scenes/game/orb/orb/orb_green.png")
+				$CPUParticles2D.color = Color("8fde5d")
+			OrbColor.BLUE:
+				$Sprite.texture = preload("res://scenes/game/orb/orb/orb_blue.png")
+				$CPUParticles2D.color = Color("4b5bab")

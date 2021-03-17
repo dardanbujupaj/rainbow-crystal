@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/game/orb/Orb.gd" type="Script" id=1]
+[ext_resource path="res://scenes/game/orb/orb/orb_red.png" type="Texture" id=2]
 
 [node name="Orb" type="Node2D"]
 z_index = 2
@@ -14,4 +15,7 @@ spread = 180.0
 gravity = Vector2( 0, 0 )
 initial_velocity = 20.0
 initial_velocity_random = 1.0
-color = Color( 0, 0, 0, 1 )
+color = Color( 0.921569, 0.337255, 0.294118, 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
