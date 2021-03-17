@@ -7,7 +7,7 @@ uniform bool blue_enabled = true;
 
 
 void fragment() {
-	COLOR = texture(SCREEN_TEXTURE, SCREEN_UV);
+	COLOR = texture(TEXTURE, UV);
 	
 	if (!(red_enabled && green_enabled && blue_enabled)) {
 		float avg = (COLOR.r + COLOR.g + COLOR.b) / 3.0;

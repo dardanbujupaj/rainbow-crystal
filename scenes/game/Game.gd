@@ -2,7 +2,9 @@ extends Node2D
 
 
 
-onready var shader: ShaderMaterial = $CanvasLayer/TextureRect.material
+onready var shader: ShaderMaterial = material
+
+onready var current_scene = $Scene
 
 
 # enable or disable a color
@@ -12,10 +14,10 @@ func _set_color_enabled(enabled: bool, color: String) -> void:
 
 # load an area in the game
 # This is usually called by the Portal class
-func load_area(scene: PackedScene) -> void:
-	print("load area %s" % scene)
-	var instance = scene.instance()
-	instance.name = "Scene"
-	$Scene.queue_free()
+func load_area(area: PackedScene) -> void:
+	print("load area %s" % area)
+	current_scene.queue_free()
 	
-	call_deferred("add_child", instance)
+	current_scene = area.instance()
+	
+	call_deferred("add_child", current_scene)

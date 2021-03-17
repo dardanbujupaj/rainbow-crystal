@@ -1,13 +1,58 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/game/Portal.gd" type="Script" id=1]
+[ext_resource path="res://scenes/game/forest_portal.png" type="Texture" id=3]
+
+[sub_resource type="Shader" id=4]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+const float rotation_factor = -5.0 * 2.0 * 3.1415;
+
+vec2 rotate(vec2 v, float a) {
+    float s = sin(a);
+    float c = cos(a);
+    mat2 m = mat2(vec2(c,-s),vec2(s,c));
+    return m * v;
+}
+
+void fragment() {
+	vec2 offset = vec2(0.5, 0.5);
+	vec2 uv = UV - offset;
+	float radius = uv.x * uv.x + uv.y * uv.y;
+	float rotation = -radius * rotation_factor * sin(TIME) - TIME;
+	
+	
+	COLOR = texture(TEXTURE, rotate(uv, rotation) + offset);
+	// COLOR *= 2.0 + sin(TIME * 2.0);
+	COLOR.a = 1.0 - radius * 6.0;
+	
+}
+"
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = SubResource( 4 )
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 64.0
+radius = 32.0
 
 [node name="Portal" type="Area2D"]
 collision_layer = 0
 script = ExtResource( 1 )
+destination = 1
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 30.0
+tangential_accel = 100.0
+tangential_accel_random = 1.0
+color = Color( 0, 1, 0, 1 )
+
+[node name="image" type="Sprite" parent="."]
+material = SubResource( 5 )
+position = Vector2( -0.0366249, 0.072155 )
+texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

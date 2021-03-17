@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/game/Tilesets.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/game/character/Character.tscn" type="PackedScene" id=2]
@@ -9,11 +9,14 @@
 [ext_resource path="res://scenes/game/forest/background_forest/background_forest_layer 2.png" type="Texture" id=7]
 [ext_resource path="res://scenes/game/forest/background_forest/background_forest_layer 4.png" type="Texture" id=8]
 [ext_resource path="res://scenes/game/forest/Forest.gd" type="Script" id=9]
+[ext_resource path="res://scenes/game/Color.tres" type="Material" id=10]
 
 [node name="Forest" type="Node2D"]
+use_parent_material = true
 script = ExtResource( 9 )
 
 [node name="TileMap" type="TileMap" parent="."]
+use_parent_material = true
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 cell_custom_transform = Transform2D( 32, 0, 0, 32, 0, 0 )
@@ -33,39 +36,50 @@ position = Vector2( 168.708, -127.138 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+material = ExtResource( 10 )
+use_parent_material = true
 motion_scale = Vector2( 0.4, 1 )
 motion_mirroring = Vector2( 1200, 0 )
 
 [node name="background_forest_layer 4" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+use_parent_material = true
 position = Vector2( 0, -180 )
 texture = ExtResource( 8 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 1200, 360 )
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+material = ExtResource( 10 )
+use_parent_material = true
 motion_scale = Vector2( 0.6, 1 )
 motion_mirroring = Vector2( 1200, 0 )
 
 [node name="background_forest_layer 3" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+use_parent_material = true
 position = Vector2( 0, -180 )
 texture = ExtResource( 6 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 1200, 360 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+material = ExtResource( 10 )
+use_parent_material = true
 motion_scale = Vector2( 0.8, 1 )
 motion_mirroring = Vector2( 1200, 0 )
 
 [node name="background_forest_layer 2" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+use_parent_material = true
 position = Vector2( 0, -180 )
 texture = ExtResource( 7 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 1200, 360 )
 
 [node name="ParallaxLayer1" type="ParallaxLayer" parent="ParallaxBackground"]
+material = ExtResource( 10 )
 motion_mirroring = Vector2( 1200, 0 )
 
 [node name="background_forest_layer 1" type="Sprite" parent="ParallaxBackground/ParallaxLayer1"]
+use_parent_material = true
 position = Vector2( 0, -180 )
 texture = ExtResource( 5 )
 region_enabled = true
