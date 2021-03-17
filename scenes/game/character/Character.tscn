@@ -175,3 +175,16 @@ wait_time = 0.2
 one_shot = true
 
 [node name="DamageColorTween" type="Tween" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OnFloor" type="Label" parent="CanvasLayer/VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 14.0

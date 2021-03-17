@@ -5,7 +5,7 @@ class_name Character
 const ACCELERATION = 800
 const DECELERATION = 1000
 const MAX_SPEED = 200
-const JUMP_SPEED = 250
+const JUMP_SPEED = 320
 const GRAVITY = 200
 const JUMP_ACTIVE_MODIFIER = 2
 const JUMP_PASSIVE_MODIFIER = 4
@@ -75,7 +75,8 @@ func _physics_process(delta):
 			# reset jump, vertical velocity an coyote time
 			coyote_timer.start()
 			jumped = false
-			velocity.y = 0
+			
+			apply_gravity(delta)
 	else:
 		if Input.is_action_just_pressed("g_jump"):
 			# coyote jump
@@ -88,11 +89,17 @@ func _physics_process(delta):
 		else:
 			apply_gravity(delta)
 			
-
 	#$Label.text = str(velocity)
 	velocity = move_and_slide(velocity, Vector2.UP)
-	move_and_slide(knockback, Vector2.UP)
-	knockback *= 0.9
+	if knockback.length() > 0.1:
+		move_and_slide(knockback, Vector2.UP)
+		knockback *= 0.9
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("g_attack"):
+		shoot()
+	
 
 
 # Called by source, when character gets hit
@@ -107,6 +114,13 @@ func hit(damage: float, direction: Vector2):
 	damage_tween.interpolate_property(self, "modulate", modulate, Color.white * 5, 0.3)
 	damage_tween.interpolate_property(self, "modulate", Color.white * 5, Color.white, 0.3)
 	damage_tween.start()
+	
+
+func shoot():
+	var instance = preload("res://scenes/game/character/SlingshotProjectile.tscn").instance()
+	instance.position = position + Vector2(0, -10)
+	instance.velocity = Vector2($Sprite.scale.x * 300, 0)
+	add_child(instance)
 	
 
 func apply_gravity(delta):
