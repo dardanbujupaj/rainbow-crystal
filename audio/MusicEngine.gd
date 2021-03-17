@@ -4,6 +4,8 @@ extends Node
 # counter for switching between players
 var count = 0
 
+var currently_playing: String
+
 # array containing the music players
 var players: Array
 
@@ -54,6 +56,11 @@ func _ready():
 
 # Play next song, fade volumes between songs
 func play_song(song_name: String, transition: float = 2.0):
+	if currently_playing == song_name:
+		return
+	
+	currently_playing = song_name
+	
 	tween.stop_all()
 	print("Switching to song %s" % song_name)
 	
