@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/game/Tilesets.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/game/character/Character.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/game/forest/Mushroom.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/game/forest/ent/Ent.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/game/forest/background_forest/background_forest_layer 1.png" type="Texture" id=5]
 [ext_resource path="res://scenes/game/forest/background_forest/background_forest_layer 3.png" type="Texture" id=6]
 [ext_resource path="res://scenes/game/forest/background_forest/background_forest_layer 2.png" type="Texture" id=7]
@@ -80,3 +81,6 @@ position = Vector2( 0, -180 )
 texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 1200, 360 )
+
+[node name="Ent" parent="." instance=ExtResource( 4 )]
+position = Vector2( 140, -128 )

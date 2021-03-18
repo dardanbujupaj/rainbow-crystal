@@ -40,7 +40,7 @@ func _ready() -> void:
 
 
 func _set_destination(new_destination):
-	if $image != null:
+	if has_node("image"):
 		$image.texture = portals[new_destination]["image"]
 		$CPUParticles2D.color = portals[new_destination]["color"]
 	destination = new_destination

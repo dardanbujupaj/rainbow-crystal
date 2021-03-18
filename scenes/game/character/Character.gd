@@ -33,6 +33,9 @@ func _ready():
 	pass # Replace with function body.
 
 
+func _process(delta) -> void:
+	$CanvasLayer/VBoxContainer/OnFloor.text = "on floor" if is_on_floor() else "not on floor"
+
 func _physics_process(delta):
 	animation_tree["parameters/conditions/running"] = abs(velocity.x) > 1
 	animation_tree["parameters/conditions/not_running"] = abs(velocity.x) < 1
@@ -112,10 +115,11 @@ func has_green_orb():
 func has_blue_orb():
 	return has_node("Orb") and get_node("Orb").color == Color.blue
 
+
 # Called by source, when character gets hit
 # decrease health and show impact
 func hit(damage: float, direction: Vector2):
-	knockback += direction.normalized() * pow(damage, 2) * KNOCKBACK_INTENSITY
+	knockback += direction * pow(damage, 2) * KNOCKBACK_INTENSITY
 	$CameraCenter/Camera2D.add_trauma(damage / 2) # screenshake equal to dmg is a bit too much
 	
 	SoundEngine.play_sound("CharacterHit")

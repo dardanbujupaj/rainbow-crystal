@@ -182,6 +182,102 @@
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 200
+   },
+   "ent 23.aseprite": {
+    "frame": { "x": 5888, "y": 0, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 200
+   },
+   "ent 24.aseprite": {
+    "frame": { "x": 6144, "y": 0, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 200
+   },
+   "ent 25.aseprite": {
+    "frame": { "x": 6400, "y": 0, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 200
+   },
+   "ent 26.aseprite": {
+    "frame": { "x": 6656, "y": 0, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 200
+   },
+   "ent 27.aseprite": {
+    "frame": { "x": 6912, "y": 0, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 200
+   },
+   "ent 28.aseprite": {
+    "frame": { "x": 7168, "y": 0, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 400
+   },
+   "ent 29.aseprite": {
+    "frame": { "x": 7424, "y": 0, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 200
+   },
+   "ent 30.aseprite": {
+    "frame": { "x": 7680, "y": 0, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 200
+   },
+   "ent 31.aseprite": {
+    "frame": { "x": 7936, "y": 0, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 200
+   },
+   "ent 32.aseprite": {
+    "frame": { "x": 8192, "y": 0, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 200
+   },
+   "ent 33.aseprite": {
+    "frame": { "x": 8448, "y": 0, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 200
+   },
+   "ent 34.aseprite": {
+    "frame": { "x": 8704, "y": 0, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 200
    }
  },
  "meta": {
@@ -189,16 +285,17 @@
   "version": "1.2.25",
   "image": "ent.png",
   "format": "RGBA8888",
-  "size": { "w": 5888, "h": 256 },
+  "size": { "w": 8960, "h": 256 },
   "scale": "1",
   "frameTags": [
    { "name": "activate", "from": 0, "to": 12, "direction": "forward" },
    { "name": "still", "from": 0, "to": 0, "direction": "forward" },
    { "name": "idle", "from": 13, "to": 16, "direction": "forward" },
-   { "name": "stomp", "from": 17, "to": 22, "direction": "forward" }
+   { "name": "stomp", "from": 17, "to": 22, "direction": "forward" },
+   { "name": "defeat", "from": 23, "to": 34, "direction": "forward" }
   ],
   "layers": [
-   { "name": "orb", "opacity": 255, "blendMode": "normal" },
+   { "name": "dust", "opacity": 255, "blendMode": "normal" },
    { "name": "ent", "opacity": 255, "blendMode": "normal" }
   ],
   "slices": [

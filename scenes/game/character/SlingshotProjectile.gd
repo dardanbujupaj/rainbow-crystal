@@ -13,3 +13,10 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	velocity.y += 98 * delta
 	position += velocity * delta
+
+
+func _on_hit_target(target: Node) -> void:
+	if target.has_method("hit"):
+		target.hit(1, velocity.normalized())
+		queue_free()
+

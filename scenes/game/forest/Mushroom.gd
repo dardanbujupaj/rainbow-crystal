@@ -22,3 +22,7 @@ func _physics_process(delta: float) -> void:
 	if collider != null:
 		direction *= -1
 	move_and_slide(Vector2(direction * SPEED, 10), Vector2.UP)
+
+
+func hit(damage, impact):
+	pass

@@ -7,57 +7,57 @@
 [sub_resource type="AnimationNodeAnimation" id=1]
 animation = "idle"
 
-[sub_resource type="AnimationNodeAnimation" id=16]
+[sub_resource type="AnimationNodeAnimation" id=2]
 animation = "jump"
 
-[sub_resource type="AnimationNodeAnimation" id=2]
+[sub_resource type="AnimationNodeAnimation" id=3]
 animation = "run"
 
-[sub_resource type="AnimationNodeAnimation" id=3]
+[sub_resource type="AnimationNodeAnimation" id=4]
 animation = "shoot"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=4]
+[sub_resource type="AnimationNodeStateMachineTransition" id=5]
 advance_condition = "running"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=5]
-advance_condition = "not_running"
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=6]
-switch_mode = 2
 advance_condition = "not_running"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=7]
 switch_mode = 2
-advance_condition = "running"
+advance_condition = "not_running"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=8]
+switch_mode = 2
+advance_condition = "running"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=9]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=17]
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
 
-[sub_resource type="AnimationNodeStateMachine" id=10]
+[sub_resource type="AnimationNodeStateMachine" id=14]
 states/idle/node = SubResource( 1 )
 states/idle/position = Vector2( 152.5, 146 )
-states/jump/node = SubResource( 16 )
+states/jump/node = SubResource( 2 )
 states/jump/position = Vector2( 229.465, 8.3125 )
-states/run/node = SubResource( 2 )
+states/run/node = SubResource( 3 )
 states/run/position = Vector2( 396.5, 76.5 )
-states/shoot/node = SubResource( 3 )
+states/shoot/node = SubResource( 4 )
 states/shoot/position = Vector2( 364, 214 )
-transitions = [ "idle", "run", SubResource( 4 ), "run", "idle", SubResource( 5 ), "shoot", "idle", SubResource( 6 ), "shoot", "run", SubResource( 7 ), "run", "shoot", SubResource( 8 ), "idle", "shoot", SubResource( 9 ), "jump", "idle", SubResource( 17 ), "idle", "jump", SubResource( 18 ), "run", "jump", SubResource( 19 ) ]
+transitions = [ "idle", "run", SubResource( 5 ), "run", "idle", SubResource( 6 ), "shoot", "idle", SubResource( 7 ), "shoot", "run", SubResource( 8 ), "run", "shoot", SubResource( 9 ), "idle", "shoot", SubResource( 10 ), "jump", "idle", SubResource( 11 ), "idle", "jump", SubResource( 12 ), "run", "jump", SubResource( 13 ) ]
 start_node = "idle"
 graph_offset = Vector2( -4.375, -28.5 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=11]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=15]
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=16]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -84,7 +84,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=17]
 length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -111,7 +111,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=18]
 length = 1.6
 loop = true
 tracks/0/type = "value"
@@ -139,7 +139,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=19]
 length = 0.7
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -176,24 +176,24 @@ script = ExtResource( 3 )
 polygon = PoolVector2Array( -4, 32, 10, 32, 13.9856, 18.0964, 14.0541, 3.92203, 11.0548, -10.266, 8.67186, -16.1959, 3.39928, -17.4284, -0.435318, -13.9362, -3.94119, -2.59675, -6.26934, 7.4006 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 10 )
+tree_root = SubResource( 14 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 11 )
+parameters/playback = SubResource( 15 )
 parameters/conditions/not_running = false
 parameters/conditions/running = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/idle = SubResource( 12 )
-anims/jump = SubResource( 15 )
-anims/run = SubResource( 13 )
-anims/shoot = SubResource( 14 )
+anims/idle = SubResource( 16 )
+anims/jump = SubResource( 17 )
+anims/run = SubResource( 18 )
+anims/shoot = SubResource( 19 )
 
 [node name="Sprite" type="Sprite" parent="."]
 use_parent_material = true
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 64, 0, 64, 64 )
+region_rect = Rect2( 0, 0, 64, 64 )
 
 [node name="CameraCenter" type="Node2D" parent="."]
 position = Vector2( -0.23375, -61.082 )

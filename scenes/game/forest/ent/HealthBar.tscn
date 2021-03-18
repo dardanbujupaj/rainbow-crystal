@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://default_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scenes/game/forest/ent/ent_progress/ent_progress_over.png" type="Texture" id=2]
+[ext_resource path="res://scenes/game/forest/ent/ent_progress/ent_progress_under.png" type="Texture" id=3]
+[ext_resource path="res://scenes/game/forest/ent/ent_progress/ent_progress_progress.png" type="Texture" id=4]
+[ext_resource path="res://scenes/game/forest/ent/HealthBar.gd" type="Script" id=5]
+
+[node name="HealthBar" type="MarginContainer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -128.0
+margin_right = 128.0
+margin_bottom = 120.0
+theme = ExtResource( 1 )
+custom_constants/margin_top = 20
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_top = 20.0
+margin_right = 256.0
+margin_bottom = 120.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 256.0
+margin_bottom = 32.0
+text = "ANCIENT_TREE"
+align = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+margin_top = 36.0
+margin_right = 256.0
+margin_bottom = 100.0
+
+[node name="HealthBarBackdrop" type="TextureProgress" parent="VBoxContainer/CenterContainer"]
+margin_right = 256.0
+margin_bottom = 64.0
+value = 100.0
+texture_under = ExtResource( 3 )
+texture_over = ExtResource( 2 )
+texture_progress = ExtResource( 4 )
+tint_progress = Color( 0.262745, 0.262745, 0.309804, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthBar" type="TextureProgress" parent="VBoxContainer/CenterContainer"]
+margin_right = 256.0
+margin_bottom = 64.0
+value = 100.0
+texture_over = ExtResource( 2 )
+texture_progress = ExtResource( 4 )
+tint_progress = Color( 0.235294, 0.639216, 0.439216, 1 )
+
+[node name="Tween" type="Tween" parent="."]
