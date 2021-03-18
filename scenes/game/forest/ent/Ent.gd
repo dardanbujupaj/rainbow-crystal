@@ -45,7 +45,7 @@ func start_combat():
 func spawn_acorn(position: Vector2 = Vector2()):
 	var instance = preload("res://scenes/game/forest/ent/acorn/Acorn.tscn").instance()
 	instance.position = position
-	instance.set_as_toplevel(true)
+	# instance.set_as_toplevel(true)
 	add_child(instance)
 	
 
@@ -60,6 +60,7 @@ func defeat():
 	$Orb/Hitbox.monitorable = false
 	health_bar.hide()
 	state_machine.travel("defeat")
+	MusicEngine.play_song("Runaway")
 
 
 func _on_StompTimer_timeout() -> void:
