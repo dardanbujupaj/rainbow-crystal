@@ -125,8 +125,8 @@ func hit(damage: float, direction: Vector2):
 	SoundEngine.play_sound("CharacterHit")
 	
 	damage_tween.stop_all()
-	damage_tween.interpolate_property(self, "modulate", modulate, Color.white * 5, 0.3)
-	damage_tween.interpolate_property(self, "modulate", Color.white * 5, Color.white, 0.3)
+	damage_tween.interpolate_property(self, "modulate", modulate, Color.white * 5, 0.3, Tween.TRANS_QUAD, Tween.EASE_OUT)
+	damage_tween.interpolate_property(self, "modulate", Color.white * 5, Color.white, 0.3, Tween.TRANS_LINEAR, Tween.EASE_IN, 0.3)
 	damage_tween.start()
 	
 
