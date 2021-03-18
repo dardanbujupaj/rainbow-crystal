@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ZitronSound - Apocalypse.ogg-dd57d38b69ea87639b7681d138f073c8.oggstr"
+
+[deps]
+
+source_file="res://audio/songs/ZitronSound - Apocalypse.ogg"
+dest_files=[ "res://.import/ZitronSound - Apocalypse.ogg-dd57d38b69ea87639b7681d138f073c8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
