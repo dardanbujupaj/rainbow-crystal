@@ -54,10 +54,13 @@ func _on_Orb_body_entered(body: Node) -> void:
 func attach_to_character(character: Node) -> void:
 	if character.has_node("Orb"):
 		character.get_node("Orb").free()
-		
+	
 	name = "Orb"
 	
+	SaveGame.orb_equipped = color
+	
 	attach_to_node(character)
+
 
 func attach_to_node(node: Node) -> void:
 	self.collectible = false
@@ -67,7 +70,6 @@ func attach_to_node(node: Node) -> void:
 		position = global_position
 		get_parent().remove_child(self)
 		
-	SaveGame.orb_equipped = color
 	node.add_child(self)
 	set_as_toplevel(true)
 	tween_to_offset()
