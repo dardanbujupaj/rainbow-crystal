@@ -11,7 +11,6 @@ const MAX_HEALTH = 3
 var health = MAX_HEALTH setget _set_health
 
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	yield(get_tree().create_timer(2), "timeout")
@@ -28,6 +27,7 @@ func activate():
 	health_bar.show()
 	
 	MusicEngine.play_song("Showdown")
+
 
 func creak() -> void:
 	SoundEngine.play_sound("EntCreak")
@@ -57,10 +57,20 @@ func spawn_acorn_salve():
 
 func defeat():
 	$Timer.stop()
-	$Orb/Hitbox.monitorable = false
+	$Orb/Hitbox.queue_free()
+	
 	health_bar.hide()
 	state_machine.travel("defeat")
 	MusicEngine.play_song("Runaway")
+
+func release_orb() -> void:
+	$Orb.collectible = true
+	print($Orb.position)
+	print($Orb.global_position)
+	$Orb.position = $Orb.global_position
+	$Orb.set_as_toplevel(true)
+	print($Orb.position)
+	
 
 
 func _on_StompTimer_timeout() -> void:

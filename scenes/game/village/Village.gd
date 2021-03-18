@@ -34,5 +34,5 @@ func orb_sound():
 func _on_Area2D_body_entered(body: Node) -> void:
 	MusicEngine.play_song("Runaway")
 	var state_machine = $AnimationTree["parameters/playback"]
-	state_machine.travel("orbs_disappearing")
+	# state_machine.travel("orbs_disappearing")
 		

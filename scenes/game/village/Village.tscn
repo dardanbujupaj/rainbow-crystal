@@ -29,7 +29,6 @@ states/orbs_disappearing/position = Vector2( 500.5, 126 )
 states/orbs_idle/node = SubResource( 2 )
 states/orbs_idle/position = Vector2( 196.5, 126.5 )
 transitions = [ "orbs_idle", "orbs_disappearing", SubResource( 3 ) ]
-start_node = "orbs_idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=5]
 
@@ -248,14 +247,16 @@ position = Vector2( 683.712, -128.139 )
 texture = ExtResource( 3 )
 
 [node name="BlueOrb" parent="." instance=ExtResource( 6 )]
-position = Vector2( 696.838, -80.9779 )
+position = Vector2( 711.638, -75.4349 )
+collision_mask = 1
 color = 2
+collectible = true
 
 [node name="RedOrb" parent="." instance=ExtResource( 6 )]
-position = Vector2( 681.763, -55.0469 )
+position = Vector2( 681.993, -71.1098 )
 
 [node name="GreenOrb" parent="." instance=ExtResource( 6 )]
-position = Vector2( 713.338, -55.4498 )
+position = Vector2( 700.077, -50.3294 )
 color = 1
 
 [node name="AnimationTree" type="AnimationTree" parent="."]

@@ -28,12 +28,18 @@ _global_script_classes=[ {
 "class": "EditorTheme",
 "language": "GDScript",
 "path": "res://addons/aseprite_importer/classes/EditorTheme.gd"
+}, {
+"base": "Area2D",
+"class": "Orb",
+"language": "GDScript",
+"path": "res://scenes/game/orb/Orb.gd"
 } ]
 _global_script_class_icons={
 "AsepriteImportData": "",
 "AsepriteImporter": "",
 "Character": "",
-"EditorTheme": ""
+"EditorTheme": "",
+"Orb": ""
 }
 
 [application]
@@ -49,6 +55,7 @@ Settings="*res://util/Settings.gd"
 SoundEngine="*res://audio/SoundEngine.gd"
 MusicEngine="*res://audio/MusicEngine.gd"
 Keymap="*res://util/Keymap.gd"
+SaveGame="*res://util/SaveGame.gd"
 
 [display]
 
