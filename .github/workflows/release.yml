@@ -6,7 +6,8 @@ on:
       - 'v*'
 
 env:
-  GODOT_VERSION: 3.2.3
+  GODOT_EXECUTABLE_URL: https://downloads.tuxfamily.org/godotengine/3.2.4/rc5/Godot_v3.2.4-rc5_linux_headless.64.zip
+  GODOT_TEMPATES_URL: https://downloads.tuxfamily.org/godotengine/3.2.4/rc5/Godot_v3.2.4-rc5_export_templates.tpz
 
 jobs:
   # job id, can be anything
@@ -38,8 +39,8 @@ jobs:
       with:
         # Defining all the required inputs
         # I used the mono version of Godot in this example
-        godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/${{env.GODOT_VERSION}}/mono/Godot_v${{env.GODOT_VERSION}}-stable_mono_linux_headless_64.zip
-        godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/${{env.GODOT_VERSION}}/mono/Godot_v${{env.GODOT_VERSION}}-stable_mono_export_templates.tpz
+        godot_executable_download_url: ${{env.GODOT_EXECUTABLE_URL}}
+        godot_export_templates_download_url: ${{env.GODOT_TEMPLATES_URL}}
         relative_project_path: ./
         create_release: true
         base_version:  ${{ steps.tag_version.outputs.TAG_VERSION}} 
