@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/game/Color.tres" type="Material" id=1]
-[ext_resource path="res://scenes/game/village/Village.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/game/Game.gd" type="Script" id=3]
 
 [node name="Game" type="Node2D" groups=[
@@ -41,8 +40,6 @@ margin_right = 70.0
 margin_bottom = 80.0
 pressed = true
 text = "BLUE"
-
-[node name="Scene" parent="." instance=ExtResource( 2 )]
 
 [node name="BackgroundColor" type="CanvasLayer" parent="."]
 layer = -101

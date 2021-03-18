@@ -56,17 +56,29 @@ func attach_to_character(character: Node) -> void:
 		character.get_node("Orb").free()
 		
 	name = "Orb"
+	
+	attach_to_node(character)
+
+func attach_to_node(node: Node) -> void:
 	self.collectible = false
 	
-	position = global_position
 	
-	get_parent().remove_child(self)
+	if get_parent():
+		position = global_position
+		get_parent().remove_child(self)
+		
 	SaveGame.orb_equipped = color
-	character.add_child(self)
+	node.add_child(self)
 	set_as_toplevel(true)
+	tween_to_offset()
 
 
 func tween_to_offset() -> void:
 	var target_offset = Vector2(rand_range(-1, 1), rand_range(-1, 1)) * 30
+	tween.stop_all()
 	tween.interpolate_property(self, "offset", offset, target_offset, 3, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
 	tween.start()
+
+
+func _on_Tween_tween_completed(object: Object, key: NodePath) -> void:
+	tween_to_offset()

@@ -4,7 +4,14 @@ extends Node2D
 
 onready var shader: ShaderMaterial = material
 
-onready var current_scene = $Scene
+onready var current_scene
+
+
+func _ready() -> void:
+	if SaveGame.tutorial_completed:
+		load_area(preload("res://scenes/game/village/Village.tscn"))
+	else:
+		load_area(preload("res://scenes/game/tutorial/Tutorial.tscn"))
 
 
 # enable or disable a color
@@ -16,7 +23,9 @@ func _set_color_enabled(enabled: bool, color: String) -> void:
 # This is usually called by the Portal class
 func load_area(area: PackedScene, background_color: Color = Color.black) -> void:
 	print("load area %s" % area)
-	current_scene.queue_free()
+	
+	if current_scene:
+		current_scene.queue_free()
 	
 	current_scene = area.instance()
 	

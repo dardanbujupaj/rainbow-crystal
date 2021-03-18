@@ -33,9 +33,7 @@ func _ready():
 	if SaveGame.orb_equipped > -1:
 		var orb = preload("res://scenes/game/orb/Orb.tscn").instance()
 		orb.color = SaveGame.orb_equipped
-		orb.name = "Orb"
-		orb.set_as_toplevel(true)
-		add_child(orb)
+		orb.attach_to_character(self)
 
 
 func _process(delta) -> void:

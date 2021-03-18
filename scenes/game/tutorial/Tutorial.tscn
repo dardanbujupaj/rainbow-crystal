@@ -1,8 +1,6 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scenes/game/Tilesets.tres" type="TileSet" id=1]
-[ext_resource path="res://scenes/game/village/Village.gd" type="Script" id=2]
-[ext_resource path="res://scenes/game/village/village.png" type="Texture" id=3]
 [ext_resource path="res://scenes/game/village/tree.png" type="Texture" id=4]
 [ext_resource path="res://scenes/game/character/Character.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/game/Color.tres" type="Material" id=7]
@@ -28,6 +26,7 @@ states/orbs_disappearing/position = Vector2( 500.5, 126 )
 states/orbs_idle/node = SubResource( 2 )
 states/orbs_idle/position = Vector2( 196.5, 126.5 )
 transitions = [ "orbs_idle", "orbs_disappearing", SubResource( 3 ) ]
+start_node = "orbs_idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=5]
 
@@ -67,12 +66,8 @@ tracks/0/keys = {
 length = 3.0
 loop = true
 
-[sub_resource type="CircleShape2D" id=8]
-radius = 50.0
-
-[node name="Village" type="Node2D"]
+[node name="Tutorial" type="Node2D"]
 use_parent_material = true
-script = ExtResource( 2 )
 
 [node name="TileMap" type="TileMap" parent="."]
 use_parent_material = true
@@ -88,49 +83,31 @@ position = Vector2( 347.853, -32.9467 )
 
 [node name="tree" type="Sprite" parent="."]
 use_parent_material = true
-position = Vector2( 790.872, -128.269 )
+position = Vector2( 790, -128 )
 texture = ExtResource( 4 )
 
 [node name="tree2" type="Sprite" parent="."]
 use_parent_material = true
-position = Vector2( 446.874, -127.564 )
+position = Vector2( 450, -128 )
 texture = ExtResource( 4 )
-
-[node name="village" type="Sprite" parent="."]
-use_parent_material = true
-position = Vector2( 683.712, -128.139 )
-texture = ExtResource( 3 )
-
-[node name="Crystal" type="Node2D" parent="."]
-position = Vector2( 696.923, -67.8131 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 4 )
 anim_player = NodePath("../AnimationPlayer")
+active = true
 parameters/playback = SubResource( 5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/orbs_disappearing = SubResource( 6 )
 anims/orbs_idle = SubResource( 7 )
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2( 695.015, -11.9588 )
-collision_layer = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 8 )
-
-[node name="ForestPortal" parent="." instance=ExtResource( 8 )]
+[node name="VillagePortal" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1214.49, -31.893 )
+destination = 0
 
-[node name="ForestSign" parent="." instance=ExtResource( 13 )]
-position = Vector2( 986.858, -0.0520172 )
-text = "Forest"
+[node name="VillageSign" parent="." instance=ExtResource( 13 )]
+position = Vector2( 550, 0 )
 direction = 1
-
-[node name="MountainSign" parent="." instance=ExtResource( 13 )]
-position = Vector2( 250, 0 )
-text = "Mountain"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -183,5 +160,3 @@ position = Vector2( 0, -180 )
 texture = ExtResource( 10 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 1200, 360 )
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
