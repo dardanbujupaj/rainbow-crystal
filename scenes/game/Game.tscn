@@ -44,6 +44,17 @@ text = "BLUE"
 
 [node name="Scene" parent="." instance=ExtResource( 2 )]
 
+[node name="BackgroundColor" type="CanvasLayer" parent="."]
+layer = -101
+
+[node name="ColorRect" type="ColorRect" parent="BackgroundColor"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.4, 1, 0.890196, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="toggled" from="CanvasLayer/VBoxContainer/Red" to="." method="_set_color_enabled" binds= [ "red" ]]
 [connection signal="toggled" from="CanvasLayer/VBoxContainer/Green" to="." method="_set_color_enabled" binds= [ "green" ]]
 [connection signal="toggled" from="CanvasLayer/VBoxContainer/Blue" to="." method="_set_color_enabled" binds= [ "blue" ]]

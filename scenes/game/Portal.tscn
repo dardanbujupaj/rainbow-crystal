@@ -50,7 +50,7 @@ gravity = Vector2( 0, 0 )
 initial_velocity = 40.0
 tangential_accel = 100.0
 tangential_accel_random = 1.0
-color = Color( 0, 1, 0, 1 )
+color = Color( 0.235294, 0.639216, 0.439216, 1 )
 
 [node name="image" type="Sprite" parent="."]
 material = SubResource( 2 )

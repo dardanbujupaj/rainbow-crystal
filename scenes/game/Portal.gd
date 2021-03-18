@@ -12,24 +12,25 @@ var portals = {
 	Area.VILLAGE: {
 		"image": preload("res://scenes/game/forest_portal.png"),
 		"scene": "res://scenes/game/village/Village.tscn",
-		"color": Color.white
+		"color": Color("66ffe3")
 	},
 	Area.FOREST: {
 		"image": preload("res://scenes/game/forest_portal.png"),
 		"scene": "res://scenes/game/forest/Forest.tscn",
-		"color": Color.green
+		"color": Color("3ca370")
 	},
 	Area.MOUNTAIN: {
 		"image": preload("res://scenes/game/forest_portal.png"),
 		"scene": "res://scenes/game/mountain/Mountain.tscn",
-		"color": Color.red
+		"color": Color("eb564b")
 	},
 	Area.SKY: {
 		"image": preload("res://scenes/game/forest_portal.png"),
 		"scene": "res://scenes/game/sky/Sky.tscn",
-		"color": Color.blue
+		"color": Color("4b5bab")
 	},
 }
+
 
 export(Area) var destination setget _set_destination
 
@@ -49,4 +50,4 @@ func _set_destination(new_destination):
 func _on_Portal_body_entered(body: Node) -> void:
 	if body is Character:
 		var area = ResourceLoader.load(portals[destination]["scene"])
-		get_tree().call_group("game", "load_area", area)
+		get_tree().call_group("game", "load_area", area, portals[destination]["color"])

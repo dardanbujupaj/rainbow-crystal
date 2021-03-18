@@ -1,5 +1,4 @@
 shader_type canvas_item;
-//render_mode blend_mix;
 
 uniform bool red_enabled = true;
 uniform bool green_enabled = true;
