@@ -16,12 +16,7 @@ var health = MAX_HEALTH setget _set_health
 func _ready() -> void:
 	yield(get_tree().create_timer(2), "timeout")
 	activate()
-	
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-#	pass
 
 func activate():
 	state_machine.travel("activate")
@@ -65,8 +60,6 @@ func defeat():
 	$Orb/Hitbox.monitorable = false
 	health_bar.hide()
 	state_machine.travel("defeat")
-	
-
 
 
 func _on_StompTimer_timeout() -> void:
@@ -76,6 +69,8 @@ func _on_StompTimer_timeout() -> void:
 
 func _on_StompArea_body_entered(body: Node) -> void:
 	body.hit(1, Vector2(-5, -5))
+	$StompArea.visible = false
+	$StompArea.collision_mask = 0
 
 
 # Called by source, when character gets hit

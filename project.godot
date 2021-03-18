@@ -50,6 +50,11 @@ SoundEngine="*res://audio/SoundEngine.gd"
 MusicEngine="*res://audio/MusicEngine.gd"
 Keymap="*res://util/Keymap.gd"
 
+[display]
+
+window/size/resizable=false
+window/stretch/mode="viewport"
+
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/aseprite_importer/plugin.cfg" )

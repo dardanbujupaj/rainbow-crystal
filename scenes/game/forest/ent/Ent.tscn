@@ -451,7 +451,7 @@ tracks/4/keys = {
 "values": [ 0.0, 0.0 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("StompArea:monitoring")
+tracks/5/path = NodePath("StompArea:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -463,19 +463,19 @@ tracks/5/keys = {
 "values": [ true, false ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("StompArea:visible")
+tracks/6/path = NodePath("Orb:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0.5, 3 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.7, 0.9, 1.1, 1.3, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ Vector2( -0.626669, 4.02182 ), Vector2( -10.4483, 16.507 ), Vector2( -10.2818, 15.5081 ), Vector2( -10.9446, 4.951 ), Vector2( -10.1091, 0.286108 ), Vector2( -8.2988, 3.07112 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Orb:position")
+tracks/7/path = NodePath("Orb:rotation_degrees")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -483,20 +483,20 @@ tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0, 0.7, 0.9, 1.1, 1.3, 1.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( -0.626669, 4.02182 ), Vector2( -10.4483, 16.507 ), Vector2( -10.2818, 15.5081 ), Vector2( -10.9446, 4.951 ), Vector2( -10.1091, 0.286108 ), Vector2( -8.2988, 3.07112 ) ]
+"update": 0,
+"values": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Orb:rotation_degrees")
+tracks/8/path = NodePath("StompArea:collision_mask")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0, 0.7, 0.9, 1.1, 1.3, 1.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
+"times": PoolRealArray( 0.5, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 0 ]
 }
 
 [sub_resource type="AnimationNodeAnimation" id=24]
@@ -541,7 +541,7 @@ states/activate/position = Vector2( 328, 60 )
 states/defeat/node = SubResource( 25 )
 states/defeat/position = Vector2( 859.608, 44.5575 )
 states/idle/node = SubResource( 26 )
-states/idle/position = Vector2( 638, 87 )
+states/idle/position = Vector2( 638, 86.5 )
 states/orb_hovering/node = SubResource( 60 )
 states/orb_hovering/position = Vector2( 1010.9, 123.438 )
 states/still/node = SubResource( 27 )
@@ -581,15 +581,15 @@ region_rect = Rect2( 0, 0, 256, 256 )
 [node name="StompArea" type="Area2D" parent="."]
 visible = false
 position = Vector2( -320, 128 )
-monitoring = false
 collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StompArea"]
 shape = SubResource( 36 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="StompArea"]
 frames = SubResource( 52 )
-frame = 2
+frame = 7
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
