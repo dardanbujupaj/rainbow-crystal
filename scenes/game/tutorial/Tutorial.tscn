@@ -1,6 +1,8 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scenes/game/Tilesets.tres" type="TileSet" id=1]
+[ext_resource path="res://util/Dialog.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/game/tutorial/Tutorial.gd" type="Script" id=3]
 [ext_resource path="res://scenes/game/village/tree.png" type="Texture" id=4]
 [ext_resource path="res://scenes/game/character/Character.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/game/Color.tres" type="Material" id=7]
@@ -68,6 +70,7 @@ loop = true
 
 [node name="Tutorial" type="Node2D"]
 use_parent_material = true
+script = ExtResource( 3 )
 
 [node name="TileMap" type="TileMap" parent="."]
 use_parent_material = true
@@ -108,6 +111,14 @@ destination = 0
 [node name="VillageSign" parent="." instance=ExtResource( 13 )]
 position = Vector2( 550, 0 )
 direction = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Dialog" parent="CanvasLayer" instance=ExtResource( 2 )]
+visible = true
+margin_left = -300.0
+margin_top = -150.0
+margin_right = 300.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
