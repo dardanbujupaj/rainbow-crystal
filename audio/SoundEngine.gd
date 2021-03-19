@@ -32,10 +32,10 @@ const sounds = {
 		"stream": preload("res://audio/effects/THUD_Medium_01_mono.wav"),
 		"volume": 0
 		},
-#	"MoonThrowing": {
-#		"stream": preload("res://Sounds/MoonThrowing.wav"),
-#		"volume": 0
-#		},
+	"SlingshotShoot": {
+		"stream": preload("res://audio/effects/WHOOSH_Air_Super_Fast_RR3_mono.wav"),
+		"volume": 0
+		},
 #	"MenuButtonHoverSound": {
 #		"stream": preload("res://Sounds/MenuButtonHoverSound.wav"),
 #		"volume": -18
