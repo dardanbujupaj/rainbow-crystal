@@ -69,6 +69,8 @@ func attach_to_node(node: Node) -> void:
 	if get_parent():
 		position = global_position
 		get_parent().remove_child(self)
+	else:
+		position = node.global_position
 		
 	node.add_child(self)
 	set_as_toplevel(true)

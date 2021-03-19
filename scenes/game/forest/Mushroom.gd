@@ -36,7 +36,10 @@ func update_direction():
 
 
 func hit(damage, impact):
-	pass
+	var shard = preload("res://scenes/game/CrystalShard.tscn").instance()
+	shard.position = position
+	get_parent().add_child(shard)
+	queue_free()
 
 
 func _on_AttackCooldown_timeout() -> void:

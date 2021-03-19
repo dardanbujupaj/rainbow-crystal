@@ -34,5 +34,5 @@ margin_bottom = 36.0
 text = "QUIT"
 
 [connection signal="mouse_entered" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_Button_mouse_entered"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_Button_pressed"]
