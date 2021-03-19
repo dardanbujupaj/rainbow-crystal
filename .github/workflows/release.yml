@@ -7,7 +7,7 @@ on:
 
 env:
   GODOT_EXECUTABLE_URL: https://downloads.tuxfamily.org/godotengine/3.3/rc6/Godot_v3.3-rc6_linux_headless.64.zip
-  GODOT_TEMPATES_URL: https://downloads.tuxfamily.org/godotengine/3.3/rc6/Godot_v3.3-rc6_export_templates.tpz
+  GODOT_TEMPLATES_URL: https://downloads.tuxfamily.org/godotengine/3.3/rc6/Godot_v3.3-rc6_export_templates.tpz
 
 jobs:
   # job id, can be anything
