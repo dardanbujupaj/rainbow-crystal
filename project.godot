@@ -46,7 +46,7 @@ _global_script_class_icons={
 
 config/name="rainbow-crystal"
 run/main_scene="res://scenes/title_screen/TitleScreen.tscn"
-config/icon="res://icon.png"
+config/icon="res://logo.png"
 
 [autoload]
 
@@ -56,6 +56,7 @@ SoundEngine="*res://audio/SoundEngine.gd"
 MusicEngine="*res://audio/MusicEngine.gd"
 Keymap="*res://util/Keymap.gd"
 SaveGame="*res://util/SaveGame.gd"
+AnimatedIcon="*res://AnimatedIcon.gd"
 
 [display]
 
