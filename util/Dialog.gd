@@ -48,11 +48,12 @@ func next_step() -> void:
 	
 	if step != null:
 		current_step = step
-		characters_left = len(step["text_key"])
+		characters_left = len(get_text(step))
 		
 		render_current_step()
 		
 		if step.has("end_trigger"):
+			print(step)
 			yield(step["end_trigger"]["target"], step["end_trigger"]["signal"])
 		else:
 			yield(self, "next_step")
@@ -66,9 +67,21 @@ func next_step() -> void:
 		hide()
 
 
+func get_text(step) -> String:
+	if step.has("variables"):
+		return tr(step.text_key) % step["variables"]
+	else:
+		return tr(step.text_key)
+
+
 func render_current_step():
 	if current_step:
-		var content = current_step.text_key.substr(0, len(current_step.text_key) - characters_left)
+		var text = get_text(current_step)
+		
+		var content = text.substr(0, len(text) - characters_left)
+		
+		if not current_step.has("end_trigger"):
+			content += "\n\nPress %s to continue" % Keymap.input_to_text(Keymap.input_for_action("g_interact"))
 		
 		if current_step.has("speaker"):
 			content = "%s: %s" % [current_step.speaker, content]

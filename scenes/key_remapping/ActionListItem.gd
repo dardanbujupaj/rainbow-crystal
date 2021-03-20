@@ -6,17 +6,6 @@ signal action_input
 # action to represent for this list-item
 var action: String
 
-const MouseButtons = {
-	1: "BUTTON_LEFT", # Left mouse button.
-	2: "BUTTON_RIGHT", # Right mouse button.
-	3: "BUTTON_MIDDLE", # Middle mouse button.
-	8: "BUTTON_XBUTTON1", # Extra mouse button 1 (only present on some mice).
-	9: "BUTTON_XBUTTON2", # Extra mouse button 2 (only present on some mice).
-	4: "BUTTON_WHEEL_UP", # Mouse wheel up.
-	5: "BUTTON_WHEEL_DOWN", # Mouse wheel down.
-	6: "BUTTON_WHEEL_LEFT", # Mouse wheel left button (only present on some mice).
-	7: "BUTTON_WHEEL_RIGHT"
-}
 
 
 # Called when the node enters the scene tree for the first time.
@@ -53,24 +42,11 @@ func can_map_event(event: InputEvent):
 
 # update the button text in this list-item
 func update_button():
-	if len(InputMap.get_action_list(action)) > 0:
-		$Event.text = input_to_text(InputMap.get_action_list(action)[0])
+	var event = Keymap.input_for_action(action)
+	if event:
+		$Event.text = Keymap.input_to_text(event)
 	else:
 		$Event.text = "NOT_AVAILABLE"
-
-
-func input_to_text(input: InputEvent) -> String:
-	if input is InputEventMouseButton:
-		return MouseButtons[input.button_index]
-		
-	if input is InputEventJoypadButton:
-		return "Joypad Button %d" % input.button_index
-		
-	if input is InputEventJoypadMotion:
-		return "Joypad Axis %d%s" % [input.axis, "+" if input.axis_value > 0 else "-"]
-	
-	return input.as_text()
-
 
 
 # Procedure to change the event for this action

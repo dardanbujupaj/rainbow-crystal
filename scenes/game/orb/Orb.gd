@@ -2,6 +2,8 @@ tool
 extends Area2D
 class_name Orb
 
+signal collected
+
 
 enum OrbColor { RED, GREEN, BLUE }
 
@@ -58,6 +60,8 @@ func attach_to_character(character: Node) -> void:
 	name = "Orb"
 	
 	SaveGame.orb_equipped = color
+	
+	emit_signal("collected")
 	
 	attach_to_node(character)
 

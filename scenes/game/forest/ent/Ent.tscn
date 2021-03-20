@@ -1,10 +1,11 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://scenes/game/forest/ent/Ent.gd" type="Script" id=1]
 [ext_resource path="res://scenes/game/forest/ent/HealthBar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/game/forest/ent/ent.png" type="Texture" id=3]
 [ext_resource path="res://scenes/game/orb/Orb.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/game/forest/ent/shockwave.png" type="Texture" id=5]
+[ext_resource path="res://util/Dialog.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/game/forest/ent/Hitbox.gd" type="Script" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -13,75 +14,75 @@ radius = 20.0
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 24.784, 20.2465 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 5 )
 region = Rect2( 64, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 5 )
 region = Rect2( 128, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 5 )
 region = Rect2( 192, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=24]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 5 )
 region = Rect2( 256, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=25]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 5 )
 region = Rect2( 320, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=26]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 5 )
 region = Rect2( 384, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=27]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 5 )
 region = Rect2( 448, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=28]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 5 )
 region = Rect2( 512, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=29]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 5 )
 region = Rect2( 576, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=30]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 5 )
 region = Rect2( 640, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=31]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 5 )
 region = Rect2( 704, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=32]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 5 )
 region = Rect2( 768, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=33]
+[sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 5 )
 region = Rect2( 832, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=34]
+[sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 5 )
 region = Rect2( 896, 0, 64, 64 )
 
-[sub_resource type="SpriteFrames" id=35]
+[sub_resource type="SpriteFrames" id=18]
 animations = [ {
-"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ) ],
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
 "loop": true,
 "name": "default",
 "speed": 22.0
 } ]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=19]
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -155,7 +156,7 @@ tracks/4/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=20]
 length = 2.6
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -196,7 +197,7 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=21]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -248,7 +249,7 @@ tracks/3/keys = {
 "values": [ 0.0, 0.0 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=22]
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -312,7 +313,7 @@ tracks/4/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=23]
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -428,52 +429,52 @@ tracks/8/keys = {
 "values": [ 0.0, 0.0 ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=8]
+[sub_resource type="AnimationNodeAnimation" id=24]
 animation = "activate"
 
-[sub_resource type="AnimationNodeAnimation" id=9]
+[sub_resource type="AnimationNodeAnimation" id=25]
 animation = "defeat"
 
-[sub_resource type="AnimationNodeAnimation" id=10]
+[sub_resource type="AnimationNodeAnimation" id=26]
 animation = "idle"
 
-[sub_resource type="AnimationNodeAnimation" id=11]
+[sub_resource type="AnimationNodeAnimation" id=27]
 animation = "still"
 
-[sub_resource type="AnimationNodeAnimation" id=12]
+[sub_resource type="AnimationNodeAnimation" id=28]
 animation = "stomp"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+[sub_resource type="AnimationNodeStateMachineTransition" id=29]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=14]
+[sub_resource type="AnimationNodeStateMachineTransition" id=30]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=15]
+[sub_resource type="AnimationNodeStateMachineTransition" id=31]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=16]
+[sub_resource type="AnimationNodeStateMachineTransition" id=32]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=17]
+[sub_resource type="AnimationNodeStateMachineTransition" id=33]
 
-[sub_resource type="AnimationNodeStateMachine" id=18]
-states/activate/node = SubResource( 8 )
+[sub_resource type="AnimationNodeStateMachine" id=34]
+states/activate/node = SubResource( 24 )
 states/activate/position = Vector2( 328, 60 )
-states/defeat/node = SubResource( 9 )
+states/defeat/node = SubResource( 25 )
 states/defeat/position = Vector2( 859.608, 44.5575 )
-states/idle/node = SubResource( 10 )
+states/idle/node = SubResource( 26 )
 states/idle/position = Vector2( 638, 86.5 )
-states/still/node = SubResource( 11 )
+states/still/node = SubResource( 27 )
 states/still/position = Vector2( 164.5, 104.5 )
-states/stomp/node = SubResource( 12 )
+states/stomp/node = SubResource( 28 )
 states/stomp/position = Vector2( 542, 228 )
-transitions = [ "still", "activate", SubResource( 13 ), "activate", "idle", SubResource( 14 ), "idle", "stomp", SubResource( 15 ), "stomp", "idle", SubResource( 16 ), "idle", "defeat", SubResource( 17 ) ]
+transitions = [ "still", "activate", SubResource( 29 ), "activate", "idle", SubResource( 30 ), "idle", "stomp", SubResource( 31 ), "stomp", "idle", SubResource( 32 ), "idle", "defeat", SubResource( 33 ) ]
 start_node = "still"
 end_node = "defeat"
 graph_offset = Vector2( 297.665, 2.9175 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=19]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=35]
 
 [node name="Ent" type="Node2D"]
 use_parent_material = true
@@ -508,7 +509,7 @@ collision_mask = 0
 shape = SubResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="StompArea"]
-frames = SubResource( 35 )
+frames = SubResource( 18 )
 frame = 9
 playing = true
 
@@ -522,22 +523,22 @@ collision_mask = 0
 shape = SubResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="StompArea2"]
-frames = SubResource( 35 )
+frames = SubResource( 18 )
 frame = 8
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/activate = SubResource( 3 )
-anims/defeat = SubResource( 4 )
-anims/idle = SubResource( 5 )
-anims/still = SubResource( 6 )
-anims/stomp = SubResource( 7 )
+anims/activate = SubResource( 19 )
+anims/defeat = SubResource( 20 )
+anims/idle = SubResource( 21 )
+anims/still = SubResource( 22 )
+anims/stomp = SubResource( 23 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 18 )
+tree_root = SubResource( 34 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 19 )
+parameters/playback = SubResource( 35 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
@@ -551,6 +552,15 @@ health = 10.0
 
 [node name="DamageTween" type="Tween" parent="."]
 
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Dialog" parent="CanvasLayer2" instance=ExtResource( 6 )]
+margin_left = -300.0
+margin_top = -150.0
+margin_right = 300.0
+margin_bottom = 10.0
+
+[connection signal="collected" from="Orb" to="." method="_on_Orb_collected"]
 [connection signal="hit" from="Orb/Hitbox" to="." method="hit"]
 [connection signal="body_entered" from="StompArea" to="." method="_on_StompArea_body_entered"]
 [connection signal="body_entered" from="StompArea2" to="." method="_on_StompArea_body_entered"]

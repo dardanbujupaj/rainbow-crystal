@@ -1,0 +1,13 @@
+﻿key,en,de
+DIALOG_TUTORIAL_INTRO_1,"The habitants of Prism, your home village, are in midst of the preparations for the festival of the crystal.","Die Bewohner von Prisma, deinem Heimatdorf, sind inmitten der Vorbereiten für das Fest des Kristalls."
+DIALOG_TUTORIAL_INTRO_2,You’ve been assigned to collect the apples with one of the village eldest.,Du wurdest beauftrag den Dorfältesten zum Sammeln der Äpfel zu begleiten.
+DIALOG_TUTORIAL_ELDEST_APPLES,"Oy, hurry up. We need to collect those apples for the festival of the crystal!","Hey, beeil dich! Wir müssen die Äpfel für das Fest einsammeln."
+DIALOG_TUTORIAL_ELDEST_WALK,Or did you forget how to walk?,Oder hast du vergessen wie man läuft?
+DIALOG_TUTORIAL_WALK,Press %s/%s to walk.\nCollect the apples.,%s/%s drücken um zu laufen.\nSammle die Äpfel ein.
+DIALOG_TUTORIAL_ELDEST_TREE,There are some more on that other tree there.,Da sind noch ein paar Äpfel mehr auf dem anderen Baum.
+DIALOG_TUTORIAL_ELDEST_JUMP,Would you mind jumping up there?,Kannst du da hoch springen?
+DIALOG_TUTORIAL_JUMP,Press %s to jump. \nCollect the remaining apples.,%s drücken um zu springen. \nSammle die verbleibenden Äpfel ein.
+DIALOG_TUTORIAL_ELDEST_DONE,Well done! Bring the apples back to the village. I’ll meet you there.,Gut gemacht! Bring die Äpfel zum Dorf. Ich treffe dich dort.
+DIALOG_VILLAGE_ENEMY,Well done! Bring the apples back to the village. I’ll meet you there.,Gut gemacht! Bring die Äpfel zum Dorf. Ich treffe dich dort.
+DIALOG_VILLAGE_ELDEST,Well done! Bring the apples back to the village. I’ll meet you there.,Gut gemacht! Bring die Äpfel zum Dorf. Ich treffe dich dort.
+DIALOG_FOREST_ORB,You feel the power of the green orb making your movement faster.,Die spürst wie die Macht der grünen Kugel dich schneller macht.

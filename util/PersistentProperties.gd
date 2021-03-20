@@ -66,6 +66,11 @@ func _enter_tree() -> void:
 
 # save settings before game is closed
 func _exit_tree() -> void:
+	print("save %s" % filepath)
+	
+	for prop in _get_properties_to_persist():
+		print("%s" % [get(prop)])
+	
 	var settings_file: File = File.new()
 	# TODO: handle file errors
 	var error: int = settings_file.open(filepath, File.WRITE)
@@ -102,4 +107,11 @@ func _get_properties_to_persist() -> Array:
 	return properties_to_persist
 
 
-
+func reset() -> void:
+	var dir = Directory.new()
+	dir.remove(filepath)
+	var clean_instance = get_script().new()
+	clean_instance.name = name
+	for prop in _get_properties_to_persist():
+		set(prop, clean_instance.get(prop))
+	

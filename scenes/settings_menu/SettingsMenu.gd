@@ -67,3 +67,7 @@ func _on_Button_pressed() -> void:
 
 func _on_Button_mouse_entered() -> void:
 	SoundEngine.play_sound("UIHover")
+
+
+func _on_Delete_Savegame_pressed() -> void:
+	SaveGame.reset()

@@ -104,3 +104,9 @@ func hit(damage: float, direction: Vector2):
 func _set_health(new_health: float):
 	health_bar.health = new_health
 	health = new_health
+
+
+func _on_Orb_collected() -> void:
+	$CanvasLayer2/Dialog.queue_step({
+		"text_key": "DIALOG_FOREST_ORB"
+	})

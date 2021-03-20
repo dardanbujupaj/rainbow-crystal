@@ -165,7 +165,7 @@ g_interact={
 
 [locale]
 
-translations=PoolStringArray( "res://localization/localization.en.translation", "res://localization/localization.de.translation" )
+translations=PoolStringArray( "res://localization/localization.en.translation", "res://localization/localization.de.translation", "res://localization/dialog.de.translation", "res://localization/dialog.en.translation" )
 
 [localization_editor]
 
