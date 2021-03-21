@@ -19,10 +19,16 @@ func _ready() -> void:
 	setup_dialogs()
 
 
+func set_character_enabled() -> void:
+	$Character.moving_disabled = false
+func set_character_disabled() -> void:
+	$Character.moving_disabled = true
+
 func walk_tutorial_done():
 	$eldest.scale.x = 1
 	$Apple3.monitoring = true
 	$Apple4.monitoring = true
+	$Character.moving_disabled = false
 
 
 func tutorial_done():
@@ -32,6 +38,7 @@ func tutorial_done():
 
 
 func setup_dialogs():
+	$Character.moving_disabled = true
 	dialog.queue_step({
 		"text_key": "DIALOG_TUTORIAL_INTRO_1",
 	})
@@ -44,7 +51,8 @@ func setup_dialogs():
 	})
 	dialog.queue_step({
 		"text_key": "DIALOG_TUTORIAL_ELDEST_WALK",
-		"speaker": "Old person"
+		"speaker": "Old person",
+		"end_hook": funcref(self, "set_character_enabled"),
 	})
 	
 	var walk_inputs = [
@@ -54,6 +62,7 @@ func setup_dialogs():
 	dialog.queue_step({
 		"text_key": "DIALOG_TUTORIAL_WALK",
 		"variables": walk_inputs,
+		"end_hook": funcref(self, "set_character_disabled"),
 		"end_trigger": {
 			"target": self,
 			"signal": "two_apples_collected"
@@ -94,3 +103,9 @@ func _set_apples(new_apples: int) -> void:
 	if new_apples >= 4 and apples < 4:
 		emit_signal("four_apples_collected")
 	apples = new_apples
+
+
+
+	
+
+	

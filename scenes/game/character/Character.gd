@@ -16,6 +16,10 @@ const KNOCKBACK_INTENSITY = 150
 var knockback: Vector2
 var velocity: Vector2
 
+
+var moving_disabled = false
+
+
 onready var coyote_timer = $CoyoteTimer
 onready var jump_memory_timer = $JumpMemoryTimer
 
@@ -40,13 +44,15 @@ func _process(delta) -> void:
 	$CanvasLayer/VBoxContainer/OnFloor.text = "on floor" if is_on_floor() else "not on floor"
 
 func _physics_process(delta):
+	
 	animation_tree["parameters/conditions/running"] = abs(velocity.x) > 1
 	animation_tree["parameters/conditions/not_running"] = abs(velocity.x) < 1
+	
 	
 	var input_direction = Input.get_action_strength("g_right") - Input.get_action_strength("g_left")
 	var shooting = state_machine.get_current_node() == "shoot"
 	# handle horizontal movement
-	if abs(input_direction) > 0.1 and not shooting:
+	if abs(input_direction) > 0.1 and not shooting and not moving_disabled:
 		
 		if $Sprite.scale.x == -sign(input_direction):
 			$Sprite.scale.x = sign(input_direction)
@@ -136,7 +142,7 @@ func hit(damage: float, direction: Vector2):
 	
 
 func shoot():
-	if state_machine.get_current_node() != "shoot":
+	if state_machine.get_current_node() != "shoot" and !moving_disabled:
 		state_machine.travel("shoot")
 		yield(get_tree().create_timer(0.5), "timeout")
 		
@@ -160,6 +166,9 @@ func apply_gravity(delta):
 
 
 func jump():
+	if moving_disabled:
+		return
+	
 	velocity.y = -JUMP_SPEED
 	jumped = true
 	coyote_timer.stop()
