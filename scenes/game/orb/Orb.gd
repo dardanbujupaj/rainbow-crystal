@@ -54,10 +54,24 @@ func _on_Orb_body_entered(body: Node) -> void:
 	
 
 func attach_to_character(character: Node) -> void:
-	if character.has_node("Orb"):
-		character.get_node("Orb").free()
 	
-	name = "Orb"
+	
+	
+	
+	match color:
+		OrbColor.RED:
+			SaveGame.red_orb_collected = true
+			name = "RedOrb"
+		OrbColor.GREEN:
+			SaveGame.green_orb_collected = true
+			name = "GreenOrb"
+		OrbColor.BLUE:
+			SaveGame.blue_orb_collected = true
+			name = "BlueOrb"
+	
+	if character.has_node(name):
+		character.get_node(name).free()
+		
 	
 	SaveGame.orb_equipped = color
 	

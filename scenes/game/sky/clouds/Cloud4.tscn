@@ -7,6 +7,7 @@ extents = Vector2( 64.2183, 7.75306 )
 
 [node name="Cloud1" type="StaticBody2D"]
 z_index = 5
+collision_layer = 2
 
 [node name="clouds" type="Sprite" parent="."]
 position = Vector2( -1.19055, -2.3959 )

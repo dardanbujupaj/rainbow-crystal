@@ -26,6 +26,8 @@ var storage_type: String = "json"
 ###
 
 
+var save_timer: Timer
+
 # load settings from file
 func _enter_tree() -> void:
 	var save_file: File = File.new()
@@ -62,14 +64,19 @@ func _enter_tree() -> void:
 	else:
 		for property in _get_properties_to_persist():
 			set(property, get(property))
+	
+	save_timer = Timer.new()
+	add_child(save_timer)
+	save_timer.connect("timeout", self, "persist_data")
+	save_timer.start(20)
 
 
 # save settings before game is closed
 func _exit_tree() -> void:
+	persist_data()
+
+func persist_data() -> void:
 	print("save %s" % filepath)
-	
-	for prop in _get_properties_to_persist():
-		print("%s" % [get(prop)])
 	
 	var settings_file: File = File.new()
 	# TODO: handle file errors

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://scenes/game/sky/bird/Bird.gd" type="Script" id=1]
 [ext_resource path="res://scenes/game/sky/bird/images/eyes.png" type="Texture" id=2]
@@ -479,6 +479,9 @@ tracks/17/keys = {
 [sub_resource type="CircleShape2D" id=9]
 radius = 52.836
 
+[sub_resource type="CircleShape2D" id=10]
+radius = 200.0
+
 [node name="Bird" type="Area2D"]
 position = Vector2( 0, -0.523132 )
 collision_layer = 4
@@ -486,7 +489,7 @@ collision_mask = 0
 script = ExtResource( 1 )
 
 [node name="body" type="Sprite" parent="."]
-position = Vector2( -0.721793, -17.4441 )
+position = Vector2( -1.19039, -4.39066 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 3 )
 __meta__ = {
@@ -508,7 +511,7 @@ color = 2
 
 [node name="neck" type="Sprite" parent="body"]
 position = Vector2( -29.7474, -57.2406 )
-rotation = -0.187682
+rotation = -0.0101872
 texture = ExtResource( 10 )
 offset = Vector2( -17.686, -57.4028 )
 __meta__ = {
@@ -518,7 +521,7 @@ __meta__ = {
 
 [node name="beak_top" type="Sprite" parent="body/neck"]
 position = Vector2( -77.7976, -125.194 )
-rotation = 0.223115
+rotation = 0.0506382
 texture = ExtResource( 9 )
 offset = Vector2( -35.9977, 48.4928 )
 __meta__ = {
@@ -537,13 +540,13 @@ texture = ExtResource( 2 )
 
 [node name="wing_left" type="Sprite" parent="body"]
 position = Vector2( -40.6205, -60.5834 )
-rotation = 0.101462
+rotation = 0.716727
 texture = ExtResource( 5 )
 offset = Vector2( -113.831, 99.89 )
 
 [node name="wing_right" type="Sprite" parent="body"]
 position = Vector2( 0.67337, -86.4314 )
-rotation = 0.346577
+rotation = -0.26147
 texture = ExtResource( 7 )
 offset = Vector2( 118.248, -47.1624 )
 
@@ -560,6 +563,7 @@ anims/pick = SubResource( 8 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HealthBar" parent="CanvasLayer" instance=ExtResource( 11 )]
+visible = false
 enemy_name = "GIANT_BIRD"
 color = Color( 0.294118, 0.356863, 0.670588, 1 )
 
@@ -568,3 +572,16 @@ color = Color( 0.294118, 0.356863, 0.670588, 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -16.2358, -37.3424 )
 shape = SubResource( 9 )
+
+[node name="ActivationArea" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActivationArea"]
+shape = SubResource( 10 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="OrbPosition" type="Position2D" parent="."]
+
+[connection signal="body_entered" from="ActivationArea" to="." method="_on_ActivationArea_body_entered" flags=7]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -14,7 +14,6 @@ var health = MAX_HEALTH setget _set_health
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	yield(get_tree().create_timer(2), "timeout")
-	# activate()
 
 
 func activate():
@@ -65,11 +64,8 @@ func defeat():
 
 func release_orb() -> void:
 	$Orb.collectible = true
-	print($Orb.position)
-	print($Orb.global_position)
 	$Orb.position = $Orb.global_position
 	$Orb.set_as_toplevel(true)
-	print($Orb.position)
 	
 
 

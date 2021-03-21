@@ -33,10 +33,19 @@ var jumped
 
 
 # Called when the node enters the scene tree for the first time.
+# TODO: only 30 minutes left, so forgive me this anty-DRY mess...
 func _ready():
-	if SaveGame.orb_equipped > -1:
+	if SaveGame.red_orb_collected:
 		var orb = preload("res://scenes/game/orb/Orb.tscn").instance()
-		orb.color = SaveGame.orb_equipped
+		orb.color = Orb.OrbColor.RED
+		orb.attach_to_character(self)
+	if SaveGame.green_orb_collected:
+		var orb = preload("res://scenes/game/orb/Orb.tscn").instance()
+		orb.color = Orb.OrbColor.GREEN
+		orb.attach_to_character(self)
+	if SaveGame.blue_orb_collected:
+		var orb = preload("res://scenes/game/orb/Orb.tscn").instance()
+		orb.color = Orb.OrbColor.BLUE
 		orb.attach_to_character(self)
 
 
@@ -118,13 +127,13 @@ func _unhandled_input(event: InputEvent) -> void:
 
 # Helper functions to check if character has an orb
 func has_red_orb():
-	return has_node("Orb") and get_node("Orb").color == Orb.OrbColor.RED
+	return has_node("RedOrb")
 
 func has_green_orb():
-	return has_node("Orb") and get_node("Orb").color == Orb.OrbColor.GREEN
+	return has_node("GreenOrb")
 
 func has_blue_orb():
-	return has_node("Orb") and get_node("Orb").color == Orb.OrbColor.BLUE
+	return has_node("BlueOrb")
 
 
 # Called by source, when character gets hit
