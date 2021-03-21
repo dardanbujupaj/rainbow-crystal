@@ -512,7 +512,6 @@ shape = SubResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="StompArea"]
 use_parent_material = true
 frames = SubResource( 18 )
-frame = 3
 playing = true
 
 [node name="StompArea2" type="Area2D" parent="."]
@@ -526,7 +525,7 @@ shape = SubResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="StompArea2"]
 frames = SubResource( 18 )
-frame = 2
+frame = 14
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
