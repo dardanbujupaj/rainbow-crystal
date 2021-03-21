@@ -515,7 +515,7 @@ shape = SubResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="StompArea"]
 use_parent_material = true
 frames = SubResource( 18 )
-frame = 13
+frame = 6
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
