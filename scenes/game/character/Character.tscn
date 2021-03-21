@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://scenes/game/character/character.png" type="Texture" id=1]
 [ext_resource path="res://scenes/game/character/ShakeCamera.gd" type="Script" id=2]
@@ -8,8 +8,14 @@
 [sub_resource type="AnimationNodeAnimation" id=1]
 animation = "idle"
 
-[sub_resource type="AnimationNodeAnimation" id=2]
-animation = "jump"
+[sub_resource type="AnimationNodeAnimation" id=20]
+animation = "jump_fall"
+
+[sub_resource type="AnimationNodeAnimation" id=21]
+animation = "jump_land"
+
+[sub_resource type="AnimationNodeAnimation" id=22]
+animation = "jump_up"
 
 [sub_resource type="AnimationNodeAnimation" id=3]
 animation = "run"
@@ -35,26 +41,38 @@ advance_condition = "running"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=10]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+advance_condition = "falling"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+advance_condition = "on_floor"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=26]
 switch_mode = 2
-auto_advance = true
+advance_condition = "running"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=12]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+switch_mode = 2
+advance_condition = "not_running"
 
 [sub_resource type="AnimationNodeStateMachine" id=14]
 states/idle/node = SubResource( 1 )
 states/idle/position = Vector2( 152.5, 146 )
-states/jump/node = SubResource( 2 )
-states/jump/position = Vector2( 229.465, 8.3125 )
+states/jump_fall/node = SubResource( 20 )
+states/jump_fall/position = Vector2( 111.913, -82.2049 )
+states/jump_land/node = SubResource( 21 )
+states/jump_land/position = Vector2( 279.413, -31.7049 )
+states/jump_up/node = SubResource( 22 )
+states/jump_up/position = Vector2( 74.9125, 13.7951 )
 states/run/node = SubResource( 3 )
 states/run/position = Vector2( 396.5, 76.5 )
 states/shoot/node = SubResource( 4 )
 states/shoot/position = Vector2( 364, 214 )
-transitions = [ "idle", "run", SubResource( 5 ), "run", "idle", SubResource( 6 ), "shoot", "idle", SubResource( 7 ), "shoot", "run", SubResource( 8 ), "run", "shoot", SubResource( 9 ), "idle", "shoot", SubResource( 10 ), "jump", "idle", SubResource( 11 ), "idle", "jump", SubResource( 12 ), "run", "jump", SubResource( 13 ) ]
+transitions = [ "idle", "run", SubResource( 5 ), "run", "idle", SubResource( 6 ), "shoot", "idle", SubResource( 7 ), "shoot", "run", SubResource( 8 ), "run", "shoot", SubResource( 9 ), "idle", "shoot", SubResource( 10 ), "idle", "jump_up", SubResource( 23 ), "jump_up", "jump_fall", SubResource( 24 ), "jump_fall", "jump_land", SubResource( 25 ), "jump_land", "run", SubResource( 26 ), "jump_land", "idle", SubResource( 27 ) ]
 start_node = "idle"
-graph_offset = Vector2( -4.375, -28.5 )
+graph_offset = Vector2( -89.0875, -156.705 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=15]
 
@@ -86,7 +104,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=17]
-length = 0.8
+length = 0.65
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
 tracks/0/interp = 0
@@ -94,7 +112,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"times": PoolRealArray( 0, 0.05, 0.25, 0.45 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Rect2( 1088, 0, 64, 64 ), Rect2( 1152, 0, 64, 64 ), Rect2( 1216, 0, 64, 64 ), Rect2( 1280, 0, 64, 64 ) ]
@@ -106,10 +124,91 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"times": PoolRealArray( 0, 0.05, 0.25, 0.45 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=28]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 1216, 0, 64, 64 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=29]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 1280, 0, 64, 64 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=30]
+length = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Rect2( 1088, 0, 64, 64 ), Rect2( 1152, 0, 64, 64 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=18]
@@ -181,12 +280,18 @@ tree_root = SubResource( 14 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 15 )
+parameters/conditions/falling = false
 parameters/conditions/not_running = false
+parameters/conditions/on_floor = false
 parameters/conditions/running = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 1.5
 anims/idle = SubResource( 16 )
 anims/jump = SubResource( 17 )
+anims/jump_fall = SubResource( 28 )
+anims/jump_land = SubResource( 29 )
+anims/jump_up = SubResource( 30 )
 anims/run = SubResource( 18 )
 anims/shoot = SubResource( 19 )
 
@@ -195,7 +300,7 @@ use_parent_material = true
 z_index = 1
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 64, 64 )
+region_rect = Rect2( 1280, 0, 64, 64 )
 
 [node name="CameraCenter" type="Node2D" parent="."]
 position = Vector2( 0, -40 )

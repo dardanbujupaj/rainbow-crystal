@@ -65,7 +65,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PoolStringArray(  )
+enabled=PoolStringArray( "res://addons/aseprite_importer/plugin.cfg" )
 
 [importer_defaults]
 

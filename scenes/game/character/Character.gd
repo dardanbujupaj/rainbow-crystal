@@ -56,6 +56,8 @@ func _physics_process(delta):
 	
 	animation_tree["parameters/conditions/running"] = abs(velocity.x) > 1
 	animation_tree["parameters/conditions/not_running"] = abs(velocity.x) < 1
+	animation_tree["parameters/conditions/falling"] = velocity.y > 0
+	animation_tree["parameters/conditions/on_floor"] = is_on_floor()
 	
 	
 	var input_direction = Input.get_action_strength("g_right") - Input.get_action_strength("g_left")
@@ -178,6 +180,7 @@ func jump():
 	if moving_disabled:
 		return
 	
+	state_machine.travel("jump_up")
 	velocity.y = -JUMP_SPEED
 	jumped = true
 	coyote_timer.stop()
