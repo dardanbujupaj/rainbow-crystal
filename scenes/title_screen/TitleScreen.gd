@@ -4,7 +4,7 @@ extends CenterContainer
 const test_scenes = {
 	"PLAY": "res://scenes/game/Game.tscn",
 	"KEY_MAPPING": "res://scenes/key_remapping/KeyRemapping.tscn",
-	"MUSIC_PLAYER": "res://scenes/music_player/MusicPlayer.tscn",
+	#"MUSIC_PLAYER": "res://scenes/music_player/MusicPlayer.tscn",
 	"SETTINGS": "res://scenes/settings_menu/SettingsMenu.tscn",
 	"CREDITS": "res://scenes/credits/Credits.tscn"
 }	
@@ -14,6 +14,10 @@ const test_scenes = {
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	MusicEngine.play_song("Runaway")
+	
+	$Orbs/Node2D/Orb.attach_to_node($Orbs/Node2D)
+	$Orbs/Node2D2/Orb2.attach_to_node($Orbs/Node2D2)
+	$Orbs/Node2D3/Orb3.attach_to_node($Orbs/Node2D3)
 	
 	for scene in test_scenes:
 		var button = Button.new()

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/title_screen/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://default_theme.tres" type="Theme" id=2]
+[ext_resource path="res://scenes/game/orb/Orb.tscn" type="PackedScene" id=3]
 
 [node name="TitleScreen" type="CenterContainer"]
 anchor_right = 1.0
@@ -36,12 +37,37 @@ text = "QUIT"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -32.0
+margin_right = 32.0
+theme = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "A Game by Dardan Bujupaj"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Orbs" type="Node2D" parent="."]
+scale = Vector2( 2, 2 )
+
+[node name="Node2D" type="Node2D" parent="Orbs"]
+position = Vector2( 258.846, 54.5991 )
+
+[node name="Orb" parent="Orbs/Node2D" instance=ExtResource( 3 )]
+color = 2
+
+[node name="Node2D2" type="Node2D" parent="Orbs"]
+position = Vector2( 381.875, 221.184 )
+
+[node name="Orb2" parent="Orbs/Node2D2" instance=ExtResource( 3 )]
+color = 1
+
+[node name="Node2D3" type="Node2D" parent="Orbs"]
+position = Vector2( 136.006, 202.225 )
+
+[node name="Orb3" parent="Orbs/Node2D3" instance=ExtResource( 3 )]
 
 [connection signal="mouse_entered" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_Button_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_Button_pressed"]

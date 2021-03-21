@@ -17,6 +17,27 @@ const licenses = [
 		"license": "CC BY-ND 3.0",
 		"license_url": "https://creativecommons.org/licenses/by-nd/3.0/"
 	},
+	{
+		"title": "Rise and Fall",
+		"url": "https://zitronsound.bandcamp.com/track/rise_and_fall",
+		"author": "ZitronSound",
+		"license": "CC BY-ND 3.0",
+		"license_url": "https://creativecommons.org/licenses/by-nd/3.0/"
+	},
+	{
+		"title": "Apocalypse",
+		"url": "https://zitronsound.bandcamp.com/track/apocalypse",
+		"author": "ZitronSound",
+		"license": "CC BY-ND 3.0",
+		"license_url": "https://creativecommons.org/licenses/by-nd/3.0/"
+	},
+	{
+		"title": "Showdown",
+		"url": "https://zitronsound.bandcamp.com/track/showdown",
+		"author": "ZitronSound",
+		"license": "CC BY-ND 3.0",
+		"license_url": "https://creativecommons.org/licenses/by-nd/3.0/"
+	},
 	
 	
 	
@@ -39,6 +60,17 @@ func _ready():
 
 func generate_credits_text():
 	var text = "[center]"
+	
+	text += "Game by Dardan Bujupaj\n"
+	text += "Art with help from Ardian and Stephanie\n\n"
+	
+	
+	text += "Made with [url=https://godotengine.org]Godot[/url]\n"
+	text += "Sourcecode available at [url=https://github.com/dardanbujupaj/rainbow-crystal]Github[/url]\n\n"
+	
+	
+	text += "Licenses: \n"
+	
 	
 	for license in licenses:
 		text += generate_license_line(license)
