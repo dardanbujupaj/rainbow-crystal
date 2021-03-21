@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/game/Color.tres" type="Material" id=1]
 [ext_resource path="res://scenes/game/shard_counter/ShardCounter.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/game/Game.gd" type="Script" id=3]
+[ext_resource path="res://default_theme.tres" type="Theme" id=4]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0 )
@@ -53,6 +54,77 @@ text = "BLUE"
 
 [node name="ShardCounter" parent="CanvasLayer" instance=ExtResource( 2 )]
 
+[node name="Complete" type="Button" parent="CanvasLayer"]
+margin_right = 12.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Button" parent="CanvasLayer"]
+margin_right = 12.0
+margin_bottom = 20.0
+focus_mode = 0
+theme = ExtResource( 4 )
+enabled_focus_mode = 0
+text = "MENU"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AcceptDialog" type="AcceptDialog" parent="CanvasLayer"]
+margin_right = 144.0
+margin_bottom = 88.0
+theme = ExtResource( 4 )
+window_title = "Menu"
+dialog_text = "GOTO_MENU"
+
+[node name="Popup" type="Popup" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Popup"]
+margin_right = 14.0
+margin_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Popup/PanelContainer"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 296.0
+margin_bottom = 112.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Popup/PanelContainer/VBoxContainer"]
+margin_right = 288.0
+margin_bottom = 32.0
+text = "GAME_COMPLETED"
+align = 1
+
+[node name="Credits" type="Button" parent="CanvasLayer/Popup/PanelContainer/VBoxContainer"]
+margin_top = 36.0
+margin_right = 288.0
+margin_bottom = 68.0
+text = "SHOW_CREDITS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Continue" type="Button" parent="CanvasLayer/Popup/PanelContainer/VBoxContainer"]
+margin_top = 72.0
+margin_right = 288.0
+margin_bottom = 104.0
+text = "CONTINUE_PLAYING"
+
 [node name="BackgroundColor" type="CanvasLayer" parent="."]
 layer = -101
 
@@ -78,3 +150,8 @@ __meta__ = {
 [connection signal="toggled" from="CanvasLayer/VBoxContainer/Red" to="." method="_set_color_enabled" binds= [ "red" ]]
 [connection signal="toggled" from="CanvasLayer/VBoxContainer/Green" to="." method="_set_color_enabled" binds= [ "green" ]]
 [connection signal="toggled" from="CanvasLayer/VBoxContainer/Blue" to="." method="_set_color_enabled" binds= [ "blue" ]]
+[connection signal="pressed" from="CanvasLayer/Complete" to="." method="_on_Complete_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu" to="." method="_on_Menu_pressed"]
+[connection signal="confirmed" from="CanvasLayer/AcceptDialog" to="." method="_on_AcceptDialog_confirmed"]
+[connection signal="pressed" from="CanvasLayer/Popup/PanelContainer/VBoxContainer/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="CanvasLayer/Popup/PanelContainer/VBoxContainer/Continue" to="." method="_on_Continue_pressed"]

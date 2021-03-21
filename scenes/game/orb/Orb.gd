@@ -81,6 +81,13 @@ func attach_to_character(character: Node) -> void:
 	emit_signal("collected")
 	
 	attach_to_node(character)
+	
+	
+	if (SaveGame.red_orb_collected and
+		SaveGame.green_orb_collected and
+		SaveGame.blue_orb_collected):
+		if get_tree():
+			get_tree().call_group("game", "game_completed")
 
 
 func attach_to_node(node: Node) -> void:

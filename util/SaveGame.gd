@@ -12,6 +12,7 @@ var collected_shards: int = 0
 var tutorial_completed: bool = false
 var orbs_disappeared: bool = false
 var shards_disappeared: bool = false
+var game_completed: bool = false
 
 
 func _init():

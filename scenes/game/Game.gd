@@ -42,3 +42,32 @@ func load_area(area: PackedScene) -> void:
 	
 	$BackgroundColor/ColorRect.color = current_scene.background_color
 	($BackgroundColor/TextureRect.texture as GradientTexture).gradient.colors[0] = current_scene.background_color
+
+
+func game_completed():
+	if not SaveGame.game_completed:
+		$CanvasLayer/Popup.popup_centered()
+		SaveGame.game_completed = true
+	
+
+
+func _on_Credits_pressed() -> void:
+	print("load credits")
+	SceneLoader.goto_scene("res://scenes/credits/Credits.tscn")
+
+
+func _on_Continue_pressed() -> void:
+	$CanvasLayer/Popup.hide()
+
+
+func _on_Complete_pressed() -> void:
+	game_completed()
+	$CanvasLayer/Complete.hide()
+
+
+func _on_Menu_pressed() -> void:
+	$CanvasLayer/AcceptDialog.popup_centered()
+
+
+func _on_AcceptDialog_confirmed() -> void:
+	SceneLoader.goto_scene("res://scenes/title_screen/TitleScreen.tscn")

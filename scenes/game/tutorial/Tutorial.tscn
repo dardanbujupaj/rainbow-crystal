@@ -152,6 +152,7 @@ anchor_right = 0.5
 margin_left = -120.0
 margin_right = 120.0
 margin_bottom = 32.0
+grow_horizontal = 2
 theme = ExtResource( 16 )
 text = "SKIP_TUTORIAL"
 __meta__ = {

@@ -87,3 +87,8 @@ VILLAGE,Village,Dorf
 FOREST,Forest,Wald
 MOUNTAIN,Mountain,Berg
 SKY,Sky,Himmel
+GAME_COMPLETED,Congratulations. You collected all orbs.,Glückwunsch. Du hast alle Kugeln gefunden.
+SHOW_CREDITS,Show credits,Credits anzeigen
+CONTINUE_PLAYING,Continue playing,Weiterspielen
+DELETE_SAVEGAME,Delete savegame,Speicherstand löschen
+GOTO_MENU,Goto titlescreen?,Zum Hauptbildschirm?
