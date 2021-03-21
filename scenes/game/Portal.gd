@@ -50,4 +50,4 @@ func _set_destination(new_destination):
 func _on_Portal_body_entered(body: Node) -> void:
 	if body is Character:
 		var area = ResourceLoader.load(portals[destination]["scene"])
-		get_tree().call_group("game", "load_area", area, portals[destination]["color"])
+		get_tree().call_group("game", "load_area", area)

@@ -26,7 +26,7 @@ func _ready() -> void:
 
 func _set_text(new_text: String) -> void:
 	if label != null:
-		label.text = new_text
+		label.text = tr(new_text)
 	text = new_text
 	
 	

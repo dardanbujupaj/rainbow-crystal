@@ -8,6 +8,15 @@ DIALOG_TUTORIAL_ELDEST_TREE,There are some more on that other tree there.,Da sin
 DIALOG_TUTORIAL_ELDEST_JUMP,Would you mind jumping up there?,Kannst du da hoch springen?
 DIALOG_TUTORIAL_JUMP,Press %s to jump. \nCollect the remaining apples.,%s drücken um zu springen. \nSammle die verbleibenden Äpfel ein.
 DIALOG_TUTORIAL_ELDEST_DONE,Well done! Bring the apples back to the village. I’ll meet you there.,Gut gemacht! Bring die Äpfel zum Dorf. Ich treffe dich dort.
-DIALOG_VILLAGE_ENEMY,Well done! Bring the apples back to the village. I’ll meet you there.,Gut gemacht! Bring die Äpfel zum Dorf. Ich treffe dich dort.
-DIALOG_VILLAGE_ELDEST,Well done! Bring the apples back to the village. I’ll meet you there.,Gut gemacht! Bring die Äpfel zum Dorf. Ich treffe dich dort.
+DIALOG_VILLAGE_ENEMY,???,???
+DIALOG_VILLAGE_ELDEST_CRYSTAL,Huh?!? Where is the rainbow crystal? The energy orbs are floating around freely?,Was?!? Wo ist der Regenbogen Kristall? Die Energiekugeln fliegen frei herum?
+DIALOG_VILLAGE_ELDEST_ORBS_COLLECT,You have to collect the orbs again!,Du musst die Kugeln wieder einsammeln.
+DIALOG_VILLAGE_ELDEST_ORBS_ORIGIN,"They will have returned to their origins, the Forest, the Mountain and the Sky!","Sie sind sicher wieder an ihre Ursprungsorte, dem Wald, dem Berg und dem Himmel, zurück."
 DIALOG_FOREST_ORB,You feel the power of the green orb making your movement faster.,Die spürst wie die Macht der grünen Kugel dich schneller macht.
+DIALOG_MOUNTAIN_ORB,You feel the power of the red orb making your attacks stronger.,Die spürst wie die Macht der grünen Kugel eine Schusskraft verstärkt.
+DIALOG_SKY_ORB,You feel the power of the blue orb making your jumps higher.,Die spürst wie die Macht der blauen Kugel deine Sprungkraft erhöht.
+SKIP_TUTORIAL,Skip tutorial,Tutorial überspringen
+VILLAGE,Village,Dorf
+FOREST,Forest,Wald
+MOUNTAIN,Mountain,Berg
+SKY,Sky,Himmel

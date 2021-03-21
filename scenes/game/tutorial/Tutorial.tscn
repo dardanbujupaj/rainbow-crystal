@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://scenes/game/Tilesets.tres" type="TileSet" id=1]
 [ext_resource path="res://util/Dialog.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://scenes/game/Sign.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/game/eldest.png" type="Texture" id=14]
 [ext_resource path="res://scenes/game/village/village_bg_2.png" type="Texture" id=15]
+[ext_resource path="res://default_theme.tres" type="Theme" id=16]
 
 [sub_resource type="AnimationNodeAnimation" id=1]
 animation = "orbs_disappearing"
@@ -115,6 +116,7 @@ destination = 0
 
 [node name="VillageSign" parent="." instance=ExtResource( 13 )]
 position = Vector2( 761.074, 0 )
+text = "VILLAGE"
 direction = 1
 
 [node name="eldest" type="Sprite" parent="."]
@@ -141,9 +143,20 @@ monitoring = false
 [node name="Dialog" parent="CanvasLayer" instance=ExtResource( 2 )]
 visible = true
 margin_left = -300.0
-margin_top = -150.0
+margin_top = -160.0
 margin_right = 300.0
-margin_bottom = 10.0
+
+[node name="SkipTutorial" type="Button" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -120.0
+margin_right = 120.0
+margin_bottom = 32.0
+theme = ExtResource( 16 )
+text = "SKIP_TUTORIAL"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
 
@@ -203,3 +216,5 @@ position = Vector2( 0, -180 )
 texture = ExtResource( 12 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 1200, 360 )
+
+[connection signal="pressed" from="CanvasLayer/SkipTutorial" to="." method="_on_SkipTutorial_pressed"]

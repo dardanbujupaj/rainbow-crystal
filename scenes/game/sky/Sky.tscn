@@ -21,6 +21,7 @@ destination = 0
 [node name="Sign" parent="." instance=ExtResource( 4 )]
 position = Vector2( 185.898, -283.593 )
 z_index = -1
+text = "VILLAGE"
 direction = 1
 
 [node name="Character" parent="." instance=ExtResource( 2 )]

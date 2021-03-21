@@ -86,6 +86,7 @@ destination = 0
 
 [node name="Sign" parent="." instance=ExtResource( 10 )]
 position = Vector2( 252.759, -97.0632 )
+text = "VILLAGE"
 direction = 1
 
 [node name="Node2D" type="Node2D" parent="."]

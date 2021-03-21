@@ -195,7 +195,7 @@ use_parent_material = true
 z_index = 1
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 64, 64 )
+region_rect = Rect2( 64, 0, 64, 64 )
 
 [node name="CameraCenter" type="Node2D" parent="."]
 position = Vector2( 0, -40 )

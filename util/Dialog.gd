@@ -84,7 +84,7 @@ func render_current_step():
 			content += "\n\nPress %s to continue" % Keymap.input_to_text(Keymap.input_for_action("g_interact"))
 		
 		if current_step.has("speaker"):
-			content = "%s: %s" % [current_step.speaker, content]
+			content = "%s: %s" % [tr(current_step.speaker), content]
 			label.bbcode_text = content
 		else:
 			content = "[color=#cccccc]%s[/color]" % [content]

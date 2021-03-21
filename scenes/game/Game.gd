@@ -21,7 +21,7 @@ func _set_color_enabled(enabled: bool, color: String) -> void:
 
 # load an area in the game
 # This is usually called by the Portal class
-func load_area(area: PackedScene, background_color: Color = Color.black) -> void:
+func load_area(area: PackedScene) -> void:
 	print("load area %s" % area)
 	
 	if current_scene:

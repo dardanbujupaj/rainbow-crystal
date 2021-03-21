@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://scenes/game/Tilesets.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/game/village/Village.gd" type="Script" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://scenes/game/village/village_bg_5.png" type="Texture" id=11]
 [ext_resource path="res://scenes/game/village/village_bg_2.png" type="Texture" id=12]
 [ext_resource path="res://scenes/game/Sign.tscn" type="PackedScene" id=13]
+[ext_resource path="res://util/Dialog.tscn" type="PackedScene" id=14]
 
 [sub_resource type="AnimationNodeAnimation" id=1]
 animation = "orbs_disappearing"
@@ -134,16 +135,20 @@ destination = 3
 
 [node name="ForestSign" parent="." instance=ExtResource( 13 )]
 position = Vector2( 986.858, -0.0520172 )
-text = "Forest"
+text = "FOREST"
 direction = 1
 
 [node name="MountainSign" parent="." instance=ExtResource( 13 )]
 position = Vector2( 200.622, -2.50012 )
-text = "Mountain"
+text = "MOUNTAIN"
 
 [node name="SkySign" parent="." instance=ExtResource( 13 )]
 position = Vector2( 385.951, -95.9949 )
-text = "Sky"
+text = "SKY"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Dialog" parent="CanvasLayer" instance=ExtResource( 14 )]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

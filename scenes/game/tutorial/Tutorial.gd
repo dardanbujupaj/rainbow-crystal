@@ -47,11 +47,11 @@ func setup_dialogs():
 	})
 	dialog.queue_step({
 		"text_key": "DIALOG_TUTORIAL_ELDEST_APPLES",
-		"speaker": "Old person"
+		"speaker": "ELDEST"
 	})
 	dialog.queue_step({
 		"text_key": "DIALOG_TUTORIAL_ELDEST_WALK",
-		"speaker": "Old person",
+		"speaker": "ELDEST",
 		"end_hook": funcref(self, "set_character_enabled"),
 	})
 	
@@ -71,11 +71,11 @@ func setup_dialogs():
 	
 	dialog.queue_step({
 		"text_key": "DIALOG_TUTORIAL_ELDEST_TREE",
-		"speaker": "Old person"
+		"speaker": "ELDEST"
 	})
 	dialog.queue_step({
 		"text_key": "DIALOG_TUTORIAL_ELDEST_JUMP",
-		"speaker": "Old person",
+		"speaker": "ELDEST",
 		"end_hook": funcref(self, "walk_tutorial_done")
 	})
 	
@@ -92,7 +92,7 @@ func setup_dialogs():
 	})
 	dialog.queue_step({
 		"text_key": "DIALOG_TUTORIAL_ELDEST_DONE",
-		"speaker": "Old person",
+		"speaker": "ELDEST",
 		"end_hook": funcref(self, "tutorial_done")
 	})
 
@@ -106,6 +106,8 @@ func _set_apples(new_apples: int) -> void:
 
 
 
-	
-
+func _on_SkipTutorial_pressed() -> void:
+	tutorial_done()
+	var area = ResourceLoader.load("res://scenes/game/village/Village.tscn")
+	get_tree().call_group("game", "load_area", area)
 	
