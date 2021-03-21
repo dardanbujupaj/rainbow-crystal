@@ -10,31 +10,43 @@ onready var dialog = $CanvasLayer/Dialog
 func _ready() -> void:
 	MusicEngine.play_song("Crystals")
 	
-	for color in Orb.OrbColor.values():
-		var orb = preload("res://scenes/game/orb/Orb.tscn").instance()
-		orb.color = color
-		orb.attach_to_node($Crystal)
 	
-	if SaveGame.shards_disappeared:
+	if SaveGame.orbs_disappeared:
+		for orb in $Crystal.get_children():
+			orb.queue_free()
+	else:
 		setup_dialogs()
 
 
 func setup_dialogs():
 	$Character.moving_disabled = true
+	
 	dialog.queue_step({
-		"text_key": "DIALOG_VILLAGE_",
+		"text_key": "DIALOG_VILLAGE_ELDEST_CRYSTAL",
+		"speaker": "ELDEST",
+		"end_hook": funcref(self, "animate_orbs_disappearing"),
 	})
-	dialog.queue_step({
-		"text_key": "DIALOG_TUTORIAL_INTRO_2"
-	})
-	dialog.queue_step({
-		"text_key": "DIALOG_TUTORIAL_ELDEST_APPLES",
-		"speaker": "Old person"
-	})
+	
+
 
 func set_red_disabled():
 	get_parent()._set_color_enabled(false, "red")
 	pass
+
+
+func orbs_disappeared():
+	SaveGame.orbs_disappeared = true
+	$Character.moving_disabled = false
+	
+	
+	dialog.queue_step({
+		"text_key": "DIALOG_VILLAGE_ELDEST_ORBS_COLLECT",
+		"speaker": "ELDEST"
+	})
+	dialog.queue_step({
+		"text_key": "DIALOG_VILLAGE_ELDEST_ORBS_ORIGIN",
+		"speaker": "ELDEST"
+	})
 
 
 func set_green_disabled():
@@ -51,8 +63,7 @@ func orb_sound():
 	SoundEngine.play_sound("OrbWhoosh")
 
 
-func _on_Area2D_body_entered(body: Node) -> void:
-	MusicEngine.play_song("Runaway")
-	var state_machine = $AnimationTree["parameters/playback"]
-	# state_machine.travel("orbs_disappearing")
+func animate_orbs_disappearing() -> void:
+	# MusicEngine.play_song("Runaway")
+	$AnimationPlayer.play("orbs_disappearing")
 		

@@ -58,12 +58,18 @@ func attach_to_character(character: Node) -> void:
 	match color:
 		OrbColor.RED:
 			SaveGame.red_orb_collected = true
+			if get_tree():
+				get_tree().call_group("game", "_set_color_enabled", true, "red")
 			name = "RedOrb"
 		OrbColor.GREEN:
 			SaveGame.green_orb_collected = true
+			if get_tree():
+				get_tree().call_group("game", "_set_color_enabled", true, "green")
 			name = "GreenOrb"
 		OrbColor.BLUE:
 			SaveGame.blue_orb_collected = true
+			if get_tree():
+				get_tree().call_group("game", "_set_color_enabled", true, "blue")
 			name = "BlueOrb"
 	
 	if character.has_node(name):

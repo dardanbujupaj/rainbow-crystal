@@ -6,10 +6,12 @@
 extents = Vector2( 41.8498, 7.75306 )
 
 [node name="Cloud1" type="StaticBody2D"]
+use_parent_material = true
 z_index = 5
 collision_layer = 2
 
 [node name="clouds" type="Sprite" parent="."]
+use_parent_material = true
 position = Vector2( -1.19055, -2.3959 )
 texture = ExtResource( 1 )
 region_enabled = true

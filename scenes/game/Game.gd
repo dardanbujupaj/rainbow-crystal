@@ -8,6 +8,15 @@ onready var current_scene
 
 
 func _ready() -> void:
+	
+	if SaveGame.orbs_disappeared:
+		if not SaveGame.red_orb_collected:
+			_set_color_enabled(false, "red")
+		if not SaveGame.green_orb_collected:
+			_set_color_enabled(false, "green")
+		if not SaveGame.blue_orb_collected:
+			_set_color_enabled(false, "blue")
+	
 	if SaveGame.tutorial_completed:
 		load_area(preload("res://scenes/game/village/Village.tscn"))
 	else:
@@ -32,3 +41,4 @@ func load_area(area: PackedScene) -> void:
 	call_deferred("add_child", current_scene)
 	
 	$BackgroundColor/ColorRect.color = current_scene.background_color
+	($BackgroundColor/TextureRect.texture as GradientTexture).gradient.colors[0] = current_scene.background_color

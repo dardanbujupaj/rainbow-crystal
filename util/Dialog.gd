@@ -81,7 +81,8 @@ func render_current_step():
 		var content = text.substr(0, len(text) - characters_left)
 		
 		if not current_step.has("end_trigger"):
-			content += "\n\nPress %s to continue" % Keymap.input_to_text(Keymap.input_for_action("g_interact"))
+			content += "\n\n"
+			content += tr("DIALOG_CONTINUE_DIALOG") % Keymap.input_to_text(Keymap.input_for_action("g_interact"))
 		
 		if current_step.has("speaker"):
 			content = "%s: %s" % [tr(current_step.speaker), content]

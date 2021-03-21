@@ -11,12 +11,8 @@ DIALOG_TUTORIAL_ELDEST_DONE,Well done! Bring the apples back to the village. I�
 DIALOG_VILLAGE_ENEMY,???,???
 DIALOG_VILLAGE_ELDEST_CRYSTAL,Huh?!? Where is the rainbow crystal? The energy orbs are floating around freely?,Was?!? Wo ist der Regenbogen Kristall? Die Energiekugeln fliegen frei herum?
 DIALOG_VILLAGE_ELDEST_ORBS_COLLECT,You have to collect the orbs again!,Du musst die Kugeln wieder einsammeln.
-DIALOG_VILLAGE_ELDEST_ORBS_ORIGIN,"They will have returned to their origins, the Forest, the Mountain and the Sky!","Sie sind sicher wieder an ihre Ursprungsorte, dem Wald, dem Berg und dem Himmel, zurück."
+DIALOG_VILLAGE_ELDEST_ORBS_ORIGIN,"They will have returned to their origins, the Forest, the Mountain and the Sky!","Sie sind sicher an ihre Ursprungsorten, dem Wald, dem Berg und dem Himmel."
 DIALOG_FOREST_ORB,You feel the power of the green orb making your movement faster.,Die spürst wie die Macht der grünen Kugel dich schneller macht.
 DIALOG_MOUNTAIN_ORB,You feel the power of the red orb making your attacks stronger.,Die spürst wie die Macht der grünen Kugel eine Schusskraft verstärkt.
 DIALOG_SKY_ORB,You feel the power of the blue orb making your jumps higher.,Die spürst wie die Macht der blauen Kugel deine Sprungkraft erhöht.
-SKIP_TUTORIAL,Skip tutorial,Tutorial überspringen
-VILLAGE,Village,Dorf
-FOREST,Forest,Wald
-MOUNTAIN,Mountain,Berg
-SKY,Sky,Himmel
+DIALOG_CONTINUE_DIALOG,Press %s to continue.,%s drücken um fortzufahren.
