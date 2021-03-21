@@ -14,7 +14,7 @@ var health = MAX_HEALTH setget _set_health
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	yield(get_tree().create_timer(2), "timeout")
-	#activate()
+	# activate()
 
 
 func activate():
@@ -110,3 +110,7 @@ func _on_Orb_collected() -> void:
 	$CanvasLayer2/Dialog.queue_step({
 		"text_key": "DIALOG_FOREST_ORB"
 	})
+
+
+func _on_ActivationArea_body_entered(body: Node) -> void:
+	activate()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://scenes/game/forest/ent/Ent.gd" type="Script" id=1]
 [ext_resource path="res://scenes/game/forest/ent/HealthBar.tscn" type="PackedScene" id=2]
@@ -476,6 +476,9 @@ graph_offset = Vector2( 297.665, 2.9175 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=35]
 
+[sub_resource type="CircleShape2D" id=36]
+radius = 200.0
+
 [node name="Ent" type="Node2D"]
 use_parent_material = true
 script = ExtResource( 1 )
@@ -512,20 +515,7 @@ shape = SubResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="StompArea"]
 use_parent_material = true
 frames = SubResource( 18 )
-playing = true
-
-[node name="StompArea2" type="Area2D" parent="."]
-visible = false
-position = Vector2( -120.667, 128 )
-collision_layer = 0
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StompArea2"]
-shape = SubResource( 2 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="StompArea2"]
-frames = SubResource( 18 )
-frame = 14
+frame = 13
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -559,8 +549,14 @@ margin_top = -150.0
 margin_right = 300.0
 margin_bottom = 10.0
 
+[node name="ActivationArea" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActivationArea"]
+shape = SubResource( 36 )
+
 [connection signal="collected" from="Orb" to="." method="_on_Orb_collected"]
 [connection signal="hit" from="Orb/Hitbox" to="." method="hit"]
 [connection signal="body_entered" from="StompArea" to="." method="_on_StompArea_body_entered"]
-[connection signal="body_entered" from="StompArea2" to="." method="_on_StompArea_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_StompTimer_timeout"]
+[connection signal="body_entered" from="ActivationArea" to="." method="_on_ActivationArea_body_entered" flags=7]
