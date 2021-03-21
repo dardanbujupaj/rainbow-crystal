@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://scenes/game/Tilesets.tres" type="TileSet" id=1]
 [ext_resource path="res://util/Dialog.tscn" type="PackedScene" id=2]
@@ -8,12 +8,13 @@
 [ext_resource path="res://scenes/game/tutorial/Apple.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/game/Color.tres" type="Material" id=7]
 [ext_resource path="res://scenes/game/Portal.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/game/village/village_background/village_background_layer 4.png" type="Texture" id=9]
-[ext_resource path="res://scenes/game/village/village_background/village_background_layer 1.png" type="Texture" id=10]
-[ext_resource path="res://scenes/game/village/village_background/village_background_layer 2.png" type="Texture" id=11]
-[ext_resource path="res://scenes/game/village/village_background/village_background_layer 3.png" type="Texture" id=12]
+[ext_resource path="res://scenes/game/village/village_bg_1.png" type="Texture" id=9]
+[ext_resource path="res://scenes/game/village/village_bg_4.png" type="Texture" id=10]
+[ext_resource path="res://scenes/game/village/village_bg_3.png" type="Texture" id=11]
+[ext_resource path="res://scenes/game/village/village_bg_5.png" type="Texture" id=12]
 [ext_resource path="res://scenes/game/Sign.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/game/eldest.png" type="Texture" id=14]
+[ext_resource path="res://scenes/game/village/village_bg_2.png" type="Texture" id=15]
 
 [sub_resource type="AnimationNodeAnimation" id=1]
 animation = "orbs_disappearing"
@@ -122,10 +123,10 @@ scale = Vector2( -1, 1 )
 texture = ExtResource( 14 )
 
 [node name="Apple" parent="." instance=ExtResource( 6 )]
-position = Vector2( 423.167, -8.92506 )
+position = Vector2( 423.167, -8 )
 
 [node name="Apple2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 483.879, -9.10724 )
+position = Vector2( 483.879, -8 )
 
 [node name="Apple3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 667.911, -134.269 )
@@ -144,54 +145,61 @@ margin_top = -150.0
 margin_right = 300.0
 margin_bottom = 10.0
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
 
-[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground2"]
 material = ExtResource( 7 )
 use_parent_material = true
 motion_scale = Vector2( 0.4, 1 )
 motion_mirroring = Vector2( 1200, 0 )
 
-[node name="Background4" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+[node name="Background4" type="Sprite" parent="ParallaxBackground2/ParallaxLayer4"]
 use_parent_material = true
 position = Vector2( 0, -180 )
 texture = ExtResource( 9 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 1200, 360 )
 
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground2"]
 material = ExtResource( 7 )
 use_parent_material = true
 motion_scale = Vector2( 0.6, 1 )
 motion_mirroring = Vector2( 1200, 0 )
 
-[node name="Background3" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+[node name="Background3" type="Sprite" parent="ParallaxBackground2/ParallaxLayer3"]
 use_parent_material = true
 position = Vector2( 0, -180 )
-texture = ExtResource( 12 )
+texture = ExtResource( 15 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 1200, 360 )
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground2"]
 material = ExtResource( 7 )
 use_parent_material = true
 motion_scale = Vector2( 0.8, 1 )
 motion_mirroring = Vector2( 1200, 0 )
 
-[node name="Background2" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+[node name="Background2" type="Sprite" parent="ParallaxBackground2/ParallaxLayer2"]
 use_parent_material = true
 position = Vector2( 0, -180 )
 texture = ExtResource( 11 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 1200, 360 )
 
-[node name="ParallaxLayer1" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxLayer1" type="ParallaxLayer" parent="ParallaxBackground2"]
 material = ExtResource( 7 )
 motion_mirroring = Vector2( 1200, 0 )
 
-[node name="Background1" type="Sprite" parent="ParallaxBackground/ParallaxLayer1"]
+[node name="Background1" type="Sprite" parent="ParallaxBackground2/ParallaxLayer1"]
 use_parent_material = true
 position = Vector2( 0, -180 )
 texture = ExtResource( 10 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1200, 360 )
+
+[node name="village_bg_5" type="Sprite" parent="ParallaxBackground2/ParallaxLayer1"]
+use_parent_material = true
+position = Vector2( 0, -180 )
+texture = ExtResource( 12 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 1200, 360 )

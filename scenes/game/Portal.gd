@@ -10,7 +10,7 @@ enum Area {
 
 var portals = {
 	Area.VILLAGE: {
-		"image": preload("res://scenes/game/forest_portal.png"),
+		"image": preload("res://scenes/game/village_portal.png"),
 		"scene": "res://scenes/game/village/Village.tscn",
 		"color": Color("66ffe3")
 	},
@@ -20,12 +20,12 @@ var portals = {
 		"color": Color("3ca370")
 	},
 	Area.MOUNTAIN: {
-		"image": preload("res://scenes/game/forest_portal.png"),
+		"image": preload("res://scenes/game/mountain_portal.png"),
 		"scene": "res://scenes/game/mountain/Mountain.tscn",
 		"color": Color("eb564b")
 	},
 	Area.SKY: {
-		"image": preload("res://scenes/game/forest_portal.png"),
+		"image": preload("res://scenes/game/sky_portal.png"),
 		"scene": "res://scenes/game/sky/Sky.tscn",
 		"color": Color("4b5bab")
 	},

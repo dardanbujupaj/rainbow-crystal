@@ -549,8 +549,6 @@ wait_time = 5.0
 
 [node name="HealthBar" parent="CanvasLayer" instance=ExtResource( 2 )]
 visible = false
-max_health = 10.0
-health = 10.0
 
 [node name="DamageTween" type="Tween" parent="."]
 

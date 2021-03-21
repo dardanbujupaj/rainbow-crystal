@@ -7,6 +7,9 @@ signal four_apples_collected
 onready var dialog = $CanvasLayer/Dialog
 
 
+const background_color = Color("4da6ff")
+
+
 var apples = 0 setget _set_apples
 
 

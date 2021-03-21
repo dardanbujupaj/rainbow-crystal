@@ -31,4 +31,4 @@ func load_area(area: PackedScene, background_color: Color = Color.black) -> void
 	
 	call_deferred("add_child", current_scene)
 	
-	$BackgroundColor/ColorRect.color = background_color
+	$BackgroundColor/ColorRect.color = current_scene.background_color

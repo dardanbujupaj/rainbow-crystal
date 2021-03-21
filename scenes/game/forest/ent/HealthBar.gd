@@ -2,6 +2,7 @@ tool
 extends MarginContainer
 
 
+export var enemy_name = "ANCIENT_TREE" setget _set_name
 export var max_health = 100 setget _set_max_health
 export var health = 100 setget _set_health
 export var color = Color("3ca370") setget _set_color
@@ -10,11 +11,14 @@ export var color = Color("3ca370") setget _set_color
 onready var health_bar = $VBoxContainer/CenterContainer/HealthBar
 onready var health_bar_backdrop = $VBoxContainer/CenterContainer/HealthBarBackdrop
 onready var tween = $Tween
+onready var name_label = $VBoxContainer/Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_set_health(health)
 	_set_max_health(max_health)
+	_set_color(color)
+	_set_name(enemy_name)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -41,3 +45,9 @@ func _set_color(new_color: Color) -> void:
 	if health_bar != null:
 		health_bar.tint_progress = new_color
 	color = new_color
+
+
+func _set_name(new_name: String) -> void:
+	if name_label != null:
+		name_label.text = new_name
+	enemy_name = new_name

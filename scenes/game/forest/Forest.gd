@@ -1,5 +1,6 @@
 extends Node2D
 
+const background_color = Color("323e4f")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

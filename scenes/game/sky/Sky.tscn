@@ -1,0 +1,141 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scenes/game/sky/clouds/Cloud1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/game/character/Character.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/game/Portal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/game/Sign.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/game/sky/Sky.gd" type="Script" id=5]
+[ext_resource path="res://scenes/game/sky/clouds/Cloud5.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/game/sky/clouds/Cloud2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/game/sky/clouds/Cloud3.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/game/sky/clouds/Cloud4.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/game/sky/bird/Bird.tscn" type="PackedScene" id=10]
+
+[node name="Sky" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Portal" parent="." instance=ExtResource( 3 )]
+position = Vector2( 320.786, -317.169 )
+destination = 0
+
+[node name="Sign" parent="." instance=ExtResource( 4 )]
+position = Vector2( 185.898, -283.593 )
+z_index = -1
+direction = 1
+
+[node name="Character" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0.496399, -340.325 )
+
+[node name="clouds" type="Node2D" parent="."]
+
+[node name="Cloud1" parent="clouds" instance=ExtResource( 1 )]
+position = Vector2( 166.077, -278.544 )
+
+[node name="Cloud3" parent="clouds" instance=ExtResource( 1 )]
+position = Vector2( 5.27248, -300.853 )
+
+[node name="Cloud4" parent="clouds" instance=ExtResource( 1 )]
+position = Vector2( -156.239, -412.423 )
+
+[node name="Cloud22" parent="clouds" instance=ExtResource( 1 )]
+position = Vector2( -440.088, -997.661 )
+
+[node name="Cloud26" parent="clouds" instance=ExtResource( 1 )]
+position = Vector2( 30.5426, -1123.21 )
+
+[node name="Cloud30" parent="clouds" instance=ExtResource( 1 )]
+position = Vector2( -112.583, -1359.07 )
+
+[node name="Cloud23" parent="clouds" instance=ExtResource( 1 )]
+position = Vector2( 365.213, -903.576 )
+
+[node name="Cloud2" parent="clouds" instance=ExtResource( 1 )]
+position = Vector2( 327.13, -247.172 )
+
+[node name="Cloud5" parent="clouds" instance=ExtResource( 7 )]
+position = Vector2( -559.013, -628.659 )
+
+[node name="Cloud11" parent="clouds" instance=ExtResource( 7 )]
+position = Vector2( -355.818, -461.212 )
+
+[node name="Cloud34" parent="clouds" instance=ExtResource( 7 )]
+position = Vector2( -1041.76, -804.182 )
+
+[node name="Cloud12" parent="clouds" instance=ExtResource( 7 )]
+position = Vector2( 270.696, -470.62 )
+
+[node name="Cloud32" parent="clouds" instance=ExtResource( 7 )]
+position = Vector2( 966.933, -967.341 )
+
+[node name="Cloud13" parent="clouds" instance=ExtResource( 7 )]
+position = Vector2( 425.065, -665.805 )
+
+[node name="Cloud27" parent="clouds" instance=ExtResource( 7 )]
+position = Vector2( 6.43958, -790.116 )
+
+[node name="Cloud28" parent="clouds" instance=ExtResource( 7 )]
+position = Vector2( 134.782, -1191.94 )
+
+[node name="Cloud10" parent="clouds" instance=ExtResource( 7 )]
+position = Vector2( 140.183, -578.913 )
+
+[node name="Cloud6" parent="clouds" instance=ExtResource( 8 )]
+position = Vector2( -449.677, -227.933 )
+
+[node name="Cloud7" parent="clouds" instance=ExtResource( 9 )]
+position = Vector2( -286.394, -322.129 )
+
+[node name="Cloud33" parent="clouds" instance=ExtResource( 9 )]
+position = Vector2( -937.223, -827.107 )
+
+[node name="Cloud9" parent="clouds" instance=ExtResource( 9 )]
+position = Vector2( -156.613, -665.918 )
+
+[node name="Cloud31" parent="clouds" instance=ExtResource( 9 )]
+position = Vector2( 1032.22, -452.644 )
+
+[node name="Cloud14" parent="clouds" instance=ExtResource( 9 )]
+position = Vector2( 206.502, -842.267 )
+
+[node name="Cloud15" parent="clouds" instance=ExtResource( 9 )]
+position = Vector2( -339.111, -789.873 )
+
+[node name="Cloud24" parent="clouds" instance=ExtResource( 9 )]
+position = Vector2( 214.234, -1016.31 )
+
+[node name="Cloud35" parent="clouds" instance=ExtResource( 9 )]
+position = Vector2( -212.172, -1387.57 )
+
+[node name="Cloud25" parent="clouds" instance=ExtResource( 9 )]
+position = Vector2( -106.292, -1065.75 )
+
+[node name="Cloud29" parent="clouds" instance=ExtResource( 9 )]
+position = Vector2( 20.0349, -1284.8 )
+
+[node name="Cloud16" parent="clouds" instance=ExtResource( 9 )]
+position = Vector2( 684.385, -680.464 )
+
+[node name="Cloud17" parent="clouds" instance=ExtResource( 9 )]
+position = Vector2( 573.381, -712.448 )
+
+[node name="Cloud8" parent="clouds" instance=ExtResource( 6 )]
+position = Vector2( 191.977, -442.748 )
+
+[node name="Cloud18" parent="clouds" instance=ExtResource( 6 )]
+position = Vector2( -463.426, -685.135 )
+
+[node name="Cloud19" parent="clouds" instance=ExtResource( 6 )]
+position = Vector2( -305.556, -965.794 )
+
+[node name="Cloud36" parent="clouds" instance=ExtResource( 6 )]
+position = Vector2( -355.697, -1495.29 )
+
+[node name="Cloud20" parent="clouds" instance=ExtResource( 6 )]
+position = Vector2( -176.389, -871.71 )
+
+[node name="Cloud21" parent="clouds" instance=ExtResource( 6 )]
+position = Vector2( 16.8876, -487.341 )
+
+[node name="Bird" parent="." instance=ExtResource( 10 )]
+position = Vector2( -395.228, -1523.65 )
+scale = Vector2( -1, 1 )
