@@ -51,14 +51,17 @@ func activate():
 
 
 func defeat():
-	release_orb()
+	call_deferred("release_orb")
 	velocity.y = 100
+	MusicEngine.play_song("Runaway")
+	health_bar.hide()
 	
 
 func release_orb() -> void:
-	orb.collectible = true
 	orb.scale = Vector2(1, 1)
 	orb.attach_to_node($OrbPosition)
+	orb.collectible = true
+
 
 func _set_health(new_health: float):
 	health_bar.health = new_health

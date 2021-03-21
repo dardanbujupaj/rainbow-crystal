@@ -62,6 +62,7 @@ func defeat():
 	state_machine.travel("defeat")
 	MusicEngine.play_song("Runaway")
 
+
 func release_orb() -> void:
 	$Orb.collectible = true
 	$Orb.position = $Orb.global_position

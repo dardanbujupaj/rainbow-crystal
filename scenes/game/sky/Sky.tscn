@@ -19,7 +19,7 @@ position = Vector2( 320.786, -317.169 )
 destination = 0
 
 [node name="Sign" parent="." instance=ExtResource( 4 )]
-position = Vector2( 185.898, -283.593 )
+position = Vector2( 180.142, -285.895 )
 z_index = -1
 text = "VILLAGE"
 direction = 1
@@ -138,5 +138,5 @@ position = Vector2( -176.389, -871.71 )
 position = Vector2( 16.8876, -487.341 )
 
 [node name="Bird" parent="." instance=ExtResource( 10 )]
-position = Vector2( -395.228, -1523.65 )
+position = Vector2( -353.785, -1552.43 )
 scale = Vector2( -1, 1 )

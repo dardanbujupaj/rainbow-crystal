@@ -55,9 +55,6 @@ func _on_Orb_body_entered(body: Node) -> void:
 
 func attach_to_character(character: Node) -> void:
 	
-	
-	
-	
 	match color:
 		OrbColor.RED:
 			SaveGame.red_orb_collected = true
