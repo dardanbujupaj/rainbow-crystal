@@ -10,7 +10,6 @@ onready var language_selection = $PanelContainer/VBoxContainer/LanguageContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print(Settings.language)
 	particles.pressed = Settings.particles_enabled
 	screenshake.value = Settings.screenshake_intensity
 	sound.value = Settings.sound_volume
@@ -18,10 +17,10 @@ func _ready() -> void:
 	main.value = Settings.main_volume
 	
 	for language in TranslationServer.get_loaded_locales():
-		language_selection.add_item(language, language.hash())
+		if language_selection.get_item_index(language.hash()) == -1: # no duplicates
+			language_selection.add_item(language, language.hash())
+	
 	language_selection.select(language_selection.get_item_index(Settings.language.hash()))
-	
-	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -56,7 +55,7 @@ func _on_Close_pressed() -> void:
 
 func _on_Language_item_selected(index: int) -> void:
 	var language = language_selection.get_item_text(index)
-	print(language)
+	
 	Settings.language = language
 	
 
