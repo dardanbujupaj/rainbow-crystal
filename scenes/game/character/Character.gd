@@ -3,7 +3,7 @@ class_name Character
 
 
 const ACCELERATION = 800
-const DECELERATION = 1000
+const DECELERATION = 1500
 const MAX_SPEED = 200
 const JUMP_SPEED = 320
 const GRAVITY = 200
@@ -13,11 +13,17 @@ const FALL_MODIFIER = 6
 
 const KNOCKBACK_INTENSITY = 150
 
+# applied knockback when character gets hit
 var knockback: Vector2
+
+#current velocity
 var velocity: Vector2
 
-
+# disable jumping/walking for cutscenes
 var moving_disabled = false
+
+# store last collision to only call impact() on first collision with an object
+var last_collider = null
 
 
 onready var coyote_timer = $CoyoteTimer
@@ -27,9 +33,6 @@ onready var animation_tree = $AnimationTree
 onready var state_machine = animation_tree["parameters/playback"]
 
 onready var damage_tween = $DamageColorTween
-
-
-var jumped
 
 
 # Called when the node enters the scene tree for the first time.
@@ -49,11 +52,11 @@ func _ready():
 		orb.attach_to_character(self)
 
 
-func _process(delta) -> void:
-	$CanvasLayer/VBoxContainer/OnFloor.text = "on floor" if is_on_floor() else "not on floor"
 
+# called everey physics frame
 func _physics_process(delta):
 	
+	# apply conditions to animation state machine
 	animation_tree["parameters/conditions/running"] = abs(velocity.x) > 1
 	animation_tree["parameters/conditions/not_running"] = abs(velocity.x) < 1
 	animation_tree["parameters/conditions/falling"] = velocity.y > 0
@@ -64,9 +67,10 @@ func _physics_process(delta):
 	var shooting = state_machine.get_current_node() == "shoot"
 	# handle horizontal movement
 	if abs(input_direction) > 0.1 and not shooting and not moving_disabled:
-		
-		if $Sprite.scale.x == -sign(input_direction):
-			$Sprite.scale.x = sign(input_direction)
+		var uniform_direction = sign(input_direction)
+		if $Sprite.scale.x == -uniform_direction:
+			$Sprite.scale.x = uniform_direction
+			$CollisionShape2D.scale.x = uniform_direction
 			
 		# Fast turn when changing run direction
 		if sign(velocity.x) != sign(input_direction):
@@ -99,7 +103,6 @@ func _physics_process(delta):
 		else:
 			# reset jump, vertical velocity an coyote time
 			coyote_timer.start()
-			jumped = false
 			
 			apply_gravity(delta)
 	else:
@@ -113,12 +116,25 @@ func _physics_process(delta):
 				apply_gravity(delta)
 		else:
 			apply_gravity(delta)
-			
-	#$Label.text = str(velocity)
-	velocity = move_and_slide(velocity, Vector2.UP)
+	
+	
+	# add impact to objects which react on the player
+	var collision = move_and_collide(velocity * delta, false, true, true)
+	
+	if collision != null and collision.collider != last_collider:
+		if collision.collider.has_method("impact"):
+			collision.collider.impact(velocity, collision.position)
+	
+	last_collider = collision.collider if collision else null
+	
+	
 	if knockback.length() > 0.1:
 		move_and_slide(knockback, Vector2.UP)
 		knockback *= 0.9
+		
+	# velocity = move_and_slide_with_snap(velocity, snap, Vector2.UP)
+	velocity = move_and_slide(velocity, Vector2.UP)
+	
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -163,6 +179,7 @@ func shoot():
 		add_child(instance)
 	
 
+# apply gravity depending on jump state
 func apply_gravity(delta):
 	var modifier
 	
@@ -182,6 +199,6 @@ func jump():
 	
 	state_machine.travel("jump_up")
 	velocity.y = -JUMP_SPEED
-	jumped = true
+	
 	coyote_timer.stop()
 	jump_memory_timer.stop()

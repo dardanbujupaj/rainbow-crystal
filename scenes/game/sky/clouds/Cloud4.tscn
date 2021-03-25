@@ -1,23 +1,15 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://scenes/game/sky/clouds/clouds.png" type="Texture" id=1]
+[ext_resource path="res://scenes/game/sky/clouds/Cloud.tscn" type="PackedScene" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 64.2183, 7.75306 )
+extents = Vector2( 59.6956, 7.75306 )
 
-[node name="Cloud1" type="StaticBody2D"]
-use_parent_material = true
-z_index = 5
-collision_layer = 2
+[node name="Cloud" instance=ExtResource( 1 )]
 
-[node name="clouds" type="Sprite" parent="."]
-use_parent_material = true
-position = Vector2( -1.19055, -2.3959 )
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 420, 0, 150, 70 )
+[node name="clouds" parent="." index="0"]
+region_rect = Rect2( 414, -3, 159, 72 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1.54603, 2.03528 )
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( -1.52351, 7.77689 )
 shape = SubResource( 1 )
-one_way_collision = true

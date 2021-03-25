@@ -8,75 +8,75 @@
 [sub_resource type="AnimationNodeAnimation" id=1]
 animation = "idle"
 
-[sub_resource type="AnimationNodeAnimation" id=20]
+[sub_resource type="AnimationNodeAnimation" id=2]
 animation = "jump_fall"
 
-[sub_resource type="AnimationNodeAnimation" id=21]
+[sub_resource type="AnimationNodeAnimation" id=3]
 animation = "jump_land"
 
-[sub_resource type="AnimationNodeAnimation" id=22]
+[sub_resource type="AnimationNodeAnimation" id=4]
 animation = "jump_up"
 
-[sub_resource type="AnimationNodeAnimation" id=3]
+[sub_resource type="AnimationNodeAnimation" id=5]
 animation = "run"
 
-[sub_resource type="AnimationNodeAnimation" id=4]
+[sub_resource type="AnimationNodeAnimation" id=6]
 animation = "shoot"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=5]
-advance_condition = "running"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=6]
-advance_condition = "not_running"
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=7]
-switch_mode = 2
-advance_condition = "not_running"
+advance_condition = "running"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=8]
-switch_mode = 2
-advance_condition = "running"
+advance_condition = "not_running"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=9]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=10]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=23]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=24]
-advance_condition = "falling"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=25]
-advance_condition = "on_floor"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=26]
-switch_mode = 2
-advance_condition = "running"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=27]
 switch_mode = 2
 advance_condition = "not_running"
 
-[sub_resource type="AnimationNodeStateMachine" id=14]
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+switch_mode = 2
+advance_condition = "running"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
+advance_condition = "falling"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=15]
+advance_condition = "on_floor"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=16]
+switch_mode = 2
+advance_condition = "running"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=17]
+switch_mode = 2
+advance_condition = "not_running"
+
+[sub_resource type="AnimationNodeStateMachine" id=18]
 states/idle/node = SubResource( 1 )
 states/idle/position = Vector2( 152.5, 146 )
-states/jump_fall/node = SubResource( 20 )
+states/jump_fall/node = SubResource( 2 )
 states/jump_fall/position = Vector2( 111.913, -82.2049 )
-states/jump_land/node = SubResource( 21 )
+states/jump_land/node = SubResource( 3 )
 states/jump_land/position = Vector2( 279.413, -31.7049 )
-states/jump_up/node = SubResource( 22 )
+states/jump_up/node = SubResource( 4 )
 states/jump_up/position = Vector2( 74.9125, 13.7951 )
-states/run/node = SubResource( 3 )
+states/run/node = SubResource( 5 )
 states/run/position = Vector2( 396.5, 76.5 )
-states/shoot/node = SubResource( 4 )
+states/shoot/node = SubResource( 6 )
 states/shoot/position = Vector2( 364, 214 )
-transitions = [ "idle", "run", SubResource( 5 ), "run", "idle", SubResource( 6 ), "shoot", "idle", SubResource( 7 ), "shoot", "run", SubResource( 8 ), "run", "shoot", SubResource( 9 ), "idle", "shoot", SubResource( 10 ), "idle", "jump_up", SubResource( 23 ), "jump_up", "jump_fall", SubResource( 24 ), "jump_fall", "jump_land", SubResource( 25 ), "jump_land", "run", SubResource( 26 ), "jump_land", "idle", SubResource( 27 ) ]
+transitions = [ "idle", "run", SubResource( 7 ), "run", "idle", SubResource( 8 ), "shoot", "idle", SubResource( 9 ), "shoot", "run", SubResource( 10 ), "run", "shoot", SubResource( 11 ), "idle", "shoot", SubResource( 12 ), "idle", "jump_up", SubResource( 13 ), "jump_up", "jump_fall", SubResource( 14 ), "jump_fall", "jump_land", SubResource( 15 ), "jump_land", "run", SubResource( 16 ), "jump_land", "idle", SubResource( 17 ) ]
 start_node = "idle"
 graph_offset = Vector2( -89.0875, -156.705 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=15]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=19]
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=20]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -103,7 +103,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=21]
 length = 0.65
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -130,7 +130,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=28]
+[sub_resource type="Animation" id=22]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -157,7 +157,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=29]
+[sub_resource type="Animation" id=23]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -184,7 +184,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=30]
+[sub_resource type="Animation" id=24]
 length = 0.25
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -211,7 +211,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=25]
 length = 1.6
 loop = true
 tracks/0/type = "value"
@@ -239,7 +239,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=26]
 length = 0.7
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -276,10 +276,10 @@ script = ExtResource( 3 )
 polygon = PoolVector2Array( -4, 32, 10, 32, 13.9856, 18.0964, 14.0541, 3.92203, 11.0548, -10.266, 8.67186, -16.1959, 3.39928, -17.4284, -0.435318, -13.9362, -3.94119, -2.59675, -6.26934, 7.4006 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 14 )
+tree_root = SubResource( 18 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 15 )
+parameters/playback = SubResource( 19 )
 parameters/conditions/falling = false
 parameters/conditions/not_running = false
 parameters/conditions/on_floor = false
@@ -287,20 +287,20 @@ parameters/conditions/running = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 1.5
-anims/idle = SubResource( 16 )
-anims/jump = SubResource( 17 )
-anims/jump_fall = SubResource( 28 )
-anims/jump_land = SubResource( 29 )
-anims/jump_up = SubResource( 30 )
-anims/run = SubResource( 18 )
-anims/shoot = SubResource( 19 )
+anims/idle = SubResource( 20 )
+anims/jump = SubResource( 21 )
+anims/jump_fall = SubResource( 22 )
+anims/jump_land = SubResource( 23 )
+anims/jump_up = SubResource( 24 )
+anims/run = SubResource( 25 )
+anims/shoot = SubResource( 26 )
 
 [node name="Sprite" type="Sprite" parent="."]
 use_parent_material = true
 z_index = 1
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 1280, 0, 64, 64 )
+region_rect = Rect2( 0, 0, 64, 64 )
 
 [node name="CameraCenter" type="Node2D" parent="."]
 position = Vector2( 0, -40 )
@@ -321,28 +321,3 @@ wait_time = 0.2
 one_shot = true
 
 [node name="DamageColorTween" type="Tween" parent="."]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = -1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="OnFloor" type="Label" parent="CanvasLayer/VBoxContainer"]
-margin_right = 40.0
-margin_bottom = 14.0
-
-[node name="hit" type="Button" parent="CanvasLayer/VBoxContainer"]
-margin_top = 18.0
-margin_right = 40.0
-margin_bottom = 38.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/hit" to="." method="hit" binds= [ 1.0, Vector2( 0, 0 ) ]]

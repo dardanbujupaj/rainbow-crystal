@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://scenes/game/sky/clouds/Cloud1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/game/sky/clouds/Cloud.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/game/character/Character.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/game/Portal.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/game/Sign.tscn" type="PackedScene" id=4]
@@ -35,7 +35,7 @@ use_parent_material = true
 position = Vector2( 166.077, -278.544 )
 
 [node name="Cloud3" parent="clouds" instance=ExtResource( 1 )]
-position = Vector2( 5.27248, -300.853 )
+position = Vector2( -190.43, -287.039 )
 
 [node name="Cloud4" parent="clouds" instance=ExtResource( 1 )]
 position = Vector2( -156.239, -412.423 )
@@ -86,7 +86,7 @@ position = Vector2( 140.183, -578.913 )
 position = Vector2( -449.677, -227.933 )
 
 [node name="Cloud7" parent="clouds" instance=ExtResource( 9 )]
-position = Vector2( -286.394, -322.129 )
+position = Vector2( 6.009, -290.471 )
 
 [node name="Cloud33" parent="clouds" instance=ExtResource( 9 )]
 position = Vector2( -937.223, -827.107 )

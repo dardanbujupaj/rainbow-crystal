@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/game/sky/clouds/clouds.png" type="Texture" id=1]
+[ext_resource path="res://scenes/game/sky/clouds/Cloud.gd" type="Script" id=2]
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.864458, 0.870482, 1 )
+colors = PoolColorArray( 1, 1, 0.921569, 1, 1, 1, 0.921569, 0.520833, 1, 1, 0.921569, 0, 1, 1, 0.992157, 0 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 58.4075, 7.75306 )
+
+[node name="Cloud" type="StaticBody2D"]
+use_parent_material = true
+position = Vector2( 0, -0.117104 )
+z_index = 5
+collision_layer = 2
+script = ExtResource( 2 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+lifetime = 0.8
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 100.0
+damping = 100.0
+scale_amount = 3.0
+scale_amount_random = 1.0
+color_ramp = SubResource( 2 )
+
+[node name="clouds" type="Sprite" parent="."]
+use_parent_material = true
+position = Vector2( -1.19055, -2.3959 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 128, 64 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1.64061, 6.13742 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="Tween" type="Tween" parent="."]
