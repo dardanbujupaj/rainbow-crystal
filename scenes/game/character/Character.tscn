@@ -61,18 +61,18 @@ advance_condition = "not_running"
 states/idle/node = SubResource( 1 )
 states/idle/position = Vector2( 152.5, 146 )
 states/jump_fall/node = SubResource( 2 )
-states/jump_fall/position = Vector2( 111.913, -82.2049 )
+states/jump_fall/position = Vector2( 85.913, -82.2049 )
 states/jump_land/node = SubResource( 3 )
 states/jump_land/position = Vector2( 279.413, -31.7049 )
 states/jump_up/node = SubResource( 4 )
-states/jump_up/position = Vector2( 74.9125, 13.7951 )
+states/jump_up/position = Vector2( 49.9125, 19.2951 )
 states/run/node = SubResource( 5 )
 states/run/position = Vector2( 396.5, 76.5 )
 states/shoot/node = SubResource( 6 )
-states/shoot/position = Vector2( 364, 214 )
+states/shoot/position = Vector2( 316, 251.5 )
 transitions = [ "idle", "run", SubResource( 7 ), "run", "idle", SubResource( 8 ), "shoot", "idle", SubResource( 9 ), "shoot", "run", SubResource( 10 ), "run", "shoot", SubResource( 11 ), "idle", "shoot", SubResource( 12 ), "idle", "jump_up", SubResource( 13 ), "jump_up", "jump_fall", SubResource( 14 ), "jump_fall", "jump_land", SubResource( 15 ), "jump_land", "run", SubResource( 16 ), "jump_land", "idle", SubResource( 17 ) ]
 start_node = "idle"
-graph_offset = Vector2( -89.0875, -156.705 )
+graph_offset = Vector2( -111.678, -182.805 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=19]
 

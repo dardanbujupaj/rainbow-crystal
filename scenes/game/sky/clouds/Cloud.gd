@@ -22,4 +22,5 @@ func impact(direction: Vector2, impact_position = global_position) -> void:
 	tween.start()
 	
 	$CPUParticles2D.position = to_local(impact_position)
+	$CPUParticles2D.direction = direction
 	$CPUParticles2D.emitting = true
