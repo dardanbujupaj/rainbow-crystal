@@ -15,9 +15,12 @@ const test_scenes = {
 func _ready():
 	MusicEngine.play_song("Runaway")
 	
-	$Orbs/Node2D/Orb.attach_to_node($Orbs/Node2D)
-	$Orbs/Node2D2/Orb2.attach_to_node($Orbs/Node2D2)
-	$Orbs/Node2D3/Orb3.attach_to_node($Orbs/Node2D3)
+	var orb_containers = [$Orbs/Node2D, $Orbs/Node2D2, $Orbs/Node2D3]
+	
+	for node in orb_containers:
+		var orb = node.get_node("Orb")
+		orb.attach_to_node(node)
+		orb.connect("mouse_entered", self, "_on_Orb_mouse_entered", [node])
 	
 	for scene in test_scenes:
 		var button = Button.new()
@@ -43,3 +46,9 @@ func _on_Button_mouse_entered() -> void:
 
 func _on_Quit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_Orb_mouse_entered(orb) -> void:
+	SoundEngine.play_sound("OrbWhoosh")
+	orb.position.x = rand_range(0, rect_size.x)
+	orb.position.y = rand_range(0, rect_size.y)

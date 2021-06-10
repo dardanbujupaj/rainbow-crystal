@@ -60,16 +60,19 @@ func attach_to_character(character: Node) -> void:
 			SaveGame.red_orb_collected = true
 			if is_inside_tree():
 				get_tree().call_group("game", "_set_color_enabled", true, "red")
+				SoundEngine.play_sound("OrbCollected")
 			name = "RedOrb"
 		OrbColor.GREEN:
 			SaveGame.green_orb_collected = true
 			if is_inside_tree():
 				get_tree().call_group("game", "_set_color_enabled", true, "green")
+				SoundEngine.play_sound("OrbCollected")
 			name = "GreenOrb"
 		OrbColor.BLUE:
 			SaveGame.blue_orb_collected = true
 			if is_inside_tree():
 				get_tree().call_group("game", "_set_color_enabled", true, "blue")
+				SoundEngine.play_sound("OrbCollected")
 			name = "BlueOrb"
 	
 	if character.has_node(name):

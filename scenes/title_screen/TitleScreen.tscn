@@ -7,6 +7,7 @@
 [node name="TitleScreen" type="CenterContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 theme = ExtResource( 2 )
 script = ExtResource( 1 )
 __meta__ = {
@@ -14,24 +15,28 @@ __meta__ = {
 }
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-margin_left = 456.0
-margin_top = 274.0
-margin_right = 568.0
-margin_bottom = 326.0
+margin_left = 184.0
+margin_top = 124.0
+margin_right = 296.0
+margin_bottom = 176.0
+mouse_filter = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 104.0
 margin_bottom = 44.0
+mouse_filter = 2
 
 [node name="Scenes" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
 margin_right = 96.0
+mouse_filter = 2
 
 [node name="Quit" type="Button" parent="PanelContainer/VBoxContainer"]
 margin_top = 4.0
 margin_right = 96.0
 margin_bottom = 36.0
+mouse_filter = 1
 text = "QUIT"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -50,24 +55,24 @@ __meta__ = {
 }
 
 [node name="Orbs" type="Node2D" parent="."]
-scale = Vector2( 2, 2 )
+z_index = 1
 
 [node name="Node2D" type="Node2D" parent="Orbs"]
-position = Vector2( 258.846, 54.5991 )
+position = Vector2( 247.624, 17.8872 )
 
 [node name="Orb" parent="Orbs/Node2D" instance=ExtResource( 3 )]
 color = 2
 
 [node name="Node2D2" type="Node2D" parent="Orbs"]
-position = Vector2( 381.875, 221.184 )
+position = Vector2( 413.085, 188.179 )
 
-[node name="Orb2" parent="Orbs/Node2D2" instance=ExtResource( 3 )]
+[node name="Orb" parent="Orbs/Node2D2" instance=ExtResource( 3 )]
 color = 1
 
 [node name="Node2D3" type="Node2D" parent="Orbs"]
-position = Vector2( 136.006, 202.225 )
+position = Vector2( 66.8669, 204.698 )
 
-[node name="Orb3" parent="Orbs/Node2D3" instance=ExtResource( 3 )]
+[node name="Orb" parent="Orbs/Node2D3" instance=ExtResource( 3 )]
 
 [connection signal="mouse_entered" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_Button_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_Button_pressed"]

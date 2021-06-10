@@ -60,12 +60,16 @@ AnimatedIcon="*res://AnimatedIcon.gd"
 
 [display]
 
-window/size/resizable=false
+window/size/width=480
+window/size/height=300
+window/size/test_width=960
+window/size/test_height=600
 window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/aseprite_importer/plugin.cfg" )
+enabled=PoolStringArray(  )
 
 [importer_defaults]
 

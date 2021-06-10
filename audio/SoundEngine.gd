@@ -36,6 +36,14 @@ const sounds = {
 		"stream": preload("res://audio/effects/WHOOSH_Air_Super_Fast_RR3_mono.wav"),
 		"volume": 0
 		},
+	"Portal": {
+		"stream": preload("res://audio/effects/MAGIC_SPELL_Metallic_Layers_Whoosh_stereo.wav"),
+		"volume": 0
+		},
+	"OrbCollected": {
+		"stream": preload("res://audio/effects/MAGIC_SPELL_Morphing_Synth_Harp_Scales_Deep_stereo.wav"),
+		"volume": 0
+		},
 #	"MenuButtonHoverSound": {
 #		"stream": preload("res://Sounds/MenuButtonHoverSound.wav"),
 #		"volume": -18

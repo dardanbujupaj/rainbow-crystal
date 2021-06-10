@@ -36,11 +36,12 @@ align = 1
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
 margin_top = 36.0
 margin_right = 256.0
-margin_bottom = 100.0
+margin_bottom = 60.0
 
 [node name="HealthBarBackdrop" type="TextureProgress" parent="VBoxContainer/CenterContainer"]
-margin_right = 256.0
-margin_bottom = 64.0
+margin_left = 64.0
+margin_right = 192.0
+margin_bottom = 24.0
 value = 100.0
 texture_under = ExtResource( 3 )
 texture_over = ExtResource( 2 )
@@ -51,8 +52,9 @@ __meta__ = {
 }
 
 [node name="HealthBar" type="TextureProgress" parent="VBoxContainer/CenterContainer"]
-margin_right = 256.0
-margin_bottom = 64.0
+margin_left = 64.0
+margin_right = 192.0
+margin_bottom = 24.0
 value = 100.0
 texture_over = ExtResource( 2 )
 texture_progress = ExtResource( 4 )
