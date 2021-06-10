@@ -1,0 +1,84 @@
+{ "frames": {
+   "LavaGeysir 0.aseprite": {
+    "frame": { "x": 0, "y": 0, "w": 48, "h": 32 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 48, "y": 0, "w": 48, "h": 32 },
+    "sourceSize": { "w": 96, "h": 144 },
+    "duration": 100
+   },
+   "LavaGeysir 1.aseprite": {
+    "frame": { "x": 48, "y": 0, "w": 48, "h": 32 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 48, "y": 0, "w": 48, "h": 32 },
+    "sourceSize": { "w": 96, "h": 144 },
+    "duration": 100
+   },
+   "LavaGeysir 2.aseprite": {
+    "frame": { "x": 96, "y": 0, "w": 48, "h": 32 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 48, "y": 0, "w": 48, "h": 32 },
+    "sourceSize": { "w": 96, "h": 144 },
+    "duration": 100
+   },
+   "LavaGeysir 3.aseprite": {
+    "frame": { "x": 144, "y": 0, "w": 48, "h": 32 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 48, "y": 0, "w": 48, "h": 32 },
+    "sourceSize": { "w": 96, "h": 144 },
+    "duration": 100
+   },
+   "LavaGeysir 4.aseprite": {
+    "frame": { "x": 192, "y": 0, "w": 48, "h": 32 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 48, "y": 0, "w": 48, "h": 32 },
+    "sourceSize": { "w": 96, "h": 144 },
+    "duration": 100
+   },
+   "LavaGeysir 5.aseprite": {
+    "frame": { "x": 240, "y": 0, "w": 48, "h": 32 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 48, "y": 0, "w": 48, "h": 32 },
+    "sourceSize": { "w": 96, "h": 144 },
+    "duration": 100
+   },
+   "LavaGeysir 6.aseprite": {
+    "frame": { "x": 288, "y": 0, "w": 48, "h": 32 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 48, "y": 0, "w": 48, "h": 32 },
+    "sourceSize": { "w": 96, "h": 144 },
+    "duration": 100
+   },
+   "LavaGeysir 7.aseprite": {
+    "frame": { "x": 336, "y": 0, "w": 48, "h": 32 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 48, "y": 0, "w": 48, "h": 32 },
+    "sourceSize": { "w": 96, "h": 144 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.2.25",
+  "image": "LavaGeysir_mid.png",
+  "format": "RGBA8888",
+  "size": { "w": 384, "h": 32 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "appear", "from": 0, "to": 2, "direction": "forward" },
+   { "name": "erupt", "from": 3, "to": 7, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "mid tile", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}
