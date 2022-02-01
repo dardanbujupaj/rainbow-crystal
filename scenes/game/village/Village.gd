@@ -1,7 +1,7 @@
 extends Node2D
 
 
-const background_color = Color("4da6ff")
+const background_color = Color(0.294118, 0.356863, 0.670588)
 
 onready var dialog = $CanvasLayer/Dialog
 

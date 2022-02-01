@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/village_background_layer 3.png-f534caebff36d8df01ba29fabcfb1dbf.stex"
+path="res://.import/village_background_grass_front.png-de872dafa8eed4ac88a568cfeafecbed.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/game/village/village_background/village_background_layer 3.png"
-dest_files=[ "res://.import/village_background_layer 3.png-f534caebff36d8df01ba29fabcfb1dbf.stex" ]
+source_file="res://scenes/game/village/village_background/village_background_grass_front.png"
+dest_files=[ "res://.import/village_background_grass_front.png-de872dafa8eed4ac88a568cfeafecbed.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=false
