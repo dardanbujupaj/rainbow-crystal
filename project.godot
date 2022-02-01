@@ -9,25 +9,10 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node",
-"class": "AsepriteImportData",
-"language": "GDScript",
-"path": "res://addons/aseprite_importer/classes/AsepriteImportData.gd"
-}, {
-"base": "Node",
-"class": "AsepriteImporter",
-"language": "GDScript",
-"path": "res://addons/aseprite_importer/classes/AsepriteImporter.gd"
-}, {
 "base": "KinematicBody2D",
 "class": "Character",
 "language": "GDScript",
 "path": "res://scenes/game/character/Character.gd"
-}, {
-"base": "Node",
-"class": "EditorTheme",
-"language": "GDScript",
-"path": "res://addons/aseprite_importer/classes/EditorTheme.gd"
 }, {
 "base": "Area2D",
 "class": "Orb",
@@ -35,10 +20,7 @@ _global_script_classes=[ {
 "path": "res://scenes/game/orb/Orb.gd"
 } ]
 _global_script_class_icons={
-"AsepriteImportData": "",
-"AsepriteImporter": "",
 "Character": "",
-"EditorTheme": "",
 "Orb": ""
 }
 
@@ -69,7 +51,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray(  )
+enabled=PoolStringArray( "res://addons/zylann.translation_editor/plugin.cfg" )
 
 [importer_defaults]
 

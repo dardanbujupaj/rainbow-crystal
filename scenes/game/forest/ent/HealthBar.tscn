@@ -29,14 +29,14 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 margin_right = 256.0
-margin_bottom = 32.0
-text = "ANCIENT_TREE"
+margin_bottom = 24.0
+text = "ENEMY_NAME"
 align = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
-margin_top = 36.0
+margin_top = 28.0
 margin_right = 256.0
-margin_bottom = 60.0
+margin_bottom = 52.0
 
 [node name="HealthBarBackdrop" type="TextureProgress" parent="VBoxContainer/CenterContainer"]
 margin_left = 64.0

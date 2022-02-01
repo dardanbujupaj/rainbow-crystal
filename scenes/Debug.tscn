@@ -17,3 +17,10 @@ margin_right = 72.0
 margin_bottom = 24.0
 text = "0 FPS"
 align = 2
+
+[node name="Resolution" type="Label" parent="."]
+margin_top = 28.0
+margin_right = 72.0
+margin_bottom = 52.0
+text = "0 FPS"
+align = 2

@@ -489,7 +489,7 @@ collision_mask = 0
 script = ExtResource( 1 )
 
 [node name="body" type="Sprite" parent="."]
-position = Vector2( -0.650879, -19.4195 )
+position = Vector2( -0.964699, -10.6776 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 3 )
 __meta__ = {
@@ -511,7 +511,7 @@ color = 2
 
 [node name="neck" type="Sprite" parent="body"]
 position = Vector2( -29.7474, -57.2406 )
-rotation = -0.214543
+rotation = -0.0956753
 texture = ExtResource( 10 )
 offset = Vector2( -17.686, -57.4028 )
 __meta__ = {
@@ -521,7 +521,7 @@ __meta__ = {
 
 [node name="beak_top" type="Sprite" parent="body/neck"]
 position = Vector2( -77.7976, -125.194 )
-rotation = 0.249216
+rotation = 0.133709
 texture = ExtResource( 9 )
 offset = Vector2( -35.9977, 48.4928 )
 __meta__ = {
@@ -540,13 +540,13 @@ texture = ExtResource( 2 )
 
 [node name="wing_left" type="Sprite" parent="body"]
 position = Vector2( -40.6205, -60.5834 )
-rotation = 0.00835367
+rotation = 0.420393
 texture = ExtResource( 5 )
 offset = Vector2( -113.831, 99.89 )
 
 [node name="wing_right" type="Sprite" parent="body"]
 position = Vector2( 0.67337, -86.4314 )
-rotation = 0.438594
+rotation = 0.0313877
 texture = ExtResource( 7 )
 offset = Vector2( 118.248, -47.1624 )
 
@@ -564,7 +564,7 @@ anims/pick = SubResource( 8 )
 
 [node name="HealthBar" parent="CanvasLayer" instance=ExtResource( 11 )]
 visible = false
-enemy_name = "GIANT_BIRD"
+enemy_name = "EYE_OF_THE_STORM"
 color = Color( 0.294118, 0.356863, 0.670588, 1 )
 
 [node name="DamageTween" type="Tween" parent="."]

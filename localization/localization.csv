@@ -1,94 +1,92 @@
-﻿key,en,de
+id,de,en
 AUDIO,Audio,Audio
-CLOSE,Close,Schliessen
+BUTTON_LEFT,Linke Maustaste,Left mouse button
+BUTTON_MIDDLE,Mittlere Maustaste,Middle mouse button
+BUTTON_RIGHT,Rechte Maustaste,Right mouse button
+BUTTON_WHEEL_DOWN,Mausrad nach unter,Mouse wheel down
+BUTTON_WHEEL_LEFT, Mausrad nach links,Mouse wheel left
+BUTTON_WHEEL_RIGHT, Mausrad nach rechts,Mouse wheel right
+BUTTON_WHEEL_UP,Mausrad nach oben,Mouse wheel up
+BUTTON_XBUTTON1,Extra Maustaste 1,Extra mouse button 1
+BUTTON_XBUTTON2,Extra Maustaste 2,Extra mouse button 2
+CLOSE,Schliessen,Close
+CONTINUE_PLAYING,Weiterspielen,Continue playing
 CREDITS,Credits,Credits
-g_attack,Attack,Angreifen
-g_interact,Interact,Interagieren
-g_jump,Jump,Springen
-g_left,Left,Nach links
-g_right,Right,Nach rechts
-GAMEPLAY,Gameplay,Spielmechanik
-GENERAL,General,Allgemein
-KEY_MAPPING,Key Mapping,Tastenbelegung
-LANGUAGE,Language,Sprache
-LANGUAGE,Language,Sprache
-MAIN,Main,Gesamt
-MUSIC,Music,Musik
-MUSIC_PLAYER,Music Player,Musikplayer
-PARTICLES,Particles,Partikel
-PLAY,Play,Spielen
-QUIT,Quit,Beenden
-SCREENSHAKE,Screenshake,Screenshake
-SETTINGS,Settings,Einstellungen
-SETTINGS,Settings,Einstellungen
-SOUND,Sound,Sound
-ui_accept,UI Accept,UI Eingabe
-ui_cancel,UI Cancel,UI Abbrechen
-ui_down,UI Down,UI Nach unten
-ui_end,UI End,UI End
-ui_focus_next,UI Focus next,UI nächtes Feld
-ui_focus_prev,UI Focus previous,UI vorher. Feld
-ui_home,UI Home,UI Home
-ui_left,UI Left,UI Nach links
-ui_page_down,UI Page Up,UI Page down
-ui_page_up,UI Page Up,UI Page up
-ui_right,UI Right,UI Nach rechts
-ui_select,UI Select,UI Auswählen
-ui_up,UI Up,UI Nach oben
-REMAP_ACTIONS,Remap actions,Tastaturbelegung ändern
-RESET,Reset,Zurücksetzen
-NOT_AVAILABLE,N/A,k.A.
-Joypad Axis 0-,Left Stick Left,Linker Stick links
-Joypad Axis 0+,Left Stick Right,Linker Stick rechts
-Joypad Axis 1-,Left Stick Up,Linker Stick oben
-Joypad Axis 1+,Left Stick Down,Linker Stick unten
-Joypad Axis 2-,Right Stick Left,Rechter Stick links
-Joypad Axis 2+,Right Stick Right,Rechter Stick rechts
-Joypad Axis 3-,Right Stick Up,Rechter Stick oben
-Joypad Axis 3+,Right Stick Down,Rechter Stick unten
-Joypad Axis 4-,,
+DELETE_SAVEGAME,Speicherstand löschen,Delete savegame
+ELDEST,Dorfältester,ELDEST
+EYE_OF_THE_STORM,Auge des Sturms,Eye of the Storm
+FOREST,Wald,Forest
+GAMEPLAY,Spielmechanik,Gameplay
+GAME_COMPLETED,Glückwunsch. Du hast alle Kugeln gefunden.,Congratulations. You collected all orbs.
+GENERAL,Allgemein,General
+GOTO_MENU,Zum Hauptbildschirm?,Goto titlescreen?
+GUARDIAN_OF_THE_FOREST,Wächterin des Waldes,Guardian of the Forest
+Joypad Axis 0+,Linker Stick rechts,Left Stick Right
+Joypad Axis 0-,Linker Stick links,Left Stick Left
+Joypad Axis 1+,Linker Stick unten,Left Stick Down
+Joypad Axis 1-,Linker Stick oben,Left Stick Up
+Joypad Axis 2+,Rechter Stick rechts,Right Stick Right
+Joypad Axis 2-,Rechter Stick links,Right Stick Left
+Joypad Axis 3+,Rechter Stick unten,Right Stick Down
+Joypad Axis 3-,Rechter Stick oben,Right Stick Up
 Joypad Axis 4+,,
-Joypad Axis 5-,,
+Joypad Axis 4-,,
 Joypad Axis 5+,,
-Joypad Axis 6-,,
+Joypad Axis 5-,,
 Joypad Axis 6+,L2,L2
-Joypad Axis 7-,,
+Joypad Axis 6-,,
 Joypad Axis 7+,R2,R2
-BUTTON_LEFT,Left mouse button,Linke Maustaste
-BUTTON_RIGHT,Right mouse button,Rechte Maustaste
-BUTTON_MIDDLE,Middle mouse button,Mittlere Maustaste
-BUTTON_XBUTTON1,Extra mouse button 1,Extra Maustaste 1
-BUTTON_XBUTTON2,Extra mouse button 2,Extra Maustaste 2
-BUTTON_WHEEL_UP,Mouse wheel up,Mausrad nach oben
-BUTTON_WHEEL_DOWN,Mouse wheel down,Mausrad nach unter
-BUTTON_WHEEL_LEFT,Mouse wheel left, Mausrad nach links
-BUTTON_WHEEL_RIGHT,Mouse wheel right, Mausrad nach rechts
-Joypad Button 0,PS Cross/Xbox A/Nintendo B, 
-Joypad Button 1,PS Circle/Xbox B/Nintendo A, 
-Joypad Button 2,PS Square/Xbox X/Nintendo Y, 
-Joypad Button 3,PS Triangle/Xbox Y/Nintendo X,
-Joypad Button 4,L/L1,
-Joypad Button 5,R/R1,
-Joypad Button 6,L2,
-Joypad Button 7,R2,
-Joypad Button 8,L3,
-Joypad Button 9,R3,
-Joypad Button 10,Select/PS Share/Nintendo -,
-Joypad Button 11,Start/PS Options/Nintendo +,
-Joypad Button 12,D-Pad Up,D-Pad oben
-Joypad Button 13,D-Pad Down,D-Pad unten
-Joypad Button 14,D-Pad Left,D-Pad links
-Joypad Button 15,D-Pad Right,D-Pad rechts
-ANCIENT_TREE,Ancient Tree,Uralter Baum
-GIANT_BIRD,Giant Bird,Riesiger Vogel
-ELDEST,ELDEST,Dorfältester
-SKIP_TUTORIAL,Skip tutorial,Tutorial überspringen
-VILLAGE,Village,Dorf
-FOREST,Forest,Wald
-MOUNTAIN,Mountain,Berg
-SKY,Sky,Himmel
-GAME_COMPLETED,Congratulations. You collected all orbs.,Glückwunsch. Du hast alle Kugeln gefunden.
-SHOW_CREDITS,Show credits,Credits anzeigen
-CONTINUE_PLAYING,Continue playing,Weiterspielen
-DELETE_SAVEGAME,Delete savegame,Speicherstand löschen
-GOTO_MENU,Goto titlescreen?,Zum Hauptbildschirm?
+Joypad Axis 7-,,
+Joypad Button 0, ,PS Cross/Xbox A/Nintendo B
+Joypad Button 1, ,PS Circle/Xbox B/Nintendo A
+Joypad Button 10,,Select/PS Share/Nintendo -
+Joypad Button 11,,Start/PS Options/Nintendo +
+Joypad Button 12,D-Pad oben,D-Pad Up
+Joypad Button 13,D-Pad unten,D-Pad Down
+Joypad Button 14,D-Pad links,D-Pad Left
+Joypad Button 15,D-Pad rechts,D-Pad Right
+Joypad Button 2, ,PS Square/Xbox X/Nintendo Y
+Joypad Button 3,,PS Triangle/Xbox Y/Nintendo X
+Joypad Button 4,,L/L1
+Joypad Button 5,,R/R1
+Joypad Button 6,,L2
+Joypad Button 7,,R2
+Joypad Button 8,,L3
+Joypad Button 9,,R3
+KEY_MAPPING,Tastenbelegung,Key Mapping
+LANGUAGE,Sprache,Language
+MAIN,Gesamt,Main
+MOUNTAIN,Berg,Mountain
+MUSIC,Musik,Music
+MUSIC_PLAYER,Musikplayer,Music Player
+NOT_AVAILABLE,k.A.,N/A
+PARTICLES,Partikel,Particles
+PLAY,Spielen,Play
+QUIT,Beenden,Quit
+REMAP_ACTIONS,Tastaturbelegung ändern,Remap actions
+RESET,Zurücksetzen,Reset
+SCREENSHAKE,Screenshake,Screenshake
+SETTINGS,Einstellungen,Settings
+SHOW_CREDITS,Credits anzeigen,Show credits
+SKIP_TUTORIAL,Tutorial überspringen,Skip tutorial
+SKY,Himmel,Sky
+SOUND,Sound,Sound
+VILLAGE,Dorf,Village
+g_attack,Angreifen,Attack
+g_interact,Interagieren,Interact
+g_jump,Springen,Jump
+g_left,Nach links,Left
+g_right,Nach rechts,Right
+ui_accept,UI Eingabe,UI Accept
+ui_cancel,UI Abbrechen,UI Cancel
+ui_down,UI Nach unten,UI Down
+ui_end,UI End,UI End
+ui_focus_next,UI nächtes Feld,UI Focus next
+ui_focus_prev,UI vorher. Feld,UI Focus previous
+ui_home,UI Home,UI Home
+ui_left,UI Nach links,UI Left
+ui_page_down,UI Page down,UI Page Up
+ui_page_up,UI Page up,UI Page Up
+ui_right,UI Nach rechts,UI Right
+ui_select,UI Auswählen,UI Select
+ui_up,UI Nach oben,UI Up
