@@ -58,22 +58,22 @@ __meta__ = {
 z_index = 1
 
 [node name="Node2D" type="Node2D" parent="Orbs"]
-position = Vector2( 247.624, 17.8872 )
+position = Vector2( 339, 56 )
 
 [node name="Orb" parent="Orbs/Node2D" instance=ExtResource( 3 )]
 color = 2
 
 [node name="Node2D2" type="Node2D" parent="Orbs"]
-position = Vector2( 413.085, 188.179 )
+position = Vector2( 528, 241 )
 
 [node name="Orb" parent="Orbs/Node2D2" instance=ExtResource( 3 )]
 color = 1
 
 [node name="Node2D3" type="Node2D" parent="Orbs"]
-position = Vector2( 66.8669, 204.698 )
+position = Vector2( 122, 211 )
 
 [node name="Orb" parent="Orbs/Node2D3" instance=ExtResource( 3 )]
 
 [connection signal="mouse_entered" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_Button_mouse_entered"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]

@@ -7,26 +7,40 @@ signal collected
 
 enum OrbColor { RED, GREEN, BLUE }
 
-export(OrbColor) var color setget _set_color
-export var draw_orb = true
+export(OrbColor) var color: int setget _set_color
+export var draw_orb := true
 
-export(bool) var collectible = false setget _set_collectible
+export(bool) var collectible := false setget _set_collectible
 
-onready var tween = $Tween
+onready var tween := $Tween
+
+
+var velocity: Vector2
+
+var offset_noise = OpenSimplexNoise.new()
 
 func _ready() -> void:
 	_set_color(color)
 	_set_collectible(collectible)
-	tween_to_offset()
+	
+	randomize()
+	offset_noise.period = 5000
+	offset_noise.octaves = 2
+	offset_noise.seed = randi()
+	
+	
+	
 
-var offset: Vector2
 
 func _process(delta: float) -> void:
 	if is_set_as_toplevel():
-		var target = get_parent().global_position + offset
-		position = position.linear_interpolate(target, 0.05)
+		var offset := Vector2(offset_noise.get_noise_1d(OS.get_ticks_msec()), offset_noise.get_noise_1d(-OS.get_ticks_msec())) * 100
+		var distance = get_parent().global_position - global_position + offset
+		velocity = velocity.linear_interpolate(distance * 2, 10 * delta)
+		global_position += velocity * delta
+	else:
+		velocity = Vector2()
 
-	
 
 func _set_collectible(new_collectible: bool) -> void:
 	set_collision_mask_bit(0, new_collectible)
@@ -105,15 +119,3 @@ func attach_to_node(node: Node) -> void:
 		
 	node.add_child(self)
 	set_as_toplevel(true)
-	tween_to_offset()
-
-
-func tween_to_offset() -> void:
-	var target_offset = Vector2(rand_range(-1, 1), rand_range(-1, 1)) * 30
-	tween.stop_all()
-	tween.interpolate_property(self, "offset", offset, target_offset, 3, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
-	tween.start()
-
-
-func _on_Tween_tween_completed(object: Object, key: NodePath) -> void:
-	tween_to_offset()
