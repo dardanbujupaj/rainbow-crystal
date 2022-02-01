@@ -4,8 +4,7 @@
 [ext_resource path="res://default_theme.tres" type="Theme" id=2]
 
 [node name="SettingsMenu" type="CenterContainer"]
-anchor_left = -0.000797451
-anchor_right = 0.999203
+anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 2 )
 script = ExtResource( 1 )
@@ -14,39 +13,41 @@ __meta__ = {
 }
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-margin_left = 312.0
-margin_top = 84.0
-margin_right = 712.0
-margin_bottom = 516.0
+margin_left = 120.0
+margin_top = 22.0
+margin_right = 520.0
+margin_bottom = 338.0
 rect_min_size = Vector2( 400, 0 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
-margin_left = 8.0
-margin_top = 8.0
-margin_right = 392.0
-margin_bottom = 424.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 398.0
+margin_bottom = 314.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
-margin_right = 384.0
-margin_bottom = 32.0
+margin_right = 396.0
+margin_bottom = 24.0
+alignment = 1
 
 [node name="Title" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer"]
-margin_right = 160.0
-margin_bottom = 32.0
+margin_left = 150.0
+margin_right = 246.0
+margin_bottom = 24.0
 text = "SETTINGS"
 
 [node name="HSeparator3" type="HSeparator" parent="PanelContainer/VBoxContainer"]
-margin_top = 36.0
-margin_right = 384.0
-margin_bottom = 40.0
+margin_top = 28.0
+margin_right = 396.0
+margin_bottom = 32.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="General" type="Label" parent="PanelContainer/VBoxContainer"]
-margin_top = 44.0
-margin_right = 384.0
-margin_bottom = 76.0
+margin_top = 36.0
+margin_right = 396.0
+margin_bottom = 60.0
 text = "GENERAL"
 align = 1
 __meta__ = {
@@ -54,32 +55,32 @@ __meta__ = {
 }
 
 [node name="LanguageContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
-margin_top = 80.0
-margin_right = 384.0
-margin_bottom = 112.0
+margin_top = 64.0
+margin_right = 396.0
+margin_bottom = 88.0
 
 [node name="LanguageLabel" type="Label" parent="PanelContainer/VBoxContainer/LanguageContainer"]
-margin_right = 280.0
-margin_bottom = 32.0
+margin_right = 292.0
+margin_bottom = 24.0
 size_flags_horizontal = 3
 text = "LANGUAGE"
 
 [node name="Language" type="OptionButton" parent="PanelContainer/VBoxContainer/LanguageContainer"]
-margin_left = 284.0
-margin_right = 384.0
-margin_bottom = 32.0
+margin_left = 296.0
+margin_right = 396.0
+margin_bottom = 24.0
 rect_min_size = Vector2( 100, 0 )
 text = "en"
 
 [node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer"]
-margin_top = 116.0
-margin_right = 384.0
-margin_bottom = 120.0
+margin_top = 92.0
+margin_right = 396.0
+margin_bottom = 96.0
 
 [node name="Audio" type="Label" parent="PanelContainer/VBoxContainer"]
-margin_top = 124.0
-margin_right = 384.0
-margin_bottom = 156.0
+margin_top = 100.0
+margin_right = 396.0
+margin_bottom = 124.0
 text = "AUDIO"
 align = 1
 __meta__ = {
@@ -87,38 +88,38 @@ __meta__ = {
 }
 
 [node name="MainVolume" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
-margin_top = 160.0
-margin_right = 384.0
-margin_bottom = 192.0
+margin_top = 128.0
+margin_right = 396.0
+margin_bottom = 152.0
 
 [node name="MainVolume" type="Label" parent="PanelContainer/VBoxContainer/MainVolume"]
-margin_right = 280.0
-margin_bottom = 32.0
+margin_right = 292.0
+margin_bottom = 24.0
 size_flags_horizontal = 3
 text = "MAIN"
 
 [node name="Main" type="HSlider" parent="PanelContainer/VBoxContainer/MainVolume"]
-margin_left = 284.0
-margin_right = 384.0
+margin_left = 296.0
+margin_right = 396.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 100, 0 )
 max_value = 1.0
 step = 0.05
 
 [node name="MusicVolume" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
-margin_top = 196.0
-margin_right = 384.0
-margin_bottom = 228.0
+margin_top = 156.0
+margin_right = 396.0
+margin_bottom = 180.0
 
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer/MusicVolume"]
-margin_right = 280.0
-margin_bottom = 32.0
+margin_right = 292.0
+margin_bottom = 24.0
 size_flags_horizontal = 3
 text = "MUSIC"
 
 [node name="Music" type="HSlider" parent="PanelContainer/VBoxContainer/MusicVolume"]
-margin_left = 284.0
-margin_right = 384.0
+margin_left = 296.0
+margin_right = 396.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 100, 0 )
 max_value = 1.0
@@ -126,19 +127,19 @@ step = 0.05
 value = 1.0
 
 [node name="SoundVolume" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
-margin_top = 232.0
-margin_right = 384.0
-margin_bottom = 264.0
+margin_top = 184.0
+margin_right = 396.0
+margin_bottom = 208.0
 
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer/SoundVolume"]
-margin_right = 280.0
-margin_bottom = 32.0
+margin_right = 292.0
+margin_bottom = 24.0
 size_flags_horizontal = 3
 text = "SOUND"
 
 [node name="Sound" type="HSlider" parent="PanelContainer/VBoxContainer/SoundVolume"]
-margin_left = 284.0
-margin_right = 384.0
+margin_left = 296.0
+margin_right = 396.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 100, 0 )
 max_value = 1.0
@@ -146,17 +147,17 @@ step = 0.05
 value = 0.3
 
 [node name="HSeparator2" type="HSeparator" parent="PanelContainer/VBoxContainer"]
-margin_top = 268.0
-margin_right = 384.0
-margin_bottom = 272.0
+margin_top = 212.0
+margin_right = 396.0
+margin_bottom = 216.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Gameplay" type="Label" parent="PanelContainer/VBoxContainer"]
-margin_top = 276.0
-margin_right = 384.0
-margin_bottom = 308.0
+margin_top = 220.0
+margin_right = 396.0
+margin_bottom = 244.0
 text = "GAMEPLAY"
 align = 1
 __meta__ = {
@@ -164,22 +165,22 @@ __meta__ = {
 }
 
 [node name="Screenshake" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
-margin_top = 312.0
-margin_right = 384.0
-margin_bottom = 344.0
+margin_top = 248.0
+margin_right = 396.0
+margin_bottom = 272.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer/Screenshake"]
-margin_right = 280.0
-margin_bottom = 32.0
+margin_right = 292.0
+margin_bottom = 24.0
 size_flags_horizontal = 3
 text = "SCREENSHAKE"
 
 [node name="Screenshake" type="HSlider" parent="PanelContainer/VBoxContainer/Screenshake"]
-margin_left = 284.0
-margin_right = 384.0
+margin_left = 296.0
+margin_right = 396.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 100, 0 )
 max_value = 1.0
@@ -209,18 +210,18 @@ rect_min_size = Vector2( 100, 0 )
 flat = true
 
 [node name="Delete Savegame" type="Button" parent="PanelContainer/VBoxContainer"]
-margin_top = 348.0
-margin_right = 384.0
-margin_bottom = 380.0
+margin_top = 276.0
+margin_right = 396.0
+margin_bottom = 292.0
 text = "DELETE_SAVEGAME"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Close" type="Button" parent="PanelContainer/VBoxContainer"]
-margin_top = 384.0
-margin_right = 384.0
-margin_bottom = 416.0
+margin_top = 296.0
+margin_right = 396.0
+margin_bottom = 312.0
 text = "CLOSE"
 
 [connection signal="item_selected" from="PanelContainer/VBoxContainer/LanguageContainer/Language" to="." method="_on_Language_item_selected"]
@@ -230,8 +231,8 @@ text = "CLOSE"
 [connection signal="value_changed" from="PanelContainer/VBoxContainer/Screenshake/Screenshake" to="." method="_on_Screenshake_value_changed"]
 [connection signal="toggled" from="PanelContainer/VBoxContainer/Particles/Particles" to="." method="_on_Particles_toggled"]
 [connection signal="mouse_entered" from="PanelContainer/VBoxContainer/Delete Savegame" to="." method="_on_Button_mouse_entered"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Delete Savegame" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Delete Savegame" to="." method="_on_Delete_Savegame_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Delete Savegame" to="." method="_on_Button_pressed"]
 [connection signal="mouse_entered" from="PanelContainer/VBoxContainer/Close" to="." method="_on_Button_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Close" to="." method="_on_Close_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Close" to="." method="_on_Button_pressed"]
